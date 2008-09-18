@@ -1,0 +1,15 @@
+(defun bja-open-line-below ()
+  (interactive)
+  (end-of-line)
+  (open-line 1)
+  (next-line 1)
+  (indent-according-to-mode))
+
+(defun bja-open-line-above ()
+  (interactive)
+  (beginning-of-line)
+  (open-line 1)
+  (indent-according-to-mode))
+
+(global-set-key [?\C-o] 'bja-open-line-below)
+(global-set-key [?\M-o] 'bja-open-line-above)
