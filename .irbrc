@@ -1,10 +1,12 @@
 require 'rubygems'
-
-# Activate auto-completion.
 require 'irb/completion'
+require 'pp'
 
 # Use the simple prompt if possible.
 IRB.conf[:PROMPT_MODE] = :SIMPLE
+
+# Let irb automatically indent lines
+IRB.conf[:AUTO_INDENT] = true
 
 # Setup permanent history.
 HISTFILE = "~/.irb_history"
@@ -23,5 +25,14 @@ begin
     lines = lines[-MAXHISTSIZE, MAXHISTSIZE] if lines.nitems > MAXHISTSIZE
     puts "Saving #{lines.length} history lines to '#{histfile}'." if $VERBOSE
     File::open(histfile, File::WRONLY|File::CREAT|File::TRUNC) { |io| io.puts lines.join("\n") }
+  end
+end
+
+class Object
+  # Return a list of methods defined locally for a particular object.  Useful
+  # for seeing what it does whilst losing all the guff that's implemented
+  # by its parents (eg Object).
+  def local_methods(obj = self)
+    obj.methods(false).sort
   end
 end
