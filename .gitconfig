@@ -1,30 +1,27 @@
 [user]
-	name = Ryan Briones
-	email = ryan.briones@brionesandco.com
+  name = Mike Busch
+  email = busch.michael@gmail.com
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
 [color]
-	branch = auto
-	diff = auto
-	status = auto
+  branch = auto
+  diff = auto
+  status = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-[merge]
-	tool = opendiff
+  added = yellow
+  changed = green
+  untracked = cyan
 [core]
-	legacyheaders = false
-[repack]
-	usedeltabaseoffset = true
-[instaweb]
-  local = true
-  httpd = webrick
-  port = 9999
+  excludesfile = /Users/mike/.gitignore
