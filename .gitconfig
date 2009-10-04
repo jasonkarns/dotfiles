@@ -25,3 +25,4 @@
   untracked = cyan
 [core]
   excludesfile = /Users/mike/.gitignore
+	autocrlf = true
