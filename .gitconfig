@@ -26,4 +26,6 @@
 [core]
   excludesfile = /Users/mike/.gitignore
   editor = mate -w
-	autocrlf = input
+  autocrlf = input
+[push]
+  default = matching
