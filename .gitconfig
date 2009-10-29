@@ -6,6 +6,8 @@
   ci = commit
   br = branch
   co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	pom = push origin master
 [color]
   branch = auto
   diff = auto
@@ -29,3 +31,6 @@
   autocrlf = input
 [push]
   default = matching
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
