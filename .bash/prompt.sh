@@ -1,1 +1,11 @@
-export PS1='\u:\w\[\e[1;32m\]$(__git_ps1 " (%s)")\[\e[0m\] \$ '
+scm_ps1() {
+    local s=
+    if [[ -d ".svn" ]] ; then
+        s=\ \(svn:$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )\)
+    else
+        s=$(__git_ps1 " (git:%s)")
+    fi
+    echo -n "$s"
+}
+
+export PS1='\u:\w\[\e[1;32m\]$(scm_ps1)\[\e[0m\] \$ '
