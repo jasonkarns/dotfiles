@@ -1,3 +1,6 @@
+GREEN="\[\e[1;32m\]"
+NO_COLOR="\[\e[0m\]"
+
 scm_ps1() {
     local s=
     if [[ -d ".svn" ]] ; then
@@ -8,4 +11,4 @@ scm_ps1() {
     echo -n "$s"
 }
 
-export PS1='\u:\w\[\e[1;32m\]$(scm_ps1)\[\e[0m\] \$ '
+export PS1="\u:\w$GREEN\$(scm_ps1)$NO_COLOR \$ "
