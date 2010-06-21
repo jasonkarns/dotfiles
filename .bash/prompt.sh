@@ -11,4 +11,4 @@ scm_ps1() {
     echo -n "$s"
 }
 
-export PS1="\u:\w$GREEN\$(scm_ps1)$NO_COLOR \$ "
+export PS1="\u:\w$GREEN\$(scm_ps1)$NO_COLOR > "
