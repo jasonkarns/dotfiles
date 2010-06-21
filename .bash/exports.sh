@@ -1,4 +1,5 @@
 export EDITOR=/Applications/TextMate.app/Contents/MacOS/TextMate
+export VISUAL=$EDITOR
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
 export M2_HOME=/usr/local/apache-maven/apache-maven-2.2.1
 # export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xms256m -Xmx512m -XX:MaxPermSize=128m"
