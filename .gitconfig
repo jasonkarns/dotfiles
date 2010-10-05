@@ -6,8 +6,8 @@
   ci = commit
   br = branch
   co = checkout
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-	pom = push origin master
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  pom = push origin master
 [color]
   branch = auto
   diff = auto
@@ -27,7 +27,7 @@
   untracked = cyan
 [core]
   excludesfile = /Users/mike/.gitignore
-  editor = mate -w
+  editor = mate -wl1
   autocrlf = input
 [push]
   default = matching

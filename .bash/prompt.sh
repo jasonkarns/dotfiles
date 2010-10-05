@@ -1,3 +1,4 @@
+RED="\[\e[1;31m\]"
 GREEN="\[\e[1;32m\]"
 NO_COLOR="\[\e[0m\]"
 
@@ -11,4 +12,12 @@ scm_ps1() {
     echo -n "$s"
 }
 
-export PS1="\u:\w$GREEN\$(scm_ps1)$NO_COLOR > "
+# function rvm_ruby_prompt {
+#   if (declare -f rvm > /dev/null) {
+#       if [[ -x $MY_RUBY_HOME ]]
+#       then ruby -v | sed 's/\([^(]*\).*/\1/'
+#       fi
+#   }
+# }
+
+export PS1="$NO_COLOR\u:\W$GREEN\$(scm_ps1)$NO_COLOR > "

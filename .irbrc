@@ -1,29 +1,47 @@
-def load_gem(gem_name = nil, &block)
-  begin
-    require "#{gem_name.to_s}" if gem_name
-    yield block if block
-  rescue LoadError => e
-    puts "Error loading gem in #{__FILE__}: #{e.message}"
+require 'rubygems'
+require 'irb/completion'
+# require 'looksee/shortcuts'
+
+require 'wirble'
+Wirble.init
+Wirble.colorize
+
+require "ap"
+IRB::Irb.class_eval do
+  def output_value
+    ap(@context.last_value)
   end
 end
 
-load_gem 'rubygems'
-load_gem 'irb/completion'
-load_gem 'pp'
+# require 'hirb'
+# Hirb.enable :output=>{'Object'=>{:class=>:auto_table, :ancestor=>true}}
 
-load_gem 'wirble' do
-  Wirble.init
-  Wirble.colorize
+alias q exit
+
+IRB.conf[:PROMPT_MODE] = :SIMPLE
+IRB.conf[:AUTO_INDENT] = true
+
+IRB.conf[:IRB_RC] = proc do |conf|
+  name = "irb: "
+  name = "rails: " if $0 == 'irb' && ENV['RAILS_ENV']
+  leader = " " * name.length
+  conf.prompt_i = "#{name}"
+  conf.prompt_s = leader + '\-" '
+  conf.prompt_c = leader + '\-+ '
+  conf.return_format = ('=' * (name.length - 2)) + "> %s\n"
 end
 
-load_gem 'hirb' do
-  Hirb.enable :output=>{'Object'=>{:class=>:auto_table, :ancestor=>true}}
+class Object
+  def my_methods(include_inherited = false)
+    ignored_methods = include_inherited ? Object.methods : self.class.superclass.instance_methods
+    (self.methods - ignored_methods).sort
+  end
 end
 
-load_gem do
-  # Use the simple prompt if possible.
-  IRB.conf[:PROMPT_MODE] = :SIMPLE
 
-  # Let irb automatically indent lines
-  IRB.conf[:AUTO_INDENT] = true
+######### RAILS ONLY
+
+if $0 == 'irb' && ENV['RAILS_ENV']
+  require 'logger'
+  Object.const_set(:RAILS_DEFAULT_LOGGER, Logger.new(STDOUT))
 end
