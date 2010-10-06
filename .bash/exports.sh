@@ -6,7 +6,6 @@ export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xms256m -Xmx512m -XX:
 export M2=$M2_HOME/bin
 export HOMEBREW_PATHS="/usr/local/bin:/usr/local/sbin"
 export MAVEN_PATHS="$M2:/usr/share/maven/bin"
-export PATH="$HOME/bin:
-$HOMEBREW_PATHS:$MAVEN_PATHS:$JAVA_HOME/bin:/opt/subversion/bin:/opt/local/bin:$PATH"
+export PATH="$HOME/bin:$HOMEBREW_PATHS:$MAVEN_PATHS:$JAVA_HOME/bin:/opt/subversion/bin:/opt/local/bin:/opt/local/sbin:$PATH"
 export CDPATH=.
 export LSCOLORS=gxfxcxdxbxegedabagacad
