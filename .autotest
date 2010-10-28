@@ -1,7 +1,0 @@
-require 'autotest/growl'
-require 'autotest/redgreen'
-require 'autotest/timestamp'
-
-Autotest.add_hook :initialize do |at|
-  at.add_exception(/.git.*/)
-end
