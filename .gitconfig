@@ -1,11 +1,13 @@
 [core]
 	excludesfile = ~/.gitignore
-#	editor = mate -wl1
+	editor = 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
 	autocrlf = true
 	hideDotFiles = dotGitOnly
 [user]
 	name = Jason Karns
 	email = jason@karns.name
+[github]
+	user = jasonkarns
 [alias]
 	st = status
 	ci = commit
