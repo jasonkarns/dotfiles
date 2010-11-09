@@ -1,2 +1,7 @@
+# to un-ignore specific files, use: !file.ext
+
+# SVN files
 .svn
+
+# Eclipse Workspace files
 .metadata
