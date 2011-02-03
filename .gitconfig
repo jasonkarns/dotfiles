@@ -17,22 +17,32 @@
 	pom = push origin master
 	diffstat = diff --stat
 [color]
+	ui = auto
 	branch = auto
 	diff = auto
 	status = auto
+	interactive = auto
+	showbranch = auto
 [color "branch"]
-	current = yellow reverse
+	current = reverse yellow
 	local = yellow
 	remote = green
+#	plain =
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+	meta = bold yellow
+	frag = bold magenta
+	old = bold red
+	new = bold green
+#	plain = 
+#	func = 
+#	commit = 
+	whitespace = reverse normal
 [color "status"]
+	header = normal
 	added = yellow
 	changed = green
 	untracked = cyan
+	nobranch = red
 #[push]
 #	default = matching
 [branch "master"]
