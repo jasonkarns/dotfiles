@@ -1,7 +1,18 @@
 # to un-ignore specific files, use: !file.ext
 
-# SVN files
-.svn
+# temp
+.tmp_*~
 
-# Eclipse Workspace files
+# ide files
 .metadata
+.project
+.idea
+
+# mac
+.DS_Store
+
+# windows
+Thumbs.db
+
+# subversion
+.svn
