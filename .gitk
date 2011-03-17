@@ -1,7 +1,7 @@
-set mainfont {Monaco 14}
-set textfont {Monaco 14}
-set uifont {"Monaco Bold" 14}
-set tabstop 8
+set mainfont {Consolas 11}
+set textfont {Consolas 11}
+set uifont {Consolas 11 bold}
+set tabstop 4
 set findmergefiles 0
 set maxgraphpct 50
 set maxwidth 16
@@ -9,6 +9,7 @@ set cmitmode patch
 set wrapcomment none
 set autoselect 1
 set showneartags 1
+set hideremotes 0
 set showlocalchanges 1
 set datetimeformat {%Y-%m-%d %H:%M:%S}
 set limitdiffs 1
@@ -16,13 +17,8 @@ set bgcolor white
 set fgcolor black
 set colors {green red blue magenta darkgrey brown orange}
 set diffcolors {red "#00a000" blue}
+set markbgcolor #e0e0ff
 set diffcontext 3
 set selectbgcolor gray85
-set geometry(main) 1515x843+5+45
-set geometry(topwidth) 1511
-set geometry(topheight) 241
-set geometry(pwsash0) "1051 2"
-set geometry(pwsash1) "1076 2"
-set geometry(botwidth) 904
-set geometry(botheight) 582
+set geometry(state) zoomed
 set permviews {}
