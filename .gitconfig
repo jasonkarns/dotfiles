@@ -9,6 +9,7 @@
   email = jason@karns.name
 [github]
   user = jasonkarns
+#  token = {add github token here}
 [alias]
   st = status
   ci = commit
