@@ -10,12 +10,17 @@
 [github]
   user = jasonkarns
 #  token = {add github token here}
+[http]
+#  proxy = http://<user>:<pass>@<host>:<port>
+[https]
+#  proxy = http://<user>:<pass>@<host>:<port>
 [alias]
   st = status
   ci = commit
   br = branch
   co = checkout
-  glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  hist = log --graph --date=short    --pretty=format:\"%h %ad | %s%d [%an]\"
+  glog = log --graph --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green)%cr by %C(bold blue)%an%Creset'
   pom = push origin master
   diffstat = diff --stat
 [color]
@@ -35,7 +40,7 @@
   frag = bold magenta
   old = bold red
   new = bold green
-#  plain = 
+  plain = normal
 #  func = 
 #  commit = 
   whitespace = reverse normal
