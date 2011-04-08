@@ -19,6 +19,7 @@
   ci = commit
   br = branch
   co = checkout
+  and = commit --amend -C HEAD
   hist = log --graph --date=short    --pretty=format:\"%h %ad | %s%d [%an]\"
   glog = log --graph --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green)%cr by %C(bold blue)%an%Creset'
   pom = push origin master
