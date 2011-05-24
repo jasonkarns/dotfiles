@@ -24,9 +24,9 @@
   glog = log --graph --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green)%cr by %C(bold blue)%an%Creset'
   pom = push origin master
   diffstat = diff --stat
-[branch "master"]
-  remote = origin
-  merge = refs/heads/master
+#[branch "master"]
+#  remote = origin
+#  merge = refs/heads/master
 [color]
   ui = auto
   branch = auto
