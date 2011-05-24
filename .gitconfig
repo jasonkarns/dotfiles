@@ -24,6 +24,9 @@
   glog = log --graph --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green)%cr by %C(bold blue)%an%Creset'
   pom = push origin master
   diffstat = diff --stat
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
 [color]
   ui = auto
   branch = auto
@@ -51,27 +54,24 @@
   changed = green
   untracked = cyan
   nobranch = red
-#[push]
-#  default = matching
-[branch "master"]
-  remote = origin
-  merge = refs/heads/master
-
 [diff]
   tool = bc3
 [difftool]
   prompt = false
 [merge]
   tool = bc3
+  defaultToUpstream = true
+[push]
+  default = tracking
 
 [difftool "bc3"]
   cmd = 'c:/program files/beyond compare 3/bcomp.exe' \"$LOCAL\" \"$REMOTE\"
 [mergetool "bc3"]
   cmd = 'c:/program files/beyond compare 3/bcomp.exe' \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
   trustExitCode = true
-
 [difftool "winmerge"]
   cmd = 'c:/program files/winmerge/winmergeu.exe' \"$LOCAL\" \"$REMOTE\"
 [mergetool "winmerge"]
   cmd = 'c:/program files/winmerge/winmergeu.exe' \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
   trustExitCode = false
+
