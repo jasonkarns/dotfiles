@@ -1,6 +1,6 @@
 [core]
   excludesfile = ~/.gitignore
-  editor = notepad++ -multiInst -nosession -noPlugin
+  editor = vim #notepad++ -multiInst -nosession -noPlugin
   autocrlf = true
   safecrlf = warn
   hideDotFiles = dotGitOnly
