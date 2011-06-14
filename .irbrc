@@ -1,5 +1,5 @@
 # load project-level .irbrc if it exists (in cwd)
-if Dir.pwd != File.expand_path("~")
+if Dir.pwd.downcase != File.expand_path("~").downcase
   local_irbrc = File.expand_path '.irbrc'
   if File.exist? local_irbrc
     puts "Loading #{local_irbrc}"
