@@ -20,10 +20,12 @@
   br = branch
   co = checkout
   cam = commit --amend -C HEAD
-  hist = log --graph --date=short    --pretty=format:\"%h %ad | %s%d [%an]\"
-  glog = log --graph --date=relative --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(green)%cr by %C(bold blue)%an%Creset'
+  hist = log --graph --date=short --pretty=format:\"%C(yellow)%h%Creset %C(green)%ad%Creset %C(red)|%Creset %s%d %C(bold blue)%an%Creset\"
+  glog = log --graph --date=relative
   pom = push origin master
   diffstat = diff --stat
+[format]
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %C(green)(%ar) %C(bold blue)%an%Creset
 [branch]
   autosetuprebase = always
 #[branch "master"]
