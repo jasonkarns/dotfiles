@@ -23,7 +23,8 @@ use_ruby() {
         ls -d1 /c/*uby*        \
       | grep -i $RUBY_TYPE     \
       | grep -i $RUBY_VERSION  \
-      | sed 's:/$::'           )
+      | sed 's:/$::'           \
+      | sed '$!N;s/\n.*//'     )
 
   # remove old ruby from --and add the desired
   # ruby to-- the path
