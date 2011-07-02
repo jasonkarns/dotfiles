@@ -1,6 +1,6 @@
 [core]
   excludesfile = ~/.gitignore
-  editor = vim #notepad++ -multiInst -nosession -noPlugin
+  editor = vim
   autocrlf = true
   safecrlf = warn
   hideDotFiles = dotGitOnly
@@ -10,10 +10,6 @@
 [github]
   user = jasonkarns
 #  token = {add github token here}
-[http]
-#  proxy = http://<user>:<pass>@<host>:<port>
-[https]
-#  proxy = http://<user>:<pass>@<host>:<port>
 [alias]
   st = status
   ci = commit
