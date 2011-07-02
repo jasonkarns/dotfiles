@@ -63,6 +63,8 @@
   defaultToUpstream = true
 [push]
   default = tracking
+[rerere]
+  enabled = 1
 
 [difftool "bc3"]
   cmd = 'c:/program files/beyond compare 3/bcomp.exe' \"$LOCAL\" \"$REMOTE\"
