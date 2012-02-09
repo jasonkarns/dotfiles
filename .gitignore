@@ -16,3 +16,6 @@ Thumbs.db
 
 # subversion
 .svn
+
+# clearcase
+lost+found

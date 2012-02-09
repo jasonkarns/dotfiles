@@ -1,0 +1,437 @@
+#!/bin/sh
+###################################################
+#
+# (c) 2008 Alexander E Genaud
+# 
+# This work as-is I provide.
+# No warranty express or implied.
+# I've done my best,
+# to debug and test.
+# Liability for damages denied.
+#
+# Permission is granted hereby,
+# to copy, share, and modify.
+# Use as is fit,
+# free or for profit.
+# These rights, on this notice, rely.
+#
+###################################################
+#
+# Pristine 0.9.3
+#
+# Checks a that a Git repository and
+# ClearCase snapshot view sharing the
+# same local workspace are harmonious
+# with regard to both tracked and
+# untracked files and directories.
+#
+# Pristine means that the workspace
+# matches both repositories (minus a
+# few exclusion exceptions) exactly.
+# Specifically, all files
+# must be read-only. There are no
+# artifacts (such as *.unloaded or
+# *.keep), the Git HEAD matches the
+# workspace, there are no ClearCase
+# checkouts, hijacks, nor private
+# files or directories.
+#
+# Usage:
+#
+#   pristine --help
+#   pristine [-[waguch]] [ dirs ... ]
+#
+###################################################
+
+
+###################################################
+#
+# Init:
+#
+# Default settings if no flags passes [-wagch]
+#         for writable, artifacts, etc
+# Default DIR_LIST icludes all child directories
+
+# default skip CC_CHECKOUTS
+FLAGS="-wagchu"
+USAGE_MSG="usage: `echo $0 | sed s:.*/::` [--help] [-[waguch]] [ dir... ]"
+
+
+###################################################
+#
+# climb down tree until repository root ~/.git/..
+# create a fresh 'pristine' dir in .git as $DIR
+# after appending gitignore to an exclude file
+#
+EXCLUDE=`pwd`/tmp.exclude
+echo .git/ > $EXCLUDE
+PREV_DIR=`pwd`
+while [ 1 -eq 1 ]; do
+  if [ `pwd` = "/" -o `pwd` = "\\" ]; then
+    echo FAILURE: not a valid repository
+    rm $EXCLUDE
+    cd $PREV_DIR
+    exit 1
+  elif [ -e .gitignore ]; then
+    cat .gitignore | grep -v "^#" >> $EXCLUDE
+  fi
+  if [ -d .git ]; then
+    if [ -e .git/info/exclude ]; then
+      cat .git/info/exclude | grep -v "^#" >> $EXCLUDE
+    fi
+    DIR=`pwd`/.git/pristine
+    rm -rf $DIR
+    mkdir $DIR
+    mv $EXCLUDE $DIR/exclude
+    EXCLUDE=$DIR/exclude
+    cd $PREV_DIR
+    break
+  fi
+  cd ..
+done
+
+
+###################################################
+#
+# separate the immediate child files from directories
+# of current working directory.
+# 
+DIR_LIST="`ls -F|grep -v -f $EXCLUDE|grep /|sed s:/\$::| sed s:\ :\?:g`"
+FILE_LIST="`ls -F|grep -v -f $EXCLUDE|grep -v /| sed s:\ :\?:g`"
+
+
+###################################################
+#
+# Check arguments:
+#
+
+if [ $# -eq 0 ]; then
+  TEMP=
+elif [ "$1" = "--help" ]; then
+  echo $USAGE_MSG
+  echo
+  echo "   Flags: Check directories for..."
+  echo "       -w writable files (possibly hijacked)"
+  echo "       -a artifacts such as *.keep and *.unloaded"
+  echo "       -g Git status including untracked files"
+  echo "       -u ClearCase untracked files and directories"
+  echo "       -c ClearCase checked out files and directories"
+  echo "       -h ClearCase hijacked files and directories"
+  echo
+  echo "   Note:"
+  echo "       The flags above are ordered considering"
+  echo "       speed and likelihood of failure (-w) to the"
+  echo "       slower operations (-ch)."
+  echo
+  echo "       The ClearCase checks may be slower than other"
+  echo "       checks. -w is a reasonable substitute for -h"
+  echo "       although not technically the same (a file may"
+  echo "       be readonly and still hijacked)"
+  exit 0
+elif [ "x"`echo "$1" | grep "^\-[waguch][waguch]*\$"` = "x$1" ]; then
+  FLAGS="$1"
+  shift
+elif [ -e "$1" ]; then
+  DIR_LIST=
+  FILE_LIST=
+else
+  echo $USAGE_MSG
+  exit 127
+fi
+
+
+###################################################
+#
+# separate trailing directories from files
+# filter our redundancies
+
+NO_REPEAT=
+while [ $# -ge 1 ]; do
+  TEMP=_d_`echo $1|sed s:/\$::|sed s:\ :_s_:g`_d_
+  echo arg: $1
+  echo ${NO_REPEAT}_d_ grep $TEMP
+  if [ "x`echo ${NO_REPEAT}_d_ |grep $TEMP`" = "x${NO_REPEAT}_d_" ]; then
+    TEMP=
+  elif [ -d "$1" ]; then
+    NO_REPEAT="${NO_REPEAT}_d_`echo $1|grep -v -f $EXCLUDE|\
+      sed s:/\$::| sed s:\ :_s_:g`"
+    DIR_LIST="$DIR_LIST `echo $1|grep -v -f $EXCLUDE|\
+      sed s:/\$::| sed s:\ :\?:g`"
+  elif [ -e "$1" ]; then
+    NO_REPEAT="${NO_REPEAT}_d_`echo $1|grep -v -f $EXCLUDE|\
+      sed s:\ :_s_:g`"
+    FILE_LIST="$FILE_LIST `echo $1|grep -v -f $EXCLUDE|\
+      sed s:\ :\?:g`"
+  fi
+  shift
+done
+
+
+###################################################
+#
+# Handle flags
+
+RUN_WRITABLE=FALSE
+RUN_ARTIFACTS=FALSE
+RUN_GIT_STATUS=FALSE
+RUN_CC_UNTRACK=FALSE
+RUN_CC_CHECKOUTS=FALSE
+RUN_CC_HIJACKS=FALSE
+
+if [ "x"`echo $FLAGS | grep w` = "x"$FLAGS ]; then
+  RUN_WRITABLE=TRUE
+fi
+if [ "x"`echo $FLAGS | grep a` = "x"$FLAGS ]; then
+  RUN_ARTIFACTS=TRUE
+fi
+if [ "x"`echo $FLAGS | grep g` = "x"$FLAGS ]; then
+  RUN_GIT_STATUS=TRUE
+fi
+if [ "x"`echo $FLAGS | grep u` = "x"$FLAGS ]; then
+  RUN_CC_UNTRACK=TRUE
+fi
+if [ "x"`echo $FLAGS | grep c` = "x"$FLAGS ]; then
+  RUN_CC_CHECKOUTS=TRUE
+fi
+if [ "x"`echo $FLAGS | grep h` = "x"$FLAGS ]; then
+  RUN_CC_HIJACKS=TRUE
+fi
+
+
+###################################################
+#
+# Search the filesystem
+# for writable files
+#    #grep -v $DIR |\
+#    #grep -v .git |\
+#
+echo -n Checking \(-w\) Writable...\ \ \ \ 
+if [ $RUN_WRITABLE = "TRUE" ]; then
+  find $FILE_LIST $DIR_LIST -type f -perm +220 |\
+      grep -v -f $EXCLUDE >\
+      ${DIR}/gen_writable
+
+  if [ `cat $DIR/gen_writable | wc -l` != "0" ]; then
+    echo FAILURE
+    echo
+    echo Snapshot is not pristine
+    echo
+    echo There exist untracked writable files that ClearCase will consider
+    echo hijacked. Files may have been modified, but not checked out.
+    echo 
+    echo Neither Git nor ClearCase has been consulted.
+    echo Log directory has been preserved: $DIR
+    echo
+    echo Writable \(hijacked\) files:
+    cat $DIR/gen_writable
+    echo
+    echo Suggestion:
+    echo Consult git-status or perhaps
+    echo check files out from ClearCase.
+    echo
+    echo FAILURE: Snapshot is not pristine
+    exit 1
+  fi
+  echo OK
+else
+  echo SKIPPED
+fi
+
+
+###################################################
+#
+# Search the filesystem
+# specific extensions:
+#   .keep and .unloaded
+#
+echo -n Checking \(-a\) Artifacts...\ \ \ 
+if [ $RUN_ARTIFACTS = "TRUE" ]; then
+
+  find $FILE_LIST $DIR_LIST -type f -name *.keep > ${DIR}/gen_keep
+  find $DIR_LIST -type d -name *.unloaded > ${DIR}/gen_unloaded
+  
+  GEN_K=`cat $DIR/gen_keep|wc -l`
+  GEN_U=`cat $DIR/gen_unloaded|wc -l`
+
+  if [ $GEN_K$GEN_U != "00" ]; then
+    echo FAILURE
+    echo
+    echo There exist untracked .keep, or .unloaded artifacts which 
+    echo themselves are harmless, but may be symptomatic of problems.
+    echo Deletions may have occured upstream and risk being
+    echo committed in a local repository.
+    echo 
+    echo Neither Git nor ClearCase has been consulted.
+    echo Log directory has been preserved: $DIR
+    echo
+    echo Artifacts\(.keep, .unloaded\):
+    cat $DIR/gen_keep
+    cat $DIR/gen_unloaded
+    echo
+    echo Suggestion: Run git-status and compare with
+    echo ClearCases modified files to determine if
+    echo files have been deleted upstream.
+    echo
+    echo FAILURE: Snapshot is not pristine
+    exit 1
+  fi
+  echo OK
+else
+  echo SKIPPED
+fi
+
+
+###################################################
+#
+# Check if Git requires
+# a commit or sees
+# unexpected files
+#
+echo -n Checking \(-g\) Git status...\ \ 
+if [ $RUN_GIT_STATUS = "TRUE" ]; then
+
+  git diff --name-only HEAD $FILE_LIST $DIR_LIST > $DIR/git_changes
+  git ls-files --others | grep -v -f  $EXCLUDE > $DIR/git_untrack
+  GIT_C=`cat $DIR/git_changes | wc -l`
+  GIT_U=`cat $DIR/git_untrack | wc -l`
+  if [ $GIT_C$GIT_U != "00" ]; then
+    echo FAILURE
+    echo
+    echo Git does not consider the repository pristine
+    echo We have not bothered to consult ClearCase \(slow\)
+    echo
+    echo Suggestion: Run git-status add, remove, and commit as
+    echo appropriate and/or bring ClearCase to a pristine state
+    echo
+    echo Log directory has been preserved: $DIR
+    echo
+    echo Changed tracked files:
+    cat $DIR/git_changes
+    echo
+    echo New untracked files:
+    cat $DIR/git_untrack
+    echo
+    echo FAILURE: Snapshot is not pristine
+    exit 1
+  fi
+  echo OK
+else
+  echo SKIPPED
+fi
+
+
+###################################################
+#
+# Check for any files ClearCase
+# considers untracked
+#
+echo -n Checking \(-u\) CC Untrack...\ \ 
+if [ $RUN_CC_UNTRACK = "TRUE" ]; then
+
+  cleartool ls -recurse -view -short $FILE_LIST $DIR_LIST |\
+      grep -v -f $EXCLUDE >\
+      $DIR/cc_untrack
+  CC_U=`cat $DIR/cc_untrack | wc -l`
+
+  if [ $CC_U != "0" ]; then
+    echo FAILURE
+    echo
+    echo ClearCase does not consider the repository pristine
+    echo
+    echo Suggestion: Run git-status
+    echo add, remove, and commit as appropriate
+    echo and/or bring ClearCase to a pristine state
+    echo
+    echo Log directory has been preserved: $DIR
+    echo
+    echo New untracked files:
+    cat $DIR/git_untrack
+    echo
+    echo FAILURE: Snapshot is not pristine
+    exit 1
+  fi
+  echo OK
+else
+  echo SKIPPED
+fi
+
+
+###################################################
+#
+# Check for any ClearCase checkouts
+# that need to be checked in or cancelled.
+#
+echo -n Checking \(-c\) CC Checkouts...
+if [ $RUN_CC_CHECKOUTS = "TRUE" ]; then
+
+  cleartool lsco -me -recurse -short $FILE_LIST $DIR_LIST >\
+      $DIR/cc_checkout
+
+  if [ `cat $DIR/cc_checkout | wc -l` != "0" ]; then
+    echo FAILURE
+    echo
+    echo ClearCase has discovered checkouts
+    echo
+    echo If the Git status checks were OK, but ClearCase is has
+    echo checkouts, it is likely changes have come from
+    echo downstream and need to be pushed upstream. Or
+    echo development has occured within the Snapshot View and the state
+    echo of the repository is uncertain.
+    echo 
+    echo Log directory has been preserved: $DIR
+    echo
+    echo Checked out files:
+    cat $DIR/cc_checkout
+    echo
+    echo FAILURE: Snapshot is not pristine
+    exit 1
+  fi
+  echo OK
+else
+  echo SKIPPED
+fi
+
+
+###################################################
+#
+# Check for any files ClearCase
+# considers hijacked files and directories
+#
+echo -n Checking \(-h\) CC Hijacks...\ \ 
+if [ $RUN_CC_HIJACKS = "TRUE" ]; then
+
+  cleartool ls -recurse $FILE_LIST $DIR_LIST |\
+      grep "\[hijacked\]" >\
+      $DIR/cc_hijack
+  CC_H=`cat $DIR/cc_hijack | wc -l`
+
+  if [ $CC_H != "0" ]; then
+    echo FAILURE
+    echo
+    echo ClearCase does not consider the repository pristine
+    echo
+    echo Suggestion: Run git-status
+    echo add, remove, and commit as appropriate
+    echo and/or bring ClearCase to a pristine state
+    echo
+    echo Log directory has been preserved: $DIR
+    echo
+    echo Hijacked tracked files:
+    cat $DIR/git_changes
+    echo
+    echo FAILURE: Snapshot is not pristine
+    exit 1
+  fi
+  echo OK
+else
+  echo SKIPPED
+fi
+
+
+###################################################
+#
+# Finished:
+#
+echo SUCCESS: Snapshot is pristine
+rm -rf $DIR
+exit 0
