@@ -57,6 +57,7 @@
   nobranch = red
 [diff]
   tool = bc3
+  wordRegex=[A-z0-9_]+|[^[:space:]]
 [difftool]
   prompt = false
 [merge]
