@@ -16,6 +16,9 @@ export ANSI_COLOR=true;
 # use pik
 [[ -s ~/.pik/.pikrc ]] && source ~/.pik/.pikrc
 
+# use rubygems
+export RUBYOPT=-rubygems
+
 # proxy
 source ~/.bash/proxy.sh
 
