@@ -7,6 +7,8 @@ source ~/.bash/aliases.sh
 # git aliases
 source ~/.bash/git_aliases.sh
 
+export ANSI_COLOR=true;
+
 ##############
 # ruby stuff
 ##############
