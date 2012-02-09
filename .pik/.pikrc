@@ -1,0 +1,11 @@
+#!/bin/sh
+pik_path=~/bin/
+
+function pik  {
+  "$pik_path/pik_runner.exe" pik.sh $@
+  # wrap stuff below in double quotes
+  [[ -s "$USERPROFILE/.pik/pik.sh" ]] && source "$USERPROFILE/.pik/pik.sh"
+  # unset below
+  unset GEM_HOME
+  unset GEM_PATH
+} 
