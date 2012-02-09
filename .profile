@@ -1,11 +1,17 @@
 # ps1
-source ~/.bash/ps1.sh
+[[ -s ~/.bash/ps1.sh ]] && source ~/.bash/ps1.sh
 
 # misc aliases
-source ~/.bash/aliases.sh
+[[ -s ~/.bash/aliases.sh ]] && source ~/.bash/aliases.sh
 
 # git aliases
-source ~/.bash/git_aliases.sh
+[[ -s ~/.bash/git_aliases.sh ]] && source ~/.bash/git_aliases.sh
+
+# proxy
+[[ -s ~/.bash/proxy.sh ]] && source ~/.bash/proxy.sh
+
+# ssh
+[[ -s ~/.bash/ssh.sh ]] && source ~/.bash/ssh.sh
 
 export ANSI_COLOR=true;
 
@@ -22,8 +28,3 @@ export RUBYOPT=-rubygems
 # prefer Bundler's binstubs
 export PATH=./bin:$PATH;
 
-# proxy
-source ~/.bash/proxy.sh
-
-# ssh
-source ~/.bash/ssh.sh
