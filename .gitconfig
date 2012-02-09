@@ -69,9 +69,9 @@
   enabled = 1
 
 [difftool "bc3"]
-  cmd = 'c:/program files/beyond compare 3/bcomp.exe' \"$LOCAL\" \"$REMOTE\"
+  path = c:/program files/beyond compare 3/bcomp.exe
 [mergetool "bc3"]
-  cmd = 'c:/program files/beyond compare 3/bcomp.exe' \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+  path = c:/program files/beyond compare 3/bcomp.exe
   trustExitCode = true
 [difftool "winmerge"]
   cmd = 'c:/program files/winmerge/winmergeu.exe' \"$LOCAL\" \"$REMOTE\"
