@@ -19,6 +19,9 @@ export ANSI_COLOR=true;
 # use rubygems
 export RUBYOPT=-rubygems
 
+# prefer Bundler's binstubs
+export PATH=./bin:$PATH;
+
 # proxy
 source ~/.bash/proxy.sh
 
