@@ -4,6 +4,7 @@ alias gap='git add -p'
 alias gb='git branch'
 alias gc='git commit'
 alias gd='git diff'
+alias gdw='git diff --word-diff
 alias gdc='git diff --cached'
 alias go='git checkout'
 alias gk='gitk --all&'

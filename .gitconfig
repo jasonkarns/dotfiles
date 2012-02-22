@@ -20,6 +20,7 @@
   glog = log --graph --date=relative
 
   diffstat = diff --stat
+  diffword = diff --word-diff
   chry = cherry-pick
 [format]
   pretty=format:%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%ar) %C(bold blue)%an%C(reset)
