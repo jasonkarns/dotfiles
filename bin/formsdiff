@@ -1,0 +1,8 @@
+#! /bin/sh
+
+form1=$(echo "$1" | sed 's:/:\\:g')
+form2=$(echo "$2" | sed 's:/:\\:g')
+
+'/c/program files/orcl toolbox/formstool v2.0/formstool.exe' //COMPARE //MODULE1="$form1" //MODULE2="$form2"
+
+exit $?

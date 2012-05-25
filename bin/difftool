@@ -1,0 +1,13 @@
+#! /bin/sh
+
+case $1 in
+
+*.fmb)
+  formsdiff $@
+  ;;
+*)
+  'c:/program files/beyond compare 3/bcomp.exe' $@
+  ;;
+esac
+
+exit $?
