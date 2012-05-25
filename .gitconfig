@@ -1,8 +1,8 @@
 [core]
   excludesfile = ~/.gitignore
   editor = vim
-  autocrlf = true
-  safecrlf = warn
+  autocrlf = input
+#  safecrlf = warn
   hideDotFiles = dotGitOnly
 [user]
   name = Jason Karns
