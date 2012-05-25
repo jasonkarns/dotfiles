@@ -25,6 +25,9 @@ export ANSI_COLOR=true;
 # use rubygems
 export RUBYOPT=-rubygems
 
+# use nailgun
+#export JRUBY_OPTS=--ng
+
 # prefer Bundler's binstubs
 export PATH=./bin:$PATH;
 
