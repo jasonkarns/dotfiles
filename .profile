@@ -29,5 +29,5 @@ export RUBYOPT=-rubygems
 #export JRUBY_OPTS=--ng
 
 # prefer Bundler's binstubs
-export PATH=./bin:$PATH;
+#export PATH=./bin:$PATH;
 
