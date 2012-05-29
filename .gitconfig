@@ -21,6 +21,9 @@
   diffstat = diff --stat
   diffword = diff --word-diff
   chry = cherry-pick
+  
+  cclog = log --date=relative --pretty=format:\"- %s (%h, %ar)\"
+  cc = clearcase
 [format]
   pretty=format:%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%ar) %C(bold blue)%an%C(reset)
 [branch]
@@ -81,3 +84,6 @@
   cmd = 'c:/program files/winmerge/winmergeu.exe' \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
   trustExitCode = false
 
+  
+# difftool forms
+# difftool ext

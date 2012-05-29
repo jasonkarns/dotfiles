@@ -11,7 +11,7 @@
 [[ -s ~/.bash/proxy.sh ]] && source ~/.bash/proxy.sh
 
 # ssh
-[[ -s ~/.bash/ssh.sh ]] && source ~/.bash/ssh.sh
+#[[ -s ~/.bash/ssh.sh ]] && source ~/.bash/ssh.sh
 
 export ANSI_COLOR=true;
 
@@ -31,3 +31,14 @@ export RUBYOPT=-rubygems
 # prefer Bundler's binstubs
 #export PATH=./bin:$PATH;
 
+##############
+# ruby stuff
+##############
+
+alias godev='cd /c/dev'
+alias gonav='cd /c/dev/navigators'
+alias gokey='cd /c/dev/navigators/ppa_test_scripts/unit'
+alias gocc='gitoff && cd /r/KN_FA2012_Devl/ppa_test_scripts'
+alias chrome='/c/Documents\ and\ Settings/karnsj1/Local\ Settings/Application\ Data/Google/Chrome/Application/chrome.exe'
+
+alias deploy_masschange='ssh beagle bin/deploy dev2 ppai /bin/webforms/PPAIEX50.fm*'
