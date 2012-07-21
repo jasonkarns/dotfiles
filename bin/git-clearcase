@@ -28,36 +28,40 @@ function main {
 
 function init {
   git init
-  git config core.autocrlf input
   mkdir .git/cc
 }
 
 function clone {
+  set -x
+  
   #todo support --origin/-o flag for setting remote name
 
   BRANCH=$1
   VIEW=`cleartool pwv -short | sed -e 's/karnsj1_//'`
-  REMOTE=`echo $VIEW | tr '[A-Z]' '[a-z]'`
+  REMOTE=`echo ${VIEW} | tr '[A-Z]' '[a-z]'`
 
   init
 
   git add .
-  git commit -m "CLEARCASE INIT"
+  git commit -m "CLEARCASE INIT - ${VIEW}"
+  git tag cc/init/${REMOTE}
   git br clearcase
 
   echo "Configuring origin's remote and branch"
   pushd /c/dev/navigators/ppa_test_scripts
-  git remote add -f $REMOTE /r/$VIEW/ppa_test_scripts
-  git br $BRANCH $REMOTE/master
+  git remote add -f ${REMOTE} /r/${VIEW}/ppa_test_scripts
+  git br --track ${BRANCH} ${REMOTE}/master
   
 
   echo "Configuring origin"
   popd
   git remote add -f origin /c/dev/navigators/ppa_test_scripts
   git config branch.master.remote origin
-  git br --set-upstream master origin/$BRANCH
+  git br --set-upstream master origin/${BRANCH}
 
   echo "Set up the grafts now"
+  
+  set +x
 }
 
 function fetch {
@@ -94,16 +98,18 @@ function pull {
   git commit --file=$repo_root/.git/cc/cc.msg
 
   if [ $? -eq 0 ]; then
-    if [ "`git branch --no-color --no-merged master`" == "* clearcase" ]; then
+#    if [ "`git branch --no-color --no-merged master | grep clearcase`" == "* clearcase" ]; then
+    if can_fast_forward master clearcase; then
       echo "Fast-forwarding master:"
       git update-ref refs/heads/master clearcase
+      git checkout master
     else
       echo "Rebasing master:"
-      
-      git rebase clearcase
+      git rebase clearcase master
 
       echo "Fixing write permissions for ClearCase:"
-      cleartool setactivity dev_sync 
+      cleartool mkactivity -headline "Dev Sync" -force
+      
       cleartool ls -recurse | grep "hijacked" | sed -e 's/\\/\//g' -e 's/\s\[.*//g' | while read elem; do cleartool checkout -unreserved -ncomment -usehijack "$elem"; done 
       cleartool setactivity -none
 
@@ -115,8 +121,6 @@ function pull {
 
     fi
   fi
-  
-  git checkout master
   exit
 }
 
@@ -137,5 +141,9 @@ function commit {
   #pull from view
 }
 
+function can_fast_forward {
+    a="$(git rev-parse "$1")" &&
+    test "$(git merge-base "$a" "$2")" = "$a"
+}
 
 main $@
