@@ -9,6 +9,8 @@
   email = jason@karns.name
 [github]
   user = jasonkarns
+[credential]
+  helper = osxkeychain
 [alias]
   st = status
   ci = commit
@@ -24,6 +26,7 @@
 [format]
   pretty=format:%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%ar) %C(bold blue)%an%C(reset)
 [branch]
+  autosetupmerge = true
   autosetuprebase = always
 #[branch "master"]
 #  remote = origin
@@ -58,13 +61,15 @@
   untracked = cyan
   nobranch = red
 [diff]
-  tool = bc3
+#  tool = bc3
   wordRegex=[A-z0-9_]+|[^[:space:]]
 [difftool]
   prompt = false
 [merge]
-  tool = bc3
+#  tool = bc3
   defaultToUpstream = true
+[pull]
+  rebase = true
 [push]
   default = tracking
 [rerere]
@@ -80,4 +85,3 @@
 [mergetool "winmerge"]
   cmd = 'c:/program files/winmerge/winmergeu.exe' \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
   trustExitCode = false
-

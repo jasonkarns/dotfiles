@@ -2,6 +2,7 @@
 
 # temp
 .tmp_*~
+*.swp
 
 # ide files
 .metadata
