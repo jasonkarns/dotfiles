@@ -1,7 +1,6 @@
-alias ls='ls -hF --color=tty'                 # classify files in colour
-alias dir='ls --color=auto --format=vertical'
-alias vdir='ls --color=auto --format=long'
-alias lsl='ls -l'                              # long list
-alias lsa='ls -A'                              # all but . and ..
-alias last='ls -lart'
-alias hrep='history | grep'
+alias ls='ls -hFG'           # humanize sizes, show filetype indicators, colorize
+alias lsl='ls -l'            # long list
+alias lsa='ls -lA'           # show hidden files (except . and ..)
+alias lsart='ls -lart'       # order by modified, latest last
+alias hrep='history | grep'  # search command history
+alias g='grep -I --ignore-case --recursive --exclude-dir=.git --exclude-dir=tmp'
