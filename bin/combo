@@ -1,0 +1,8 @@
+#!/usr/bin/ruby
+
+system "mysql.server start"
+
+Dir.chdir "/Users/jasonkarns/code/comverge/smartgrid/apollo"
+system "rake db:migrate db:test:prepare"
+
+system "redis-server /usr/local/etc/redis.conf &"
