@@ -1,6 +1,6 @@
-syntax on
 
   " visual
+  set nowrap
   set number
   set ruler
   set showmatch
@@ -28,11 +28,21 @@ syntax on
   set smarttab
   set expandtab
   set shiftround
-  "" TODO visualize tabs
-  "" TODO visualize trailing space
+  set list
+  set listchars=tab:▸\ ,trail:·,extends:⇒,precedes:⇐
 
   " searching
   set hlsearch
   set ignorecase
   set smartcase
   set incsearch
+
+  " colorscheme
+  syntax on
+  colorscheme solarized
+    if has('gui_running')
+      set background=light
+    else
+      set background=dark
+    endif
+
