@@ -8,6 +8,22 @@ call vundle#rc()               " invoke vundle
 " vundle must manage vundle
 Bundle 'gmarik/vundle'
 
+""
+"" Bundles
+""
+""Bundle 'tpope/vim-fugitive'
+""Bundle 'tpope/vim-rails.git'
+""Bundle 'tpope/vim-commentary'
+""Bundle 'tpope/vim-eunuch'
+""Bundle 'wincent/Command-T'
+""Bundle 'altercation/vim-colors-solarized'
+""Bundle 'tsaleh/vim-matchit'
+""Bundle 'vim-ruby/vim-ruby'
+""Bundle 'kchmck/vim-coffee-script'
+""Bundle 'mileszs/ack.vim'
+""Bundle 'kien/ctrlp.vim'
+""Bundle vim-markdown? (plasticboy, tpope or builtin?)
+""Bundle 'FuzzyFinder'
 
 
 ""
