@@ -47,14 +47,14 @@
   remote = red
   #plain = auto
 [color "diff"]
-  meta = bold yellow
-  frag = bold magenta
-  old = bold red
-  new = bold green
+  old = red
+  new = green
   plain = normal
-#  func = 
-#  commit = 
   whitespace = reverse normal
+  meta = reverse cyan
+  frag = ul cyan
+  func = magenta
+#  commit =
 [color "status"]
   header = normal
   added = yellow
