@@ -9,8 +9,6 @@
   email = jason@karns.name
 [github]
   user = jasonkarns
-[credential]
-  helper = osxkeychain
 [alias]
   st = status
   ci = commit
@@ -63,12 +61,10 @@
   branch = reverse normal
   nobranch = red
 [diff]
-#  tool = bc3
   wordRegex=[A-z0-9_]+|[^[:space:]]
 [difftool]
   prompt = false
 [merge]
-#  tool = bc3
   defaultToUpstream = true
 [pull]
   rebase = true
@@ -76,14 +72,5 @@
   default = tracking
 [rerere]
   enabled = 1
-
-[difftool "bc3"]
-  path = c:/program files (x86)/beyond compare 3/bcomp.exe
-[mergetool "bc3"]
-  path = c:/program files (x86)/beyond compare 3/bcomp.exe
-  trustExitCode = true
-[difftool "winmerge"]
-  cmd = 'c:/program files/winmerge/winmergeu.exe' \"$LOCAL\" \"$REMOTE\"
-[mergetool "winmerge"]
-  cmd = 'c:/program files/winmerge/winmergeu.exe' \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-  trustExitCode = false
+[include]
+  path = .gitconfig.local

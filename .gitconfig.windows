@@ -1,0 +1,14 @@
+[diff]
+  tool = bc3
+[merge]
+  tool = bc3
+[difftool "bc3"]
+  path = c:/program files (x86)/beyond compare 3/bcomp.exe
+[mergetool "bc3"]
+  path = c:/program files (x86)/beyond compare 3/bcomp.exe
+  trustExitCode = true
+[difftool "winmerge"]
+  cmd = 'c:/program files/winmerge/winmergeu.exe' \"$LOCAL\" \"$REMOTE\"
+[mergetool "winmerge"]
+  cmd = 'c:/program files/winmerge/winmergeu.exe' \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+  trustExitCode = false
