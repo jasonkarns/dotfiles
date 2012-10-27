@@ -34,12 +34,13 @@
 [advice]
   statusHints = false
 [color]
-  ui = auto
   branch = auto
   diff = auto
-  status = auto
+  grep = auto
   interactive = auto
   showbranch = auto
+  status = auto
+  ui = auto
 [color "branch"]
   current = reverse yellow
   local = yellow
