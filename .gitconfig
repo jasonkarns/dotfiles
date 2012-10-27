@@ -57,9 +57,10 @@
 #  commit =
 [color "status"]
   header = normal
-  added = yellow
+  added = blue
   changed = green
   untracked = cyan
+  branch = reverse normal
   nobranch = red
 [diff]
 #  tool = bc3
