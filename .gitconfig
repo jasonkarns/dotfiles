@@ -42,10 +42,10 @@
   status = auto
   ui = auto
 [color "branch"]
-  current = reverse yellow
-  local = yellow
-  remote = green
-#  plain =
+  current = reverse green
+  local = normal
+  remote = red
+  #plain = auto
 [color "diff"]
   meta = bold yellow
   frag = bold magenta
