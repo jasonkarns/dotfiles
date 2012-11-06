@@ -1,0 +1,10 @@
+#!/bin/sh
+if git diff-tree --name-only --no-color -r -m $1 $2 | fgrep -e 'Gemfile' >/dev/null 2>&1
+then
+  echo "\nGemfile modified: run \`bundle install\`\n"
+fi
+
+if git diff-tree --name-only --no-color -r -m $1 $2 | fgrep -e 'db/migrate' -e 'db/schema.rb' -e 'db/structure.sql' >/dev/null 2>&1
+then
+  echo "\nSchema modified: run \'rake db:migrate\'\n"
+fi
