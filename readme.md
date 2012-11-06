@@ -1,3 +1,12 @@
-This repo was originally forked from [mikelikesbikes/dotfiles](https://github.com/mikelikesbikes/dotfiles) but has grown apart quite a bit since then. I have taken quite a bit from [joelhelbling/dotfiles](https://github.com/joelhelbling/dotfiles).
+Installation
+============
 
-These files are used on two different Windows systems (XP and Win7) running msys/mingw. Eventually, I plan on including my Ubuntu settings in here as well.
+1. `git clone --no-checkout https://github.com/jasonkarns/dotfiles.git`
+2. `git config core.worktree="../../"`
+3. `git config core.sparsecheckout=true`
+4. write .git/info/sparse-checkout
+5. write .git/info/exclude
+6. `git checkout master`
+7. `echo "gitdir: ~/dotfiles/.git" > ~/.git`
+8. `git submodule update`
+9. `vim +BundleInstall +qall`
