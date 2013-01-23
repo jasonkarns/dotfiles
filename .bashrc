@@ -20,3 +20,5 @@ export EDITOR=mvim
 # ruby (ruby aliases, bundler completion, rbenv setup)
 [[ -f ~/.bash/ruby.sh ]] && source ~/.bash/ruby.sh
 
+# node
+[[ -f ~/.bash/node.sh ]] && source ~/.bash/node.sh
