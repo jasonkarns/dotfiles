@@ -19,8 +19,8 @@ alias gk='gitk --all&'
 alias gx='gitx --all'
 alias glog='git glog'
 alias gh='git hist'
-alias giton='export GIT_PS1_SHOWDIRTYSTATE=true && export GIT_PS1_SHOWSTASHSTATE=true'
-alias gitoff='unset GIT_PS1_SHOWDIRTYSTATE && unset GIT_PS1_SHOWSTASHSTATE'
+alias giton='export GIT_PS1_SHOWDIRTYSTATE=true && export GIT_PS1_SHOWSTASHSTATE=true && export GIT_PS1_SHOWUPSTREAM=verbose'
+alias gitoff='unset GIT_PS1_SHOWDIRTYSTATE && unset GIT_PS1_SHOWSTASHSTATE && unset GIT_PS1_SHOWUPSTREAM'
 
 
 #alias gbc='git branch --contains'
