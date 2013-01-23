@@ -13,6 +13,7 @@ augroup bundles
   " syntax utilities
     Bundle 'tpope/vim-commentary'
     Bundle 'tsaleh/vim-matchit'
+    Bundle 'godlygeek/tabular'
 
   " languages/frameworks
     Bundle 'vim-ruby/vim-ruby'
