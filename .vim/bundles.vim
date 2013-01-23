@@ -19,7 +19,8 @@ augroup bundles
     Bundle 'vim-ruby/vim-ruby'
     Bundle 'tpope/vim-rails.git'
     Bundle 'kchmck/vim-coffee-script'
-    " Bundle vim-markdown? (plasticboy, tpope or builtin?)
+    Bundle 'tpope/vim-markdown'
+    Bundle 'nelstrom/vim-markdown-folding'
 
   " utilities
     Bundle 'tpope/vim-eunuch'
