@@ -49,3 +49,26 @@
   " guioptions
   set guioptions-=T " kill the toolbar in MacVim
 
+  " statusline
+  set statusline=
+  set statusline+=%f      " filename (tail)
+  " set statusline+=%t      " filename (tail)
+  set statusline+=\       "
+  set statusline+=%m      " modified flag
+  set statusline+=%r      " read-only flag
+
+  set statusline+=%=      " right-aligned from here
+
+  set statusline+=\       "
+  set statusline+=%{fugitive#statusline()}
+  set statusline+=\       "
+  set statusline+=%y      " filetype
+  set statusline+=\       "
+  set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+  set statusline+=%{&ff}] " file format (line-ending)
+  set statusline+=\ \ \   "
+  set statusline+=%c,     " column
+  set statusline+=%l/%L   " line number/total lines
+  set statusline+=\       "
+  set statusline+=(%P)    " percentage
+  set statusline+=\ \     "
