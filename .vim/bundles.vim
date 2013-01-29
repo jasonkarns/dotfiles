@@ -12,6 +12,7 @@ augroup bundles
 
   " syntax utilities
     Bundle 'tpope/vim-commentary'
+    Bundle 'endwise.vim'
     Bundle 'tsaleh/vim-matchit'
     Bundle 'godlygeek/tabular'
 
