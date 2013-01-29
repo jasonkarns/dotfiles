@@ -46,3 +46,6 @@
       set background=dark
     endif
 
+  " guioptions
+  set guioptions-=T " kill the toolbar in MacVim
+
