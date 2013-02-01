@@ -2,7 +2,10 @@
 
 # temp
 .tmp_*~
+
+# vim
 *.swp
+.netrwhist
 
 # bundler
 .bundle
