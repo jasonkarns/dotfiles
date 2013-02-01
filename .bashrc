@@ -1,5 +1,5 @@
 # path
-export PATH="$PATH:~/bin"
+export PATH="./bin:$PATH:~/bin"
 
 # aliases
 [[ -f ~/.bash/aliases.sh ]] && source ~/.bash/aliases.sh
