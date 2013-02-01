@@ -51,24 +51,26 @@
 
   " statusline
   set statusline=
-  set statusline+=%f      " filename (tail)
-  " set statusline+=%t      " filename (tail)
-  set statusline+=\       "
-  set statusline+=%m      " modified flag
-  set statusline+=%r      " read-only flag
-
-  set statusline+=%=      " right-aligned from here
-
-  set statusline+=\       "
-  set statusline+=%{fugitive#statusline()}
-  set statusline+=\       "
-  set statusline+=%y      " filetype
-  set statusline+=\       "
-  set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-  set statusline+=%{&ff}] " file format (line-ending)
-  set statusline+=\ \ \   "
-  set statusline+=%c,     " column
-  set statusline+=%l/%L   " line number/total lines
-  set statusline+=\       "
-  set statusline+=(%P)    " percentage
-  set statusline+=\ \     "
+  set statusline+=%f                              " filename
+  set statusline+=\                               "
+  set statusline+=%m                              " modified flag
+  set statusline+=%r                              " read-only flag
+  set statusline+=%Y                              " filetype
+                                                  "
+  set statusline+=%=                              " right-aligned from here
+                                                  "
+  set statusline+=\                               "
+  set statusline+=%{fugitive#statusline()}        " git info
+  set statusline+=\                               "
+                                                  "
+  set statusline+=%<                              " truncate point if line is too long
+                                                  "
+  set statusline+=[%{strlen(&fenc)?&fenc:'none'}, " file encoding
+  set statusline+=%{&ff}]                         " file format (line-ending)
+  set statusline+=\ \                             "
+  set statusline+=COL=%c                          " column
+  set statusline+=\ \                             "
+  set statusline+=LINE=%2l/%2L                    " line number/total lines
+  set statusline+=\                               "
+  set statusline+=(%P)                            " percentage
+  set statusline+=\ \                             "
