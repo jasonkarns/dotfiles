@@ -1,7 +1,7 @@
 let mapleader=","
 
   "" clears end of line whitespace
-  map <Leader>s :%s/\s\+$//g<CR>
+  map <leader>s :%s/\s\+$//e<CR>
 
   "" tab navigation
   nmap <leader>j :tabn<CR>
@@ -21,3 +21,6 @@ let mapleader=","
 
   "" make Y consistent with D, C, etc
   nnoremap Y y$
+
+  "" quick-run RSpec
+  map <leader>r :! rspec %<CR>
