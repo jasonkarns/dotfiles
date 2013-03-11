@@ -32,9 +32,6 @@ eval "$(rbenv init -)"
 # aliases
 alias rb='rbenv'
 
-# bash completion
-[[ -f $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
-
 __rbenv_ps1 ()
 {
   local rbenv_version=$(rbenv version | sed -e 's/ .*//')
