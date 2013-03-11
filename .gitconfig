@@ -15,8 +15,8 @@
   br = branch
   co = checkout
   cam = commit --amend -C HEAD
-  hist = log --graph --date=short --pretty=format:\"%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(red)|%C(reset) %s%d %C(bold blue)%an%C(reset)\"
-  glog = log --graph --date=relative
+  hist = log --graph --date=short --pretty=format:\"%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(red)|%C(reset) %s%C(red)%d %C(reset)- %an%C(reset)\"
+  glog = log --date=relative
 
   ap = add -p
   cop = checkout -p
@@ -74,7 +74,7 @@
 [pull]
   rebase = true
 [push]
-  default = tracking
+  default = upstream
 [rerere]
   enabled = 1
 [include]

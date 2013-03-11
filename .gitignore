@@ -11,6 +11,9 @@
 .bundle
 bin
 
+# rbenv
+.rbenv-version
+
 # ide files
 .metadata
 .project
