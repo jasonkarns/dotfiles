@@ -26,6 +26,12 @@
   diffword = diff --word-diff
   cp = cherry-pick
   chry = cherry-pick
+[sendemail]
+  smtpserver = smtp.gmail.com
+  smtpserverport = 587
+  smtpencryption = tls
+  smtpuser = jason@testdouble.com
+  smtppass = { see .gitconfig.local }
 [format]
   pretty=format:%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%ar) %C(bold blue)%an%C(reset)
 [branch]
