@@ -32,7 +32,8 @@ augroup bundles
     Bundle 'rking/ag.vim'
     Bundle 'kien/ctrlp.vim'
     " Bundle 'wincent/Command-T'
-    " Bundle 'FuzzyFinder'
+    Bundle 'L9'
+    Bundle 'FuzzyFinder'
 
   " colors
     Bundle 'altercation/vim-colors-solarized'

@@ -24,3 +24,9 @@ let mapleader=","
 
   "" quick-run RSpec
   map <leader>r :! rspec %<CR>
+
+  "" FuzzyFinder mappings
+  map <leader>b :FufBuffer<CR> " pick a file from the buffers
+  map <leader>o :FufFile<CR>   " open a file
+  map <leader>f :FufLine<CR>   " find a line
+  map <leader>t :FufTag<CR>    " find a tag
