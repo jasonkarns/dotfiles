@@ -23,5 +23,5 @@ export EDITOR=mvim
 # ruby (ruby aliases, bundler completion, rbenv setup)
 [[ -f ~/.bash/ruby.sh ]] && source ~/.bash/ruby.sh
 
-# node
+# node/npm setup and grunt completion
 [[ -f ~/.bash/node.sh ]] && source ~/.bash/node.sh
