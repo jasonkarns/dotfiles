@@ -5,7 +5,6 @@
 
 # vim
 *.swp
-.netrwhist
 
 # bundler
 .bundle
