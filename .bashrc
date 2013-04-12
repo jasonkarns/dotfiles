@@ -25,3 +25,6 @@ export EDITOR=mvim
 
 # node/npm setup and grunt completion
 [[ -f ~/.bash/node.sh ]] && source ~/.bash/node.sh
+
+# mosh
+complete -F _known_hosts mosh
