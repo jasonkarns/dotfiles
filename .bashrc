@@ -1,7 +1,7 @@
 # path
 # normally already added by /etc/paths but non-interactive shells don't use /etc/paths
 # so we need to add it for the remote tmux sessions (which need homebrew)
-export PATH="$PATH:/usr/local/bin:~/bin"
+export PATH="/usr/local/bin:$PATH:~/bin"
 
 
 # env
@@ -14,7 +14,7 @@ export EDITOR=mvim
 # aliases
 [[ -f ~/.bash/aliases.sh ]] && source ~/.bash/aliases.sh
 
-# homebrew bash completion
+# homebrew completion
 [[ -f $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
 
 # git (aliases, completion, and ps1)
