@@ -14,6 +14,9 @@ export EDITOR=mvim
 # aliases
 [[ -f ~/.bash/aliases.sh ]] && source ~/.bash/aliases.sh
 
+# functions
+[[ -f ~/.bash/functions.sh ]] && source ~/.bash/functions.sh
+
 # homebrew completion
 [[ -f $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
 
