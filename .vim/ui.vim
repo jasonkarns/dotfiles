@@ -11,6 +11,7 @@
   set showcmd
   set cmdheight=2
   set switchbuf=useopen
+  set relativenumber
 
 
 "" TODO configure backup files location?
@@ -18,6 +19,7 @@
   " tab completion
   set wildmenu
   set wildmode=longest,list
+  set wildignore=tmp/**,node_modules/**,generate/**
   "" TODO configure tab completion ignore file patterns?
 
   " whitespace
