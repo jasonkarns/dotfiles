@@ -36,8 +36,9 @@ alias gitoff='unset GIT_PS1_SHOWDIRTYSTATE && unset GIT_PS1_SHOWSTASHSTATE && un
 # completion
 #########################
 
-[[ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]] && source `brew --prefix`/etc/bash_completion.d/git-completion.bash
+[[ -f $(brew --prefix)/etc/bash_completion.d/git-completion.bash ]]    && source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
 
+[[ -f $(brew --prefix)/etc/bash_completion.d/hub.bash_completion.sh ]] && source $(brew --prefix)/etc/bash_completion.d/hub.bash_completion.sh && __git_complete hub __git_main
 
 #########################
 # ps1
