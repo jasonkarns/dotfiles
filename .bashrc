@@ -31,3 +31,6 @@ export EDITOR=vim
 
 # mosh
 complete -F _known_hosts mosh
+
+
+export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
