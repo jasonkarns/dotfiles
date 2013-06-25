@@ -21,11 +21,19 @@ augroup bundles
     Bundle 'tpope/vim-rails.git'
     Bundle 'kchmck/vim-coffee-script'
     Bundle 'tpope/vim-markdown'
-    Bundle 'nelstrom/vim-markdown-folding'
+    " Bundle 'nelstrom/vim-markdown-folding'
+    Bundle 'pangloss/vim-javascript'
+    Bundle 'hail2u/vim-css3-syntax'
+    Bundle 'groenewege/vim-less'
+    Bundle 'nono/vim-handlebars'
+    Bundle 'briancollins/vim-jst'
 
   " utilities
     Bundle 'tpope/vim-eunuch'
     Bundle 'tpope/vim-fugitive'
+    " following are for Dash.app integration
+    " Bundle 'rizzatti/funcoo.vim'
+    " Bundle 'rizzatti/dash.vim'
 
   " finder
     Bundle 'ack.vim'
