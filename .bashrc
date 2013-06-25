@@ -6,7 +6,7 @@ export PATH="/usr/local/bin:$PATH:~/bin"
 
 # env
 export PAGER=less
-export EDITOR=mvim
+export EDITOR=vim
 
 # ps1
 [[ -f ~/.bash/ps1.sh ]] && source ~/.bash/ps1.sh
