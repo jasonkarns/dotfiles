@@ -3,6 +3,8 @@
 # so we need to add it for the remote tmux sessions (which need homebrew)
 export PATH="/usr/local/bin:$PATH:~/bin"
 
+# shell options
+shopt -s dirspell globstar histappend histverify nocaseglob
 
 # env
 export PAGER=less
