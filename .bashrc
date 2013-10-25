@@ -10,6 +10,10 @@ shopt -s dirspell globstar histappend histverify nocaseglob
 export PAGER=less
 export EDITOR=vim
 
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+export HISTIGNORE="fg*"
+
 # ps1
 [[ -f ~/.bash/ps1.sh ]] && source ~/.bash/ps1.sh
 
