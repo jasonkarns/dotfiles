@@ -35,7 +35,9 @@ let mapleader=","
   map <leader>r :! rspec %<CR>
 
   "" FuzzyFinder mappings
-  map <leader>b :FufBuffer<CR> " pick a file from the buffers
-  map <leader>o :FufFile<CR>   " open a file
-  map <leader>f :FufLine<CR>   " find a line
-  map <leader>t :FufTag<CR>    " find a tag
+  if exists(':FufHelp')
+    nmap <leader>b :FufBuffer<CR> " pick a file from the buffers
+    nmap <leader>o :FufFile<CR>   " open a file
+    nmap <leader>f :FufLine<CR>   " find a line
+    nmap <leader>t :FufTag<CR>    " find a tag
+  endif

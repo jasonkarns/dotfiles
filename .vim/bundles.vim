@@ -42,7 +42,7 @@ augroup bundles
     Bundle 'kien/ctrlp.vim'
     " Bundle 'wincent/Command-T'
     Bundle 'L9'
-    Bundle 'FuzzyFinder'
+    " Bundle 'FuzzyFinder'
 
   " colors
     Bundle 'altercation/vim-colors-solarized'
