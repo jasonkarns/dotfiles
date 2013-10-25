@@ -12,6 +12,7 @@
   set cmdheight=2
   set switchbuf=useopen
   set relativenumber
+  set colorcolumn=80
 
 
 "" TODO configure backup files location?
@@ -19,7 +20,7 @@
   " tab completion
   set wildmenu
   set wildmode=longest,list
-  set wildignore=tmp/**,node_modules/**,generate/**
+  set wildignore=tmp,node_modules,generated,dist
   "" TODO configure tab completion ignore file patterns?
 
   " whitespace
