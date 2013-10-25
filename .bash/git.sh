@@ -44,6 +44,4 @@ alias gitoff='unset GIT_PS1_SHOWDIRTYSTATE && unset GIT_PS1_SHOWSTASHSTATE && un
 # ps1
 #########################
 
-[[ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]] && source `brew --prefix`/etc/bash_completion.d/git-prompt.sh
-
-
+# see ~/.bash/ps1.sh
