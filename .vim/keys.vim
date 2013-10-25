@@ -41,3 +41,12 @@ let mapleader=","
     nmap <leader>f :FufLine<CR>   " find a line
     nmap <leader>t :FufTag<CR>    " find a tag
   endif
+
+  if exists(':CtrlP')
+    " open a file
+    nmap <leader>o :CtrlP<CR>
+    " clear cache and open file
+    nmap <leader>O :CtrlPClearCache<CR>:CtrlP<CR>
+    " open buffer
+    nmap <leader>b :CtrlPBuffer<CR>
+  endif
