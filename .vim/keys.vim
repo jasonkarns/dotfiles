@@ -13,7 +13,7 @@ let mapleader=","
   nnoremap <c-l> <c-w>l
 
   " unhighlight search
-  nnoremap <CR> :nohlsearch<CR>
+  " nnoremap <CR> :nohlsearch<CR>
 
   "" tab navigation
   nmap <leader>j :tabn<CR>
