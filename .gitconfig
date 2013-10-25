@@ -4,6 +4,7 @@
   autocrlf = input
 #  safecrlf = warn
   hideDotFiles = dotGitOnly
+  pager = less -+$LESS -FRX
 [user]
   name = Jason Karns
   email = jason@karns.name
