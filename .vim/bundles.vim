@@ -15,6 +15,7 @@ augroup bundles
     Bundle 'endwise.vim'
     Bundle 'tsaleh/vim-matchit'
     Bundle 'godlygeek/tabular'
+    Bundle 'tpope/vim-surround'
 
   " languages/frameworks
     Bundle 'vim-ruby/vim-ruby'
