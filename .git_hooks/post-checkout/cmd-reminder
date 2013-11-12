@@ -1,10 +1,20 @@
 #!/bin/sh
+
+MAGENTA="\033[1;31m"
+CYAN="\033[0;37m"
+RESET="\033[0m"
+
 if git diff-tree --name-only --no-color -r -m $1 $2 | fgrep -e 'Gemfile' >/dev/null 2>&1
 then
-  echo "\nGemfile modified: run \`bundle install\`\n"
+  echo "${MAGENTA}Gemfile modified: run \`${CYAN}bundle install${MAGENTA}\`${RESET}"
+fi
+
+if git diff-tree --name-only --no-color -r -m $1 $2 | fgrep -e 'package.json' >/dev/null 2>&1
+then
+  echo "${MAGENTA}Package.json modified: run \`${CYAN}npm install${MAGENTA}\`${RESET}"
 fi
 
 if git diff-tree --name-only --no-color -r -m $1 $2 | fgrep -e 'db/migrate' -e 'db/schema.rb' -e 'db/structure.sql' >/dev/null 2>&1
 then
-  echo "\nSchema modified: run \'rake db:migrate\'\n"
+  echo "${MAGENTA}Schema modified: run \'${CYAN}rake db:migrate${MAGENTA}\'${RESET}"
 fi
