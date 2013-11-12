@@ -28,6 +28,7 @@ augroup bundles
     Bundle 'groenewege/vim-less'
     Bundle 'nono/vim-handlebars'
     Bundle 'briancollins/vim-jst'
+    Bundle 'elzr/vim-json'
 
   " utilities
     Bundle 'tpope/vim-eunuch'
