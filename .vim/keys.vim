@@ -34,6 +34,9 @@ let mapleader=","
   "" quick-run RSpec
   map <leader>r :! rspec %<CR>
 
+  "" grep word under cursor
+  nnoremap <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
   "" FuzzyFinder mappings
   if exists(':FufHelp')
     nmap <leader>b :FufBuffer<CR> " pick a file from the buffers
