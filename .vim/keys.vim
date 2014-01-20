@@ -1,5 +1,8 @@
 let mapleader=","
 
+  "" shortcut for closing all buffers
+  cmap bda bufdo bdelete
+
   "" clears end of line whitespace
   map <leader>s :%s/\s\+$//e<CR>
 
