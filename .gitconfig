@@ -27,6 +27,7 @@
   diffword = diff --word-diff
   cp = cherry-pick
   chry = cherry-pick
+  ctags = !~/bin/ctags
 [sendemail]
   smtpserver = smtp.gmail.com
   smtpserverport = 587
