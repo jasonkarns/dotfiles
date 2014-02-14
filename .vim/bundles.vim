@@ -12,14 +12,14 @@ augroup bundles
 
   " syntax utilities
     Bundle 'tpope/vim-commentary'
-    Bundle 'endwise.vim'
+    Bundle 'tpope/vim-endwise'
     Bundle 'tsaleh/vim-matchit'
     Bundle 'godlygeek/tabular'
     Bundle 'tpope/vim-surround'
 
   " languages/frameworks
     Bundle 'vim-ruby/vim-ruby'
-    Bundle 'tpope/vim-rails.git'
+    Bundle 'tpope/vim-rails'
     Bundle 'kchmck/vim-coffee-script'
     Bundle 'tpope/vim-markdown'
     " Bundle 'nelstrom/vim-markdown-folding'
@@ -29,6 +29,7 @@ augroup bundles
     Bundle 'nono/vim-handlebars'
     Bundle 'briancollins/vim-jst'
     Bundle 'elzr/vim-json'
+    Bundle 'othree/html5.vim'
 
   " utilities
     Bundle 'tpope/vim-eunuch'
