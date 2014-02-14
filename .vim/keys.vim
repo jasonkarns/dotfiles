@@ -37,6 +37,9 @@ let mapleader=","
   "" quick-run RSpec
   map <leader>r :! rspec %<CR>
 
+  "" quick-run Grunt
+  map <leader>g :! grunt<CR>
+
   "" grep word under cursor
   nnoremap <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
