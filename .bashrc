@@ -35,5 +35,7 @@ export HISTIGNORE="fg*"
 # node/npm setup and grunt completion
 [[ -f ~/.bash/node.sh ]] && source ~/.bash/node.sh
 
+# travis completion
+[[ -f ~/.travis/travis.sh ]] && source ~/.travis/travis.sh
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
