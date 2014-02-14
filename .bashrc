@@ -23,10 +23,10 @@ export HISTIGNORE="fg*"
 # functions
 [[ -f ~/.bash/functions.sh ]] && source ~/.bash/functions.sh
 
-# homebrew completion
+# source all homebrew-installed completion scripts
 [[ -f $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
 
-# git (aliases, completion, and ps1)
+# git (aliases, ps1)
 [[ -f ~/.bash/git.sh ]] && source ~/.bash/git.sh
 
 # ruby (ruby aliases, bundler completion, rbenv setup)
@@ -34,9 +34,6 @@ export HISTIGNORE="fg*"
 
 # node/npm setup and grunt completion
 [[ -f ~/.bash/node.sh ]] && source ~/.bash/node.sh
-
-# mosh
-complete -F _known_hosts mosh
 
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
