@@ -28,6 +28,7 @@
   cp = cherry-pick
   chry = cherry-pick
   ctags = !~/bin/ctags
+  pr = pull-request
 [sendemail]
   smtpserver = smtp.gmail.com
   smtpserverport = 587
