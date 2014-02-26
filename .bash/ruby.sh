@@ -26,7 +26,6 @@ alias be='bundle exec'
 #########################
 
 # path and setup
-export PATH="~/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # aliases
@@ -34,6 +33,5 @@ alias rb='rbenv'
 
 __rbenv_ps1 ()
 {
-  local rbenv_version=$(rbenv version | sed -e 's/ .*//')
-  printf "$1" "$rbenv_version"
+  printf "$1" "$(rbenv version-name)"
 }
