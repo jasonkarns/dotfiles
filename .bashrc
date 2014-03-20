@@ -23,6 +23,9 @@ export HISTIGNORE="fg*"
 # functions
 [[ -f ~/.bash/functions.sh ]] && source ~/.bash/functions.sh
 
+# gpg
+[[ -f ~/.bash/gpg.sh ]] && source ~/.bash/gpg.sh
+
 # source all homebrew-installed completion scripts
 [[ -f $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
 
