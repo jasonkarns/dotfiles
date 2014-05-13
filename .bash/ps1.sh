@@ -3,7 +3,7 @@
 #########################
 
 # source git's ps1 script
-[[ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]] && source `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+$(brew --prefix 2>/dev/null) && [[ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]] && source `brew --prefix`/etc/bash_completion.d/git-prompt.sh
 
 # display working directory state (* for modified/+ for staged)
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -71,7 +71,7 @@ else
 fi
 
 
-RUBY_VERSION='\[$MAGENTA\]$(__rbenv_ps1 "[%s] ")\[$RESET\]'
+$(which rbenv &>/dev/null) && RUBY_VERSION='\[$MAGENTA\]$(__rbenv_ps1 "[%s] ")\[$RESET\]'
 CWD='\[$BOLD$CYAN\]\w\[$RESET\]'
 GIT_STATE='\[$YELLOW\]$(__git_ps1 " (%s)")\[$RESET\]'
 PROMPT='\[$BASE3\[\n\$ \[$RESET\]'
