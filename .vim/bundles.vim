@@ -5,7 +5,7 @@ augroup bundles
   filetype off                   " required for vundle
 
   set rtp+=~/.vim/bundle/vundle/ " add vundle to runtime path
-  call vundle#rc()               " invoke vundle
+  call vundle#begin()            " invoke vundle
 
   " let Vundle manage vundle
     Bundle 'gmarik/vundle'
@@ -49,6 +49,7 @@ augroup bundles
   " colors
     Bundle 'altercation/vim-colors-solarized'
 
+  call vundle#end()
   filetype plugin indent on
 
 augroup END
