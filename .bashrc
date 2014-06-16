@@ -44,3 +44,6 @@ $(brew --prefix 2>/dev/null) && [[ -f $(brew --prefix)/etc/bash_completion ]] &&
 [[ -f ~/.travis/travis.sh ]] && source ~/.travis/travis.sh
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
+
+# machine-specific config
+[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
