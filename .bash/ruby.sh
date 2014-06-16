@@ -26,7 +26,8 @@ alias be='bundle exec'
 #########################
 
 # path and setup
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
+. <(rbenv init -)
 
 # aliases
 alias rb='rbenv'
