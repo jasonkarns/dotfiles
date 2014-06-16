@@ -30,6 +30,7 @@
   chry = cherry-pick
   ctags = !~/bin/ctags
   pr = pull-request
+  ff = merge --ff-only
 [sendemail]
   smtpserver = smtp.gmail.com
   smtpserverport = 587
@@ -82,6 +83,7 @@
 [merge]
   defaultToUpstream = true
   summary = true
+  ff = false
 [pull]
   rebase = true
 [push]
