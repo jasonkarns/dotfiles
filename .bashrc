@@ -9,6 +9,7 @@ shopt -s dirspell globstar histappend histverify nocaseglob
 # env
 export PAGER=less
 export EDITOR=vim
+export LESS=RXi
 
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
