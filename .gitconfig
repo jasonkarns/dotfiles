@@ -10,6 +10,7 @@
   email = jason@karns.name
 [github]
   user = jasonkarns
+[hub]
 [alias]
   st = status
   ci = commit
