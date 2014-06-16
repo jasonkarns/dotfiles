@@ -9,4 +9,4 @@ Installation
 6. `git checkout master`
 7. `echo "gitdir: ~/dotfiles/.git" > ~/.git`
 8. `git submodule update`
-9. `vim +BundleInstall +qall`
+9. `vim +PluginInstall +qall`
