@@ -13,7 +13,7 @@ augroup bundles
   " syntax utilities
     Bundle 'tpope/vim-commentary'
     Bundle 'tpope/vim-endwise'
-    Bundle 'tsaleh/vim-matchit'
+    Bundle 'matchit.zip'
     Bundle 'godlygeek/tabular'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-characterize'
