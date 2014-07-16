@@ -10,8 +10,8 @@
   set showcmd
   set cmdheight=2
   set switchbuf=useopen
-  set relativenumber
-  set colorcolumn=80
+  " set relativenumber
+  " set colorcolumn=80
 
 
   " tab completion
