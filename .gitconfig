@@ -1,95 +1,92 @@
 [core]
-  excludesfile = ~/.gitignore
-  editor = vim
-  autocrlf = input
+	excludesfile = ~/.gitignore
+	editor = vim
+	autocrlf = input
 #  safecrlf = warn
-  hideDotFiles = dotGitOnly
-  pager = less -+$LESS -FRX
+	hideDotFiles = dotGitOnly
+	pager = less -+$LESS -FRX
 [user]
-  name = Jason Karns
-  email = jason@karns.name
+	name = Jason Karns
+	email = jason@karns.name
 [github]
-  user = jasonkarns
+	user = jasonkarns
 [hub]
 [alias]
-  st = status
-  ci = commit
-  br = branch
-  co = checkout
-  cam = commit --amend -C HEAD
-  hist = log --graph --date=short --pretty=format:\"%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(red)|%C(reset) %s%C(red)%d %C(reset)- %an%C(reset)\"
-  glog = log --date=relative
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	cam = commit --amend -C HEAD
+	hist = log --graph --date=short --pretty=format:\"%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(red)|%C(reset) %s%C(red)%d %C(reset)- %an%C(reset)\"
+	glog = log --date=relative
 
-  ap = add -p
-  cop = checkout -p
-  rp = reset -p
+	ap = add -p
+	cop = checkout -p
+	rp = reset -p
 
-  diffstat = diff --stat
-  diffword = diff --word-diff
-  cp = cherry-pick
-  chry = cherry-pick
-  ctags = !~/bin/ctags
-  pr = pull-request
-  ff = merge --ff-only
+	diffstat = diff --stat
+	diffword = diff --word-diff
+	cp = cherry-pick
+	chry = cherry-pick
+	ctags = !~/bin/ctags
+	pr = pull-request
+	ff = merge --ff-only
 [sendemail]
-  smtpserver = smtp.gmail.com
-  smtpserverport = 587
-  smtpencryption = tls
-  smtpuser = jason@testdouble.com
-  smtppass = { see .gitconfig.local }
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = jason@testdouble.com
+	smtppass = { see .gitconfig.local }
 [format]
-  pretty=format:%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%ar) %C(bold blue)%an%C(reset)
+	pretty=format:%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%ar) %C(bold blue)%an%C(reset)
 [branch]
-  autosetupmerge = true
-  autosetuprebase = always
-#[branch "master"]
-#  remote = origin
-#  merge = refs/heads/master
+	autosetupmerge = true
+	autosetuprebase = always
 [advice]
-  statusHints = false
+	statusHints = false
 [color]
-  branch = auto
-  diff = auto
-  grep = auto
-  interactive = auto
-  showbranch = auto
-  status = auto
-  ui = auto
+	branch = auto
+	diff = auto
+	grep = auto
+	interactive = auto
+	showbranch = auto
+	status = auto
+	ui = auto
 [color "branch"]
-  current = reverse green
-  local = normal
-  remote = red
+	current = reverse green
+	local = normal
+	remote = red
   #plain = auto
 [color "diff"]
-  old = red
-  new = green
-  plain = normal
-  whitespace = reverse normal
-  meta = reverse cyan
-  frag = ul cyan
-  func = magenta
+	old = red
+	new = green
+	plain = normal
+	whitespace = reverse normal
+	meta = reverse cyan
+	frag = ul cyan
+	func = magenta
 #  commit =
 [color "status"]
-  header = normal
-  added = blue
-  changed = green
-  untracked = cyan
-  branch = reverse normal
-  nobranch = red
+	header = normal
+	added = blue
+	changed = green
+	untracked = cyan
+	branch = reverse normal
+	nobranch = red
 [diff]
-  wordRegex=[A-z0-9_]+|[^[:space:]]
+	wordRegex=[A-z0-9_]+|[^[:space:]]
 [difftool]
-  prompt = false
+	prompt = false
 [merge]
-  defaultToUpstream = true
-  summary = true
-  ff = false
+	defaultToUpstream = true
+	summary = true
+	ff = false
 [pull]
-  rebase = true
+	rebase = true
 [push]
-  default = upstream
+	default = upstream
 [rerere]
-  enabled = 1
+	enabled = 1
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
