@@ -90,8 +90,16 @@
   default = upstream
 [rerere]
   enabled = 1
-[include]
-  path = .gitconfig.local
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+
+[url "git@github.com:"]
+	insteadOf = gh:
+	insteadOf = ghub:
+	insteadOf = github:
+	insteadOf = https://github.com/
+	insteadOf = http://github.com/
+
+[include]
+	path = .gitconfig.local
