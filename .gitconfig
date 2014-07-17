@@ -11,6 +11,7 @@
 [github]
 	user = jasonkarns
 [hub]
+
 [alias]
 	st = status
 	ci = commit
@@ -31,19 +32,33 @@
 	ctags = !~/bin/ctags
 	pr = pull-request
 	ff = merge --ff-only
-[sendemail]
-	smtpserver = smtp.gmail.com
-	smtpserverport = 587
-	smtpencryption = tls
-	smtpuser = jason@testdouble.com
-	smtppass = { see .gitconfig.local }
+
+[diff]
+	wordRegex=[A-z0-9_]+|[^[:space:]]
+[difftool]
+	prompt = false
+[merge]
+	defaultToUpstream = true
+	summary = true
+	ff = false
+
+[pull]
+	rebase = true
+[push]
+	default = upstream
+[rerere]
+	enabled = 1
+
 [format]
 	pretty=format:%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%ar) %C(bold blue)%an%C(reset)
+
 [branch]
 	autosetupmerge = true
 	autosetuprebase = always
+
 [advice]
 	statusHints = false
+
 [color]
 	branch = auto
 	diff = auto
@@ -73,20 +88,14 @@
 	untracked = cyan
 	branch = reverse normal
 	nobranch = red
-[diff]
-	wordRegex=[A-z0-9_]+|[^[:space:]]
-[difftool]
-	prompt = false
-[merge]
-	defaultToUpstream = true
-	summary = true
-	ff = false
-[pull]
-	rebase = true
-[push]
-	default = upstream
-[rerere]
-	enabled = 1
+
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = jason@testdouble.com
+	smtppass = { see .gitconfig.local }
+
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
