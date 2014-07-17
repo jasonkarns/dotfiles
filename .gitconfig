@@ -25,8 +25,11 @@
 	cop = checkout -p
 	rp = reset -p
 
-	diffstat = diff --stat
-	diffword = diff --word-diff
+	d = diff
+	dc = diff --cached
+	ds = diff --stat
+	dw = diff --word-diff
+
 	cp = cherry-pick
 	chry = cherry-pick
 	ctags = !~/bin/ctags
@@ -39,8 +42,9 @@
 	prompt = false
 [merge]
 	defaultToUpstream = true
-	summary = true
 	ff = false
+	log = 999
+	stat = true
 
 [pull]
 	rebase = true
