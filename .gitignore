@@ -21,6 +21,9 @@ VirtualBox VMs
 
 git
 
+pgadmin.log
+pd/
+
 *.local
 .*_history
 .android
@@ -30,12 +33,16 @@ git
 .cache
 .CFUserTextEncoding
 .comv
+.config/browser-launcher/
+.config/configstore/
+.config/hub
 .cpan
 .cups
 .dbshell
 .dropbox
 .fontconfig
 .gem
+.gist
 .gitk
 .gpg-agent-info
 .heroku
@@ -44,16 +51,20 @@ git
 .netrc
 .node-gyp
 .npm
+.passenger/native_support/
 .pgpass
+.pow
 .rbenv
 .rdebug_hist
 .rnd
 .ssh
 .Trash
+.travis/config.yml
+.vagrant.d/
 .vim/.netrwhist
 .vim/bundle
 .vim-fuf-data
 .viminfo
+.webdriver-sync/
 .xauthority
-pgadmin.log
-pd/
+.zinc/
