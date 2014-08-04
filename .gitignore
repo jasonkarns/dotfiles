@@ -27,15 +27,10 @@ pd/
 *.local
 .*_history
 .android
-.atom/compile-cache/
-.atom/storage/
 .bower
 .cache
 .CFUserTextEncoding
 .comv
-.config/browser-launcher/
-.config/configstore/
-.config/hub
 .cpan
 .cups
 .dbshell
@@ -51,7 +46,6 @@ pd/
 .netrc
 .node-gyp
 .npm
-.passenger/native_support/
 .pgpass
 .pow
 .rbenv
@@ -59,10 +53,7 @@ pd/
 .rnd
 .ssh
 .Trash
-.travis/config.yml
 .vagrant.d/
-.vim/.netrwhist
-.vim/bundle
 .vim-fuf-data
 .viminfo
 .webdriver-sync/
