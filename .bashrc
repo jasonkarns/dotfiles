@@ -29,7 +29,7 @@ export HISTIGNORE="fg*"
 [[ -f ~/.bash/gpg.sh ]] && source ~/.bash/gpg.sh
 
 # source all homebrew-installed completion scripts
-$(brew --prefix 2>/dev/null) && [[ -f $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
+$(brew --prefix &>/dev/null) && [[ -f $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
 
 # git (aliases, ps1)
 [[ -f ~/.bash/git.sh ]] && source ~/.bash/git.sh
