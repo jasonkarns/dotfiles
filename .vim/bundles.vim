@@ -52,6 +52,7 @@ augroup bundles
     " Bundle 'rizzatti/funcoo.vim'
     " Bundle 'rizzatti/dash.vim'
     Bundle 'tpope/vim-projectile'
+    Bundle 'editorconfig/editorconfig-vim'
 
   " finder
     Bundle 'ack.vim'
