@@ -1,6 +1,6 @@
 set nocompatible
 
-source ~/.vim/bundles.vim
+source ~/.vim/vundles.vim
 source ~/.vim/ui.vim
 source ~/.vim/keys.vim
 
