@@ -27,6 +27,7 @@ alias be='bundle exec'
 
 # path and setup
 # eval "$(rbenv init -)"
+export RBENV_ROOT=$(brew --prefix)/var/rbenv
 . <(rbenv init -)
 
 # aliases
