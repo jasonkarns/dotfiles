@@ -17,12 +17,13 @@ augroup bundles
     Bundle 'godlygeek/tabular'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-characterize'
-    " Bundle 'tpope/vim-sleuth'
-    " Bundle 'tpope/vim-ragtag'
+    Bundle 'tpope/vim-sleuth'
+    Bundle 'tpope/vim-ragtag'
     Bundle 'tpope/vim-speeddating'
-    Bundle 'mattn/emmet-vim'
+    " Bundle 'mattn/emmet-vim'
 
   " languages/frameworks
+    Bundle 'scrooloose/syntastic'
     Bundle 'vim-ruby/vim-ruby'
     " Bundle 'tpope/vim-rails'
     " Bundle 'tpope/vim-bundler'
@@ -30,6 +31,7 @@ augroup bundles
     " Bundle 'tpope/vim-rake'
     " Bundle 'tpope/vim-cucumber'
     Bundle 'othree/html5.vim'
+    Bundle 'closetag.vim'
     Bundle 'hail2u/vim-css3-syntax'
     Bundle 'pangloss/vim-javascript'
     Bundle 'kchmck/vim-coffee-script'
@@ -53,14 +55,16 @@ augroup bundles
     " Bundle 'rizzatti/dash.vim'
     Bundle 'tpope/vim-projectile'
     Bundle 'editorconfig/editorconfig-vim'
+    " Bundle 'ap/vim-css-color'
 
   " finder
-    Bundle 'ack.vim'
+    " Bundle 'ack.vim'
     Bundle 'rking/ag.vim'
     Bundle 'kien/ctrlp.vim'
     " Bundle 'wincent/Command-T'
-    Bundle 'L9'
+    " Bundle 'L9'
     " Bundle 'FuzzyFinder'
+    Bundle 'scrooloose/nerdtree'
 
   " colors
     Bundle 'altercation/vim-colors-solarized'
