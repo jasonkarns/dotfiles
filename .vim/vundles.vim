@@ -17,7 +17,7 @@ augroup bundles
     Bundle 'godlygeek/tabular'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-characterize'
-    Bundle 'tpope/vim-sleuth'
+    " Bundle 'tpope/vim-sleuth'
     Bundle 'tpope/vim-ragtag'
     Bundle 'tpope/vim-speeddating'
     " Bundle 'mattn/emmet-vim'
@@ -54,7 +54,7 @@ augroup bundles
     " Bundle 'rizzatti/funcoo.vim'
     " Bundle 'rizzatti/dash.vim'
     Bundle 'tpope/vim-projectile'
-    Bundle 'editorconfig/editorconfig-vim'
+    " Bundle 'editorconfig/editorconfig-vim'
     " Bundle 'ap/vim-css-color'
 
   " finder
