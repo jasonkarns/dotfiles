@@ -11,6 +11,14 @@ export RUBYOPT=-rubygems
 
 
 #########################
+# rubygems
+#########################
+
+export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
+export GEM_PATH=$XDG_DATA_HOME/gem
+
+
+#########################
 # bundler
 #########################
 
