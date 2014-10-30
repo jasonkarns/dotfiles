@@ -22,6 +22,7 @@ export LESS=RXi
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 export HISTIGNORE="fg*"
+export HISTFILE=$XDG_CACHE_HOME/bash/history
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 
