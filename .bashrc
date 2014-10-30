@@ -1,3 +1,10 @@
+# XDG
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_DIRSA=/usr/local/share/:/usr/share/
+export XDG_CONFIG_DIRS=/etc/xdg
+export XDG_CACHE_HOME=$HOME/.cache
+
 # path
 # normally already added by /etc/paths but non-interactive shells don't use /etc/paths
 # so we need to add it for the remote tmux sessions (which need homebrew)
@@ -18,7 +25,8 @@ export HISTIGNORE="fg*"
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 
-BASH_CONFIG=${XDG_CONFIG_HOME:=~/.config}/bash
+
+BASH_CONFIG=$XDG_CONFIG_HOME/bash
 
 # ps1
 [[ -r $BASH_CONFIG/ps1.sh ]] && source $BASH_CONFIG/ps1.sh
