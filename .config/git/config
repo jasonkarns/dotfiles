@@ -98,7 +98,7 @@
 	smtpserverport = 587
 	smtpencryption = tls
 	smtpuser = jason@testdouble.com
-	smtppass = { see .gitconfig.local }
+	smtppass = { see .config/git/config.local }
 
 [filter "media"]
 	clean = git-media-clean %f
@@ -112,4 +112,4 @@
 	insteadOf = http://github.com/
 
 [include]
-	path = .gitconfig.local
+	path = config.local
