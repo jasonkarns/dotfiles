@@ -17,9 +17,6 @@ export RUBYOPT=-rubygems
 # aliases
 alias be='bundle exec'
 
-# bash completion
-# [[ -f ~/.bash/bundler_completion.sh ]] && source ~/.bash/bundler_completion.sh
-
 
 #########################
 # rbenv

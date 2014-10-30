@@ -11,5 +11,3 @@ alias upnpm='for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f
 alias upall='upbrew && upnpm && upvim'
 
 alias gemini='ssh -R1337:localhost:22 jasonkarns'
-
-[[ -f ~/.bash/aliases.sh.local ]] && source ~/.bash/aliases.sh.local

@@ -17,5 +17,5 @@
 	path = .grunt-init/node
 	url = https://github.com/gruntjs/grunt-init-node
 [submodule ".bash/keybase-completion"]
-	path = .bash/keybase-completion
+	path = .config/bash/keybase-completion
 	url = https://github.com/dtiersch/keybase-completion

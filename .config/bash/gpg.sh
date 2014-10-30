@@ -7,7 +7,3 @@ fi
 
 export GPG_AGENT_INFO
 export GPG_TTY=$(tty)
-
-
-# keybase.io bash completion
-[[ -r ~/.bash/keybase-completion/keybase.sh ]] && source ~/.bash/keybase-completion/keybase.sh

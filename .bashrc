@@ -18,32 +18,35 @@ export HISTIGNORE="fg*"
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 
+BASH_CONFIG=${XDG_CONFIG_HOME:=~/.config}/bash
+
 # ps1
-[[ -r ~/.bash/ps1.sh ]] && source ~/.bash/ps1.sh
+[[ -r $BASH_CONFIG/ps1.sh ]] && source $BASH_CONFIG/ps1.sh
 
 # aliases
-[[ -r ~/.bash/aliases.sh ]] && source ~/.bash/aliases.sh
+[[ -r $BASH_CONFIG/aliases.sh ]] && source $BASH_CONFIG/aliases.sh
+[[ -r $BASH_CONFIG/aliases.local.sh ]] && source $BASH_CONFIG/aliases.local.sh
 
 # functions
-[[ -r ~/.bash/functions.sh ]] && source ~/.bash/functions.sh
+[[ -r $BASH_CONFIG/functions.sh ]] && source $BASH_CONFIG/functions.sh
 
 # gpg
-[[ -r ~/.bash/gpg.sh ]] && source ~/.bash/gpg.sh
+[[ -r $BASH_CONFIG/gpg.sh ]] && source $BASH_CONFIG/gpg.sh
 
 # source all homebrew-installed completion scripts
 $(brew --prefix &>/dev/null) && [[ -r $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
 
 # git (aliases, ps1)
-[[ -r ~/.bash/git.sh ]] && source ~/.bash/git.sh
+[[ -r $BASH_CONFIG/git.sh ]] && source $BASH_CONFIG/git.sh
+
+# keybase.io bash completion
+[[ -r $BASH_CONFIG/keybase-completion/keybase.sh ]] && source $BASH_CONFIG/keybase-completion/keybase.sh
 
 # ruby (ruby aliases, bundler completion, rbenv setup)
-[[ -r ~/.bash/ruby.sh ]] && source ~/.bash/ruby.sh
+[[ -r $BASH_CONFIG/ruby.sh ]] && source $BASH_CONFIG/ruby.sh
 
 # node/npm setup and grunt completion
-[[ -r ~/.bash/node.sh ]] && source ~/.bash/node.sh
-
-# travis completion
-[[ -r ~/.travis/travis.sh ]] && source ~/.travis/travis.sh
+[[ -r $BASH_CONFIG/node.sh ]] && source $BASH_CONFIG/node.sh
 
 # machine-specific config
-[[ -r ~/.bashrc.local ]] && source ~/.bashrc.local
+[[ -r $BASH_CONFIG/bashrc.local ]] && source $BASH_CONFIG/bashrc.local
