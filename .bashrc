@@ -25,6 +25,10 @@ export HISTIGNORE="fg*"
 export HISTFILE=$XDG_CACHE_HOME/bash/history
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
+export MYSQL_HISTFILE=$XDG_CACHE_HOME/mysql/history
+export LESSHISTFILE=$XDG_CACHE_HOME/less/history
+export PSQLRC=$XDG_CONFIG_HOME/psql/config
+export PSQL_HISTORY=$XDG_CACHE_HOME/psql/history
 
 
 BASH_CONFIG=$XDG_CONFIG_HOME/bash
