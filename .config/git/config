@@ -12,6 +12,9 @@
 	user = jasonkarns
 [hub]
 
+[hooks]
+	global = ~/.config/git/hooks
+
 [alias]
 	st = status
 	ci = commit
