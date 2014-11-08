@@ -73,6 +73,9 @@
 [advice]
 	statusHints = false
 
+[init]
+	templatedir = ~/.config/git/template
+
 [color]
 	branch = auto
 	diff = auto
