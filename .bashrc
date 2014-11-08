@@ -40,7 +40,7 @@ BASH_CONFIG=$XDG_CONFIG_HOME/bash
 [[ -r $BASH_CONFIG/functions.sh ]] && source $BASH_CONFIG/functions.sh
 
 # gpg
-# [[ -r $BASH_CONFIG/gpg.sh ]] && source $BASH_CONFIG/gpg.sh
+[[ -r $BASH_CONFIG/gpg.sh ]] && source $BASH_CONFIG/gpg.sh
 
 # source all homebrew-installed completion scripts
 $(brew --prefix &>/dev/null) && [[ -r $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
