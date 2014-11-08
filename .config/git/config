@@ -39,7 +39,8 @@
 	churn = "!f() { git --no-pager log --all --find-renames --find-copies --name-only --format='format:' \"$@\" | grep -v '^$' | sort | uniq -c | sort -nr | head; }; f"
 
 [diff]
-	wordRegex=[A-z0-9_]+|[^[:space:]]
+	wordRegex = [A-z0-9_]+|[^[:space:]]
+	mnemonicprefix = true
 [difftool]
 	prompt = false
 [merge]
@@ -47,6 +48,8 @@
 	ff = false
 	log = 999
 	stat = true
+[rebase]
+	autosquash = true
 
 [pull]
 	rebase = true
