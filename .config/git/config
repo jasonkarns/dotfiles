@@ -36,6 +36,8 @@
 	pr = pull-request
 	ff = merge --ff-only
 
+	churn = "!f() { git --no-pager log --all --find-renames --find-copies --name-only --format='format:' \"$@\" | grep -v '^$' | sort | uniq -c | sort -nr | head; }; f"
+
 [diff]
 	wordRegex=[A-z0-9_]+|[^[:space:]]
 [difftool]
