@@ -3,7 +3,7 @@ export XDG_DATA_HOME=/usr/local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/
 export XDG_CONFIG_DIRS=/etc/xdg
-export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CACHE_HOME=/usr/local/cache
 
 # path
 # normally already added by /etc/paths but non-interactive shells don't use /etc/paths
@@ -34,7 +34,7 @@ BASH_CONFIG=$XDG_CONFIG_HOME/bash
 
 # aliases
 [[ -r $BASH_CONFIG/aliases.sh ]] && source $BASH_CONFIG/aliases.sh
-[[ -r $BASH_CONFIG/aliases.local.sh ]] && source $BASH_CONFIG/aliases.local.sh
+[[ -r $BASH_CONFIG/aliases.sh.local ]] && source $BASH_CONFIG/aliases.sh.local
 
 # functions
 [[ -r $BASH_CONFIG/functions.sh ]] && source $BASH_CONFIG/functions.sh
