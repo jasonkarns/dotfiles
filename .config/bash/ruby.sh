@@ -32,7 +32,7 @@ alias be='bundle exec'
 
 # path and setup
 # eval "$(rbenv init -)"
-export RBENV_ROOT=$(brew --prefix)/var/rbenv
+export RBENV_ROOT=$XDG_CONFIG_HOME/rbenv
 . <(rbenv init -)
 
 # aliases

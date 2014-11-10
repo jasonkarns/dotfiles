@@ -19,3 +19,42 @@
 [submodule ".bash/keybase-completion"]
 	path = .config/bash/keybase-completion
 	url = https://github.com/dtiersch/keybase-completion
+[submodule ".config/rbenv/plugins/rbenv-aliases"]
+	path = .config/rbenv/plugins/rbenv-aliases
+	url = git://github.com/tpope/rbenv-aliases.git
+[submodule ".config/rbenv/plugins/rbenv-binstubs"]
+	path = .config/rbenv/plugins/rbenv-binstubs
+	url = git://github.com/ianheggie/rbenv-binstubs.git
+[submodule ".config/rbenv/plugins/rbenv-bundler-ruby-version"]
+	path = .config/rbenv/plugins/rbenv-bundler-ruby-version
+	url = git://github.com/aripollak/rbenv-bundler-ruby-version.git
+[submodule ".config/rbenv/plugins/rbenv-ctags"]
+	path = .config/rbenv/plugins/rbenv-ctags
+	url = git://github.com/tpope/rbenv-ctags.git
+[submodule ".config/rbenv/plugins/rbenv-default-gems"]
+	path = .config/rbenv/plugins/rbenv-default-gems
+	url = git://github.com/sstephenson/rbenv-default-gems.git
+[submodule ".config/rbenv/plugins/rbenv-each"]
+	path = .config/rbenv/plugins/rbenv-each
+	url = git://github.com/chriseppstein/rbenv-each.git
+[submodule ".config/rbenv/plugins/rbenv-env"]
+	path = .config/rbenv/plugins/rbenv-env
+	url = git://github.com/ianheggie/rbenv-env.git
+[submodule ".config/rbenv/plugins/rbenv-gem-rehash"]
+	path = .config/rbenv/plugins/rbenv-gem-rehash
+	url = git://github.com/sstephenson/rbenv-gem-rehash.git
+[submodule ".config/rbenv/plugins/rbenv-only"]
+	path = .config/rbenv/plugins/rbenv-only
+	url = git://github.com/Rodreegez/rbenv-only.git
+[submodule ".config/rbenv/plugins/rbenv-update"]
+	path = .config/rbenv/plugins/rbenv-update
+	url = git://github.com/rkh/rbenv-update.git
+[submodule ".config/rbenv/plugins/rbenv-user-gems"]
+	path = .config/rbenv/plugins/rbenv-user-gems
+	url = git://github.com/mislav/rbenv-user-gems.git
+[submodule ".config/rbenv/plugins/rbenv-vars"]
+	path = .config/rbenv/plugins/rbenv-vars
+	url = git://github.com/sstephenson/rbenv-vars.git
+[submodule ".config/rbenv/plugins/rbenv-whatis"]
+	path = .config/rbenv/plugins/rbenv-whatis
+	url = git://github.com/rkh/rbenv-whatis.git
