@@ -29,6 +29,7 @@ export MYSQL_HISTFILE=$XDG_CACHE_HOME/mysql/history
 export LESSHISTFILE=$XDG_CACHE_HOME/less/history
 export PSQLRC=$XDG_CONFIG_HOME/psql/config
 export PSQL_HISTORY=$XDG_CACHE_HOME/psql/history
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 
 
 BASH_CONFIG=$XDG_CONFIG_HOME/bash

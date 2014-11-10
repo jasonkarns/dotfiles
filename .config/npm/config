@@ -1,0 +1,4 @@
+email=jason@karns.name
+//registry.npmjs.org/:username=jasonkarns
+//registry.npmjs.org/:email=jason@karns.name
+//registry.npmjs.org/:always-auth=false
