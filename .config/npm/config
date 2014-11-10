@@ -1,2 +1,3 @@
 email=jason@karns.name
 username=jasonkarns
+cache=${XDG_CACHE_HOME}/npm
