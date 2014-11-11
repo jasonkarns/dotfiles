@@ -21,12 +21,10 @@ VirtualBox VMs
 
 git
 
-pgadmin.log
 pd/
 
 *.local
 .android
-.CFUserTextEncoding
 .cpan
 .cups
 .dropbox
@@ -35,19 +33,13 @@ pd/
 .gitk
 .gpg-agent-info
 .heroku
-.ievms
 .netrc
 .node-gyp
-.npm
-.pgpass
 .pow
-.rbenv
 .rnd
 .ssh
 .Trash
 .vagrant.d/
-.vim-fuf-data
-.viminfo
 .webdriver-sync/
 .xauthority
 .zinc/
