@@ -1,6 +1,4 @@
-[submodule ".vim/bundle/vundle"]
-	path = .vim/bundle/vundle
-	url = https://github.com/gmarik/vundle.git
+# grunt-init templates
 [submodule ".grunt-init/commonjs"]
 	path = .grunt-init/commonjs
 	url = https://github.com/gruntjs/grunt-init-commonjs
@@ -16,9 +14,13 @@
 [submodule ".grunt-init/node"]
 	path = .grunt-init/node
 	url = https://github.com/gruntjs/grunt-init-node
+
+# keybase shell completion
 [submodule ".bash/keybase-completion"]
 	path = .config/bash/keybase-completion
 	url = https://github.com/dtiersch/keybase-completion
+
+# rbenv plugins
 [submodule ".config/rbenv/plugins/rbenv-aliases"]
 	path = .config/rbenv/plugins/rbenv-aliases
 	url = git://github.com/tpope/rbenv-aliases.git
@@ -58,6 +60,8 @@
 [submodule ".config/rbenv/plugins/rbenv-whatis"]
 	path = .config/rbenv/plugins/rbenv-whatis
 	url = git://github.com/rkh/rbenv-whatis.git
-[submodule ".config/vim/bundle/Vundle.vim"]
-	path = .config/vim/bundle/Vundle.vim
-	url = git@github.com:gmarik/Vundle.vim.git
+
+# vim plugins
+[submodule ".config/vim/bundle/vundle.vim"]
+	path = .config/vim/bundle/vundle.vim
+	url = git@github.com:gmarik/vundle.vim.git
