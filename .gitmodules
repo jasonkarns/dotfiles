@@ -62,6 +62,6 @@
 	url = git://github.com/rkh/rbenv-whatis.git
 
 # vim plugins
-[submodule ".config/vim/bundle/vundle.vim"]
-	path = .config/vim/bundle/vundle.vim
+[submodule ".config/vim/vundle.vim"]
+	path = .config/vim/vundle.vim
 	url = git@github.com:gmarik/vundle.vim.git
