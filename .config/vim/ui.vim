@@ -1,4 +1,3 @@
-
   " visual
   set nowrap
   set number
@@ -14,8 +13,6 @@
   set relativenumber
   set colorcolumn=80
 
-
-"" TODO configure backup files location?
 
   " tab completion
   set wildmenu

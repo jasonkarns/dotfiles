@@ -4,11 +4,11 @@ augroup bundles
   filetype on                    " OS X hack. must be on before it can be turned off
   filetype off                   " required for vundle
 
-  set rtp+=~/.vim/bundle/vundle/ " add vundle to runtime path
-  call vundle#begin()            " invoke vundle
+  set rtp+=$XDG_CONFIG_HOME/vim/bundle/Vundle.vim   " add vundle to runtime path
+  call vundle#begin("$XDG_CONFIG_HOME/vim/bundle")  " invoke vundle
 
   " let Vundle manage vundle
-    Bundle 'gmarik/vundle'
+    Bundle 'gmarik/Vundle.vim'
 
   " syntax utilities
     Bundle 'tpope/vim-commentary'

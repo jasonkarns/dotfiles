@@ -58,3 +58,6 @@
 [submodule ".config/rbenv/plugins/rbenv-whatis"]
 	path = .config/rbenv/plugins/rbenv-whatis
 	url = git://github.com/rkh/rbenv-whatis.git
+[submodule ".config/vim/bundle/Vundle.vim"]
+	path = .config/vim/bundle/Vundle.vim
+	url = git@github.com:gmarik/Vundle.vim.git
