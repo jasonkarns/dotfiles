@@ -1,3 +1,5 @@
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
+
 # grunt tab completion
 . <(grunt --completion=bash 2>/dev/null)
 
