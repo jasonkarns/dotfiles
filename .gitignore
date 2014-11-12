@@ -5,6 +5,8 @@
 # *.[oa]
 # *~
 
+/git
+
 Applications
 Desktop
 Documents
@@ -19,19 +21,12 @@ Projects
 Public
 VirtualBox VMs
 
-/git
-
-pd/
-
 *.local
 .android
-.cpan
 .cups
 .dropbox
 .gem
 .gist
-.gitk
-.gpg-agent-info
 .heroku
 .netrc
 .node-gyp
