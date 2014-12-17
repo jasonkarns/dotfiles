@@ -129,3 +129,5 @@
 
 [include]
 	path = config.local
+[hub]
+	host = github.shuttercorp.net
