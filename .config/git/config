@@ -33,6 +33,7 @@
 	ds = diff --stat
 	dw = diff --word-diff
 
+	fa = fetch --all -p
 	cp = cherry-pick
 	chry = cherry-pick
 	ctags = !~/bin/ctags

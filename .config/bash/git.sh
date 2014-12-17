@@ -13,7 +13,7 @@ alias go='git checkout'
 alias gx='gitx --all'
 alias glog='git glog'
 alias gh='git hist'
-alias gfa='git fetch --all'
+alias gfa='git fa'
 alias giton='export GIT_PS1_SHOWDIRTYSTATE=true && export GIT_PS1_SHOWSTASHSTATE=true && export GIT_PS1_SHOWUPSTREAM=verbose'
 alias gitoff='unset GIT_PS1_SHOWDIRTYSTATE && unset GIT_PS1_SHOWSTASHSTATE && unset GIT_PS1_SHOWUPSTREAM'
 
