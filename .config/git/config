@@ -49,6 +49,7 @@
 [diff]
 	wordRegex = [A-z0-9_]+|[^[:space:]]
 	mnemonicprefix = true
+	renames = true
 [difftool]
 	prompt = false
 [merge]
