@@ -2,11 +2,6 @@
 # ruby
 #########################
 
-#alias rdbm='rake db:migrate db:test:prepare'
-#alias bers='be rspec --drb'
-#alias spork2='be spork --port 9090'
-#alias bers2='RSPEC_DRB=9090 be rspec --drb'
-
 export RUBYOPT=-rubygems
 
 
