@@ -61,7 +61,7 @@
 	autosquash = true
 
 [pull]
-	rebase = true
+	rebase = preserve
 [push]
 	default = upstream
 [rerere]
