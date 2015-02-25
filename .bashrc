@@ -29,7 +29,7 @@ export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 export MYSQL_HISTFILE=$XDG_CACHE_HOME/mysql/history
 export PSQLRC=$XDG_CONFIG_HOME/psql/config
 export PSQL_HISTORY=$XDG_CACHE_HOME/psql/history
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/config" | source $MYVIMRC'
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
 
