@@ -9,8 +9,8 @@ export RUBYOPT=-rubygems
 # rubygems
 #########################
 
-export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
-export GEM_PATH=$XDG_DATA_HOME/gem
+# export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
+# export GEM_PATH=$XDG_DATA_HOME/gem
 
 
 #########################
@@ -27,7 +27,7 @@ alias be='bundle exec'
 
 # path and setup
 # eval "$(rbenv init -)"
-export RBENV_ROOT=$XDG_CONFIG_HOME/rbenv
+export RBENV_ROOT=$(brew --prefix)/var/rbenv
 . <(rbenv init -)
 
 # aliases
