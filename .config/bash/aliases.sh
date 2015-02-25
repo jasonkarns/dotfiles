@@ -12,3 +12,5 @@ alias upvim='vim +PluginUpdate +PluginClean +qall'
 alias upall='upbrew && upnpm && uprbenv && upvim'
 
 alias gemini='ssh -R1337:localhost:22 jasonkarns'
+
+alias iectrl="INSTALL_PATH=${IEVMS_HOME}/ievms iectrl"
