@@ -42,18 +42,3 @@ let mapleader=","
 
   "" grep word under cursor
   nnoremap <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-  "" FuzzyFinder mappings
-  if exists(':FufHelp')
-    nmap <leader>b :FufBuffer<CR> " pick a file from the buffers
-    nmap <leader>o :FufFile<CR>   " open a file
-    nmap <leader>f :FufLine<CR>   " find a line
-    nmap <leader>t :FufTag<CR>    " find a tag
-  endif
-
-  " open a file
-  nmap <leader>o :CtrlP<CR>
-  " clear cache and open file
-  nmap <leader>O :CtrlPClearCache<CR>:CtrlP<CR>
-  " open buffer
-  nmap <leader>b :CtrlPBuffer<CR>
