@@ -18,4 +18,9 @@ endif
 " automatically source vimrc if writing .vimrc or vimrc
 " autocmd! BufWritePost .vimrc source $MYVIMRC
 
+" source local vimrc if available {
+if filereadable(expand("$XDG_CONFIG_HOME/vim/vimrc.local"))
+  source $XDG_CONFIG_HOME/vim/vimrc.local
+endif
+
 " plugin-specific configs loaded from $XDG_CONFIG_HOME/vim/after
