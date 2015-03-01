@@ -1,4 +1,4 @@
-let mapleader=","
+let mapleader="\<Space>"
 
   "" shortcut for closing all buffers
   cmap bda bufdo bdelete
