@@ -1,3 +1,6 @@
+# use XDG dir for .tmux.conf
+alias tmux="tmux -f ~/.config/tmux/config"
+
 ##############################################
 # Tmux session helper (list, attach, create) #
 ##############################################
