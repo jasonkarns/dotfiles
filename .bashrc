@@ -65,7 +65,8 @@ $(brew --prefix &>/dev/null) && [[ -r $(brew --prefix)/etc/bash_completion ]] &&
 # ruby (ruby aliases, rubygems setup, bundler, rbenv setup)
 [[ -r $BASH_CONFIG/ruby.sh ]] && source $BASH_CONFIG/ruby.sh
 
-
+# tmux (tmux aliases, session helper)
+[[ -r $BASH_CONFIG/tmux.sh ]] && source $BASH_CONFIG/tmux.sh
 
 # machine-specific config
 [[ -r $BASH_CONFIG/bashrc.local ]] && source $BASH_CONFIG/bashrc.local
