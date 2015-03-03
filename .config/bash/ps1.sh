@@ -3,7 +3,8 @@
 #########################
 
 # source git's ps1 script
-$(brew --prefix &>/dev/null) && [[ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]] && source `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+[[ -f $HOME/.local/opt/git/contrib/completion/git-prompt.sh ]] && source $HOME/.local/opt/git/contrib/completion/git-prompt.sh
+
 
 # display working directory state (* for modified/+ for staged)
 GIT_PS1_SHOWDIRTYSTATE=true
