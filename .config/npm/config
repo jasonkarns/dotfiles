@@ -1,7 +1,7 @@
 username=jasonkarns
 email=jason@karns.name
 
-cache=${XDG_CACHE_HOME}/npm
+cache=/home/jkarns/.cache/npm
 
 init-author-name=Jason Karns
 init-author-email=jason@karns.name
