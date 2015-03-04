@@ -1,3 +1,13 @@
+##############
+# nvm        #
+##############
+
+# store node versions under brew
+export NVM_DIR=$(brew --prefix)/var/nvm
+
+# activate nvm
+. $(brew --prefix nvm)/nvm.sh
+
 
 ##############
 # npm        #
