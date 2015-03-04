@@ -71,10 +71,10 @@ else
 fi
 
 
-$(which rbenv &>/dev/null) && RUBY_VERSION='\[$MAGENTA\]$(__rbenv_ps1 "[%s] ")\[$RESET\]'
+$(which rbenv &>/dev/null) && RUBY_VERSION='\[$RED\]$(__rbenv_ps1 "[%s] ")\[$RESET\]'
 $(nvm &>/dev/null) && NODE_VERSION='\[$YELLOW\][$(nvm current)] \[$RESET\]'
 CWD='\[$BOLD$CYAN\]\w\[$RESET\]'
-GIT_STATE='\[$YELLOW\]$(__git_ps1 " (%s)")\[$RESET\]'
+GIT_STATE='\[$BASE2\]$(__git_ps1 " (%s)")\[$RESET\]'
 PROMPT='\[$BASE3\[\n\$ \[$RESET\]'
 
 export PS1="$NODE_VERSION$RUBY_VERSION$CWD$GIT_STATE$PROMPT"
