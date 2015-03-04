@@ -78,15 +78,16 @@ __color() {
 }
 
 __ps1() {
-  local hostname='$(hostname -s)'
   local ruby_version='$(__rbenv_ps1 "[%s] ")'
   local node_version='$(__nodenv_ps1 "[%s] ")'
   local cwd='\w'
   local git_state='$(__git_ps1 " (%s)")'
-  local prompt='\n\$ '
+  local hostname='$(hostname -s) '
+  local prompt='\$ '
 
-  echo $hostname$(__color yellow)$node_version$(__color red)$ruby_version$(__color cyan)$cwd$(__color base2)$git_state'${COLORS[$prompt_color]}'$prompt$(__color reset)
+  echo $(__color yellow)$node_version$(__color red)$ruby_version$(__color cyan)$cwd$(__color base2)$git_state
+  echo $(__color reset)$hostname'${COLORS[$prompt_color]}'$prompt$(__color reset)
 }
 
-export PROMPT_COMMAND='if [ $? -eq 0 ]; then prompt_color=base3; else prompt_color=red; fi;'$PROMPT_COMMAND
+export PROMPT_COMMAND='if [ $? -eq 0 ]; then prompt_color=base2; else prompt_color=red; fi;'$PROMPT_COMMAND
 export PS1=$( __ps1 )
