@@ -36,8 +36,6 @@ export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
 BASH_CONFIG=$XDG_CONFIG_HOME/bash
 
-# ps1
-[[ -r $BASH_CONFIG/ps1.sh ]] && source $BASH_CONFIG/ps1.sh
 
 # aliases
 [[ -r $BASH_CONFIG/aliases.sh ]] && source $BASH_CONFIG/aliases.sh
@@ -71,3 +69,6 @@ $(brew --prefix &>/dev/null) && [[ -r $(brew --prefix)/etc/bash_completion ]] &&
 
 # machine-specific config
 [[ -r $BASH_CONFIG/bashrc.local ]] && source $BASH_CONFIG/bashrc.local
+
+# ps1 (last so that we can take advantage of all ^^)
+[[ -r $BASH_CONFIG/ps1.sh ]] && source $BASH_CONFIG/ps1.sh
