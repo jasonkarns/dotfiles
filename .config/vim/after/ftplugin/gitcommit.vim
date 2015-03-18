@@ -1,0 +1,2 @@
+" softwrap
+set wrap
