@@ -71,10 +71,14 @@ else
 fi
 
 
-$(which rbenv &>/dev/null) && RUBY_VERSION='\[$RED\]$(__rbenv_ps1 "[%s] ")\[$RESET\]'
-$(nvm &>/dev/null) && NODE_VERSION='\[$YELLOW\][$(nvm current)] \[$RESET\]'
-CWD='\[$BOLD$CYAN\]\w\[$RESET\]'
-GIT_STATE='\[$BASE2\]$(__git_ps1 " (%s)")\[$RESET\]'
-PROMPT='\[$BASE3\[\n\$ \[$RESET\]'
+__ps1() {
+  $(which rbenv &>/dev/null) && local ruby_version='\[$RED\]$(__rbenv_ps1 "[%s] ")\[$RESET\]'
+  $(nvm &>/dev/null) && local node_version='\[$YELLOW\][$(nvm current)] \[$RESET\]'
+  local cwd='\[$BOLD$CYAN\]\w\[$RESET\]'
+  local git_state='\[$BASE2\]$(__git_ps1 " (%s)")\[$RESET\]'
+  local prompt='\[$BASE3\[\n\$ \[$RESET\]'
 
-export PS1="$NODE_VERSION$RUBY_VERSION$CWD$GIT_STATE$PROMPT"
+  echo $node_version$ruby_version$cwd$git_state$prompt
+}
+
+export PS1=$( __ps1 )
