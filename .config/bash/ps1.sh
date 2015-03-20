@@ -72,12 +72,16 @@ else
   COLORS+=( [reset]="\033[m" )
 fi
 
+__color() {
+  echo "\[${COLORS[$1]}\]"
+}
+
 __ps1() {
-  $(which rbenv &>/dev/null) && local ruby_version='\[${COLORS[red]}\]$(__rbenv_ps1 "[%s] ")\[${COLORS[reset]}\]'
-  $(nvm &>/dev/null) && local node_version='\[${COLORS[yellow]}\][$(nvm current)] \[${COLORS[reset]}\]'
-  local cwd='\[${COLORS[cyan]}\]\w\[${COLORS[reset]}\]'
-  local git_state='\[${COLORS[base2]}\]$(__git_ps1 " (%s)")\[${COLORS[reset]}\]'
-  local prompt='\[${COLORS[base3]}\[\n\$ \[${COLORS[reset]}\]'
+  $(which rbenv &>/dev/null) && local ruby_version=$(__color red)'$(__rbenv_ps1 "[%s] ")'$(__color reset)
+  $(nvm &>/dev/null) && local node_version=$(__color yellow)'[$(nvm current)] '$(__color reset)
+  local cwd=$(__color cyan)'\w'$(__color reset)
+  local git_state=$(__color base2)'$(__git_ps1 " (%s)")'$(__color reset)
+  local prompt=$(__color base3)'\n\$ '$(__color reset)
 
   echo $node_version$ruby_version$cwd$git_state$prompt
 }
