@@ -70,9 +70,6 @@
 [format]
 	pretty=format:%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%ar) %C(bold blue)%an%C(reset)
 
-[branch]
-	autosetuprebase = always
-
 [advice]
 	statusHints = false
 
