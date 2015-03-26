@@ -77,7 +77,7 @@ __color() {
 }
 
 __ps1() {
-  $(which rbenv &>/dev/null) && local ruby_version=$(__color red)'$(__rbenv_ps1 "[%s] ")'$(__color reset)
+  local ruby_version=$(__color red)'$(__rbenv_ps1 "[%s] ")'$(__color reset)
   local node_version=$(__color yellow)'$(__nodenv_ps1 "[%s] ")'$(__color reset)
   local cwd=$(__color cyan)'\w'$(__color reset)
   local git_state=$(__color base2)'$(__git_ps1 " (%s)")'$(__color reset)

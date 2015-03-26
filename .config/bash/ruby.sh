@@ -25,15 +25,16 @@ alias be='bundle exec'
 # rbenv
 #########################
 
-# path and setup
-# eval "$(rbenv init -)"
+# store rubies under brew
 export RBENV_ROOT=$(brew --prefix)/var/rbenv
+
+# initialize
+# eval "$(rbenv init -)"
 . <(rbenv init -)
 
 # aliases
 alias rb='rbenv'
 
-__rbenv_ps1 ()
-{
-  printf "$1" "$(rbenv version-name)"
+__rbenv_ps1 () {
+  $(which rbenv &>/dev/null) && printf "$1" "$(rbenv version-name)"
 }
