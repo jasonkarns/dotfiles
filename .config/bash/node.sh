@@ -13,6 +13,20 @@
 # }
 
 ##############
+# nodenv     #
+##############
+
+# store nodes under brew
+export NODENV_ROOT=$(brew --prefix)/var/nodenv
+
+# initialize
+. <(nodenv init -)
+
+__nodenv_ps1 () {
+  $(which nodenv &>/dev/null) && printf "$1" "$(nodenv version-name)"
+}
+
+##############
 # npm        #
 ##############
 
