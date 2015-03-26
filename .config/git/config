@@ -8,10 +8,11 @@
 [user]
 	name = Jason Karns
 	email = jason@karns.name
+
 [github]
 	user = jasonkarns
 [hub]
-
+	host = github.shuttercorp.net
 [hooks]
 	global = ~/.config/git/hooks
 
@@ -126,5 +127,3 @@
 
 [include]
 	path = config.local
-[hub]
-	host = github.shuttercorp.net
