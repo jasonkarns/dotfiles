@@ -77,10 +77,10 @@ __color() {
 }
 
 __ps1() {
-  local ruby_version=$(__color red)'$(__rbenv_ps1 "[%s] ")'$(__color reset)
-  local node_version=$(__color yellow)'$(__nodenv_ps1 "[%s] ")'$(__color reset)
-  local cwd=$(__color cyan)'\w'$(__color reset)
-  local git_state=$(__color base2)'$(__git_ps1 " (%s)")'$(__color reset)
+  local ruby_version=$(__color red)'$(__rbenv_ps1 "[%s] ")'
+  local node_version=$(__color yellow)'$(__nodenv_ps1 "[%s] ")'
+  local cwd=$(__color cyan)'\w'
+  local git_state=$(__color base2)'$(__git_ps1 " (%s)")'
   local prompt=$(__color base3)'\n\$ '$(__color reset)
 
   echo $node_version$ruby_version$cwd$git_state$prompt
