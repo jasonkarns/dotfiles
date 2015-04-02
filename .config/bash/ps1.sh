@@ -83,8 +83,8 @@ __ps1() {
   local git_state='$(__git_ps1 " (%s)")'
   local prompt='\n\$ '
 
-  echo $(__color yellow)$node_version$(__color red)$ruby_version$(__color cyan)$cwd$(__color base2)$git_state'$prompt_color'$prompt$(__color reset)
+  echo $(__color yellow)$node_version$(__color red)$ruby_version$(__color cyan)$cwd$(__color base2)$git_state'${COLORS[$prompt_color]}'$prompt$(__color reset)
 }
 
-export PROMPT_COMMAND='if [ $? -eq 0 ]; then prompt_color=${COLORS[base3]}; else prompt_color=${COLORS[red]}; fi'
+export PROMPT_COMMAND='if [ $? -eq 0 ]; then prompt_color=base3; else prompt_color=red; fi'
 export PS1=$( __ps1 )
