@@ -1,2 +1,2 @@
 #!/bin/sh
-~/bin/ctags >/dev/null 2>&1 &
+git ctags >/dev/null 2>&1 &
