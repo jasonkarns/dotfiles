@@ -1,20 +1,38 @@
 #!/bin/sh
 
-MAGENTA="\033[1;31m"
-CYAN="\033[0;37m"
-RESET="\033[0m"
+old_head_ref=$1
+new_head_ref=$2
 
-if git diff-tree --name-only --no-color -r -m $1 $2 | fgrep -e 'Gemfile' >/dev/null 2>&1
-then
-  echo "${MAGENTA}Gemfile modified: run \`${CYAN}bundle install${MAGENTA}\`${RESET}"
+magenta="\033[1;31m"
+cyan="\033[0;37m"
+reset="\033[0m"
+
+modified_files () {
+  echo $(git diff-tree --name-only --no-color -r -m $old_head_ref $new_head_ref)
+}
+
+modified () {
+  # arguments as an array
+  declare -a files=( $@ )
+
+  # prefix with '-e' arg
+  files=( "${files[@]/#/ -e }" )
+
+  # grep for specified files in list of modied files
+  modified_files | fgrep ${files[@]} >/dev/null 2>&1
+
+  # 0 if found
+  return $?
+}
+
+if modified 'Gemfile' 'Gemfile.lock'; then
+  echo "\n${magenta}> Gemfile modified: run \`${cyan}bundle install${magenta}\`${reset}"
 fi
 
-if git diff-tree --name-only --no-color -r -m $1 $2 | fgrep -e 'package.json' >/dev/null 2>&1
-then
-  echo "${MAGENTA}Package.json modified: run \`${CYAN}npm install${MAGENTA}\`${RESET}"
+if modified 'package.json'; then
+  echo "\n${magenta}> Package.json modified: run \`${cyan}npm install${magenta}\`${reset}"
 fi
 
-if git diff-tree --name-only --no-color -r -m $1 $2 | fgrep -e 'db/migrate' -e 'db/schema.rb' -e 'db/structure.sql' >/dev/null 2>&1
-then
-  echo "${MAGENTA}Schema modified: run \'${CYAN}rake db:migrate${MAGENTA}\'${RESET}"
+if modified 'db/migrate' 'db/schema.rb' 'db/structure.sql'; then
+  echo "\n${magenta}> Schema modified: run \'${cyan}rake db:migrate${magenta}\'${reset}"
 fi
