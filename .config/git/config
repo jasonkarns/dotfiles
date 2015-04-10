@@ -37,7 +37,7 @@
 	fa = fetch --all -p
 	cp = cherry-pick
 	chry = cherry-pick
-	ctags = !~/bin/ctags
+	ctags = "! dir=\"`git rev-parse --git-dir`\" && trap 'rm -f \"$dir/$$.tags\"' EXIT && git ls-files | ctags --tag-relative -L - -f\"$dir/$$.tags\" --languages=sql && mv \"$dir/$$.tags\" \"$dir/tags\""
 	pr = pull-request
 	ff = merge --ff-only
 
