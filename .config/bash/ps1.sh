@@ -86,5 +86,5 @@ __ps1() {
   echo $(__color yellow)$node_version$(__color red)$ruby_version$(__color cyan)$cwd$(__color base2)$git_state'${COLORS[$prompt_color]}'$prompt$(__color reset)
 }
 
-export PROMPT_COMMAND='if [ $? -eq 0 ]; then prompt_color=base3; else prompt_color=red; fi'
+export PROMPT_COMMAND='if [ $? -eq 0 ]; then prompt_color=base3; else prompt_color=red; fi;'$PROMPT_COMMAND
 export PS1=$( __ps1 )
