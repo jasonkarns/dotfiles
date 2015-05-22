@@ -21,6 +21,9 @@ Projects
 Public
 VirtualBox VMs
 
+.local/
+.cache/
+
 *.local
 .android
 .cups
