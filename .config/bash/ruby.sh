@@ -26,7 +26,7 @@ alias be='bundle exec'
 #########################
 
 # store rubies under brew (or /usr/local)
-export RBENV_ROOT=/usr/local/var/rbenv
+export RBENV_ROOT=~/.local/var/rbenv
 
 # initialize
 $(which rbenv &>/dev/null) && . <(rbenv init -)
