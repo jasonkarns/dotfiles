@@ -65,6 +65,7 @@
 	prune = true
 [pull]
 	rebase = preserve
+	tags = true
 [push]
 	default = upstream
 [rerere]
