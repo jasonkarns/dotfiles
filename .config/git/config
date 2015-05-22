@@ -34,7 +34,7 @@
 	ds = diff --stat
 	dw = diff --word-diff
 
-	fa = fetch --all -p
+	fa = fetch --all
 	cp = cherry-pick
 	chry = cherry-pick
 	ctags = "! dir=\"`git rev-parse --git-dir`\" && trap 'rm -f \"$dir/$$.tags\"' EXIT && git ls-files | ctags --tag-relative -L - -f\"$dir/$$.tags\" --languages=sql && mv \"$dir/$$.tags\" \"$dir/tags\""
@@ -61,6 +61,8 @@
 [rebase]
 	autosquash = true
 
+[fetch]
+	prune = true
 [pull]
 	rebase = preserve
 [push]
