@@ -29,8 +29,7 @@ alias be='bundle exec'
 export RBENV_ROOT=/usr/local/var/rbenv
 
 # initialize
-# eval "$(rbenv init -)"
-. <(rbenv init -)
+$(which rbenv &>/dev/null) && . <(rbenv init -)
 
 # aliases
 alias rb='rbenv'

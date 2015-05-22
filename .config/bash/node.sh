@@ -16,11 +16,11 @@
 # nodenv     #
 ##############
 
-# store nodes under brew
-export NODENV_ROOT=$(brew --prefix)/var/nodenv
+# store nodes under brew (or /usr/local)
+export NODENV_ROOT=/usr/local/var/nodenv
 
 # initialize
-. <(nodenv init -)
+$(which nodenv &>/dev/null) && . <(nodenv init -)
 
 __nodenv_ps1 () {
   $(which nodenv &>/dev/null) && printf "$1" "$(nodenv version-name)"
