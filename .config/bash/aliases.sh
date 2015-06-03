@@ -7,7 +7,7 @@ alias g='grep -I --ignore-case --recursive --exclude-dir=.git --exclude-dir=tmp'
 # alias rm='rm -I'
 
 alias upbrew='brew update && brew doctor && brew outdated && brew upgrade --all && brew cleanup'
-alias upnpm='npm update -g'
+alias upnpm='nodenv each -v npm update -g'
 alias uprbenv='rbenv update'
 alias upvim='vim +PluginUpdate +PluginClean +qall'
 alias upall='upbrew && upnpm && uprbenv && upvim'
