@@ -6,10 +6,6 @@
 # vim
 *.swp
 
-# bundler
-.bundle
-bin
-
 # ide files
 .metadata
 .project
