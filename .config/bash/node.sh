@@ -26,6 +26,8 @@ __nodenv_ps1 () {
   $(which nodenv &>/dev/null) && printf "$1" "$(nodenv version-name)"
 }
 
+alias nd=nodenv
+
 ##############
 # npm        #
 ##############
