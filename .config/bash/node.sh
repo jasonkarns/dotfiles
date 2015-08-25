@@ -43,4 +43,4 @@ alias npm-pristine='[ -f $(npm prefix)/npm-shrinkwrap.json ] || npm shrinkwrap &
 ##############
 
 # grunt tab completion
-. <(grunt --completion=bash 2>/dev/null)
+# . <(grunt --completion=bash 2>/dev/null)
