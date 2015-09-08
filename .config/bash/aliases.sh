@@ -13,6 +13,4 @@ alias uprbenv='rbenv update'
 alias upvim='vim +PluginUpdate +PluginClean +qall'
 alias upall='upbrew && upnodenv && upnpm && uprbenv && upvim'
 
-alias gemini='ssh -R1337:localhost:22 jasonkarns'
-
 alias iectrl="INSTALL_PATH=${IEVMS_HOME}/ievms iectrl"
