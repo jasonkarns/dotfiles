@@ -1,5 +1,6 @@
 # use XDG dir for .tmux.conf
-alias tmux="tmux -f ~/.config/tmux/config"
+alias tmux="tmux -f ${XDG_CONFIG_HOME}/tmux/config"
+alias tmate="tmate -f ${XDG_CONFIG_HOME}/tmux/config"
 
 ##############################################
 # Tmux session helper (list, attach, create) #
