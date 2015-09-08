@@ -22,3 +22,6 @@ Thumbs.db
 
 # clearcase
 lost+found
+
+# rake completion cache
+.rake_t_cache
