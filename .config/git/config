@@ -21,13 +21,13 @@
 	ci = commit
 	br = branch
 	co = checkout
-	cam = commit --amend -C HEAD
+	cam = commit --amend --reuse-message=HEAD
 	hist = log --graph --date=short --pretty=format:\"%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(red)|%C(reset) %s%C(red)%d %C(reset)- %an%C(reset)\"
 	glog = log --date=relative
 
-	ap = add -p
-	cop = checkout -p
-	rp = reset -p
+	ap = add --patch
+	cop = checkout --patch
+	rp = reset --patch
 
 	d = diff
 	dc = diff --cached
