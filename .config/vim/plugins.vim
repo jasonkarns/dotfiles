@@ -57,6 +57,7 @@ augroup bundles
     Plugin 'tpope/vim-projectile'
     Plugin 'editorconfig/editorconfig-vim'
     " Plugin 'ap/vim-css-color'
+    Plugin 'sjl/gundo.vim'
 
   " finder
     " Plugin 'ack.vim'
