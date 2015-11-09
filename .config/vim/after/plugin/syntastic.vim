@@ -12,4 +12,4 @@ let g:syntastic_loc_list_height = 5
 
 
 
-" let g:syntastic_javascript_checkers = [ 'jshint', 'jscs' ]
+let g:syntastic_javascript_checkers = [ 'jshint', 'jscs' ]
