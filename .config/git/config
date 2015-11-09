@@ -59,6 +59,7 @@
 	ff = false
 	log = 999
 	stat = true
+	tool = vimdiff
 [rebase]
 	autosquash = true
 
