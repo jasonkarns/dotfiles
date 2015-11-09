@@ -10,10 +10,11 @@ GIT_PS1_SHOWDIRTYSTATE=true
 # display stashed state ($ if there are stashed files)
 GIT_PS1_SHOWSTASHSTATE=true
 # display HEAD vs upstream state
-GIT_PS1_SHOWUPSTREAM=auto
+GIT_PS1_SHOWUPSTREAM="auto"
 # use colors
 GIT_PS1_SHOWCOLORHINTS=true
-
+# detached-head description
+GIT_PS1_DESCRIBE_STYLE=branch
 
 #########################
 # colors (solarized)
@@ -80,7 +81,7 @@ __ps1() {
   local ruby_version='$(__rbenv_ps1 "[%s] ")'
   local node_version='$(__nodenv_ps1 "[%s] ")'
   local cwd='\w'
-  local git_state='$(__git_ps1 " (%s)")'
+  local git_state='$(__git_ps1 " (%s `git rev-parse --abbrev-ref @{u} 2>/dev/null`)")'
   local prompt='\$ '
 
   echo $(__color yellow)$node_version$(__color red)$ruby_version$(__color cyan)$cwd$(__color base2)$git_state
