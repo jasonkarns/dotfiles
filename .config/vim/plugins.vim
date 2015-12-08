@@ -13,6 +13,7 @@ augroup bundles
   " syntax utilities
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-endwise'
+    Plugin 'tpope/vim-git'
     Plugin 'matchit.zip'
     Plugin 'godlygeek/tabular'
     Plugin 'tpope/vim-surround'
@@ -52,16 +53,18 @@ augroup bundles
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-obsession'
     " Plugin 'tpope/vim-tbone'
-    " Plugin 'tpope/vim-rsi'
-  " following are for Dash.app integration
-    " Plugin 'rizzatti/funcoo.vim'
-    " Plugin 'rizzatti/dash.vim'
+    Plugin 'tpope/vim-rsi'
     Plugin 'tpope/vim-projectile'
+    " Plugin 'vim-dotenv'
     Plugin 'editorconfig/editorconfig-vim'
     " Plugin 'ap/vim-css-color'
     Plugin 'sjl/gundo.vim'
+  " following are for Dash.app integration
+    " Plugin 'rizzatti/funcoo.vim'
+    " Plugin 'rizzatti/dash.vim'
 
   " finder
+    Plugin 'tpope/vim-vinegar'
     " Plugin 'ack.vim'
     Plugin 'rking/ag.vim'
     Plugin 'kien/ctrlp.vim'
