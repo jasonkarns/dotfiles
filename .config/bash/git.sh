@@ -30,3 +30,10 @@ alias gitoff='unset GIT_PS1_SHOWDIRTYSTATE && unset GIT_PS1_SHOWSTASHSTATE && un
 #########################
 
 # see ~/.bash/ps1.sh
+
+#########################
+# contrib
+#########################
+
+# new-workdir
+PATH="$PATH:/usr/local/share/git-core/contrib/workdir"
