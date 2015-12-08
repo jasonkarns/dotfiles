@@ -5,6 +5,7 @@ if exists('g:loaded_EditorConfig')
         if a:config["indent_style"] == "tab"
             setl listchars+=tab:\ \ 
         elseif a:config["indent_style"] == "space"
+            setl listchars-=tab:\ \ 
         endif
       endif
 
