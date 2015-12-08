@@ -48,6 +48,7 @@ augroup bundles
   " utilities
     Plugin 'tpope/vim-eunuch'
     Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-rhubarb'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-obsession'
     " Plugin 'tpope/vim-tbone'
