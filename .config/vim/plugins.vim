@@ -43,6 +43,7 @@ augroup bundles
     Plugin 'tpope/vim-markdown'
     " Plugin 'nelstrom/vim-markdown-folding'
     Plugin 'bats.vim'
+    Plugin 'sh.vim'
 
   " utilities
     Plugin 'tpope/vim-eunuch'
