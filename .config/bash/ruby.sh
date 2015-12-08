@@ -31,9 +31,7 @@ export RBENV_ROOT=/usr/local/var/rbenv
 # initialize
 $(which rbenv &>/dev/null) && . <(rbenv init -)
 
-# aliases
-alias rb='rbenv'
-
+# show active ruby version in PS1
 __rbenv_ps1 () {
   $(which rbenv &>/dev/null) && printf "$1" "$(rbenv version-name)"
 }
