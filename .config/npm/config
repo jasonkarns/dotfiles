@@ -8,5 +8,5 @@ init-author-email=jason@karns.name
 init-author-url=http://jason.karns.name/
 init-version=0.0.0
 init-license=MIT
-//registry.npmjs.org/:username=jasonkarns
-//registry.npmjs.org/:email=jason@karns.name
+
+//registry.npmjs.org/:_authToken=${NPMJS_AUTHTOKEN}
