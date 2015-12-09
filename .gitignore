@@ -41,3 +41,4 @@ VirtualBox VMs
 .webdriver-sync/
 .xauthority
 .zinc/
+.passenger/native_support/
