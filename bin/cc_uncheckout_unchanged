@@ -1,9 +1,0 @@
-#!/bin/bash
-noChange=0  ### "cleartool diff" exit status means no difference
-
-while read elem; do
-    cleartool diff -pre -options "-status_only -blank_ignore" "$elem"
-    if [ $? = $noChange ]; then
-        cleartool uncheckout -rm "$elem"
-    fi
-done
