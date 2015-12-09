@@ -1,20 +1,3 @@
-# grunt-init templates
-[submodule ".grunt-init/commonjs"]
-	path = .grunt-init/commonjs
-	url = https://github.com/gruntjs/grunt-init-commonjs
-[submodule ".grunt-init/gruntfile"]
-	path = .grunt-init/gruntfile
-	url = https://github.com/gruntjs/grunt-init-gruntfile
-[submodule ".grunt-init/gruntplugin"]
-	path = .grunt-init/gruntplugin
-	url = https://github.com/gruntjs/grunt-init-gruntplugin
-[submodule ".grunt-init/jquery"]
-	path = .grunt-init/jquery
-	url = https://github.com/gruntjs/grunt-init-jquery
-[submodule ".grunt-init/node"]
-	path = .grunt-init/node
-	url = https://github.com/gruntjs/grunt-init-node
-
 # keybase shell completion
 [submodule ".bash/keybase-completion"]
 	path = .config/bash/keybase-completion
