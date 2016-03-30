@@ -1,18 +1,4 @@
 ##############
-# nvm        #
-##############
-
-# store node versions under brew
-# export NVM_DIR=$(brew --prefix)/var/nvm
-
-# activate nvm
-# . $(brew --prefix nvm)/nvm.sh
-
-# __nvm_ps1 () {
-#   $(nvm &>/dev/null) && printf "$1" "$(nvm current)"
-# }
-
-##############
 # nodenv     #
 ##############
 
