@@ -47,6 +47,7 @@ augroup bundles
     Plugin 'sh.vim'
 
   " utilities
+    Plugin 'tpope/vim-dispatch'
     Plugin 'tpope/vim-eunuch'
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-rhubarb'
