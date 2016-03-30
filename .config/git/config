@@ -18,7 +18,7 @@
 
 [alias]
 	st = status
-	ci = commit
+	ci = commit --verbose
 	br = branch
 	co = checkout
 	cam = commit --amend --reuse-message=HEAD
@@ -47,6 +47,8 @@
 	crawl = "!f() { next_commit=$(git rev-list --reverse HEAD..$1 | head -1); : ${next_commit:=$1}; git checkout $next_commit; }; f"
 
 	ghprs = "!f() { remote=$1; : ${remote:=$(git remote | grep '^origin\\|upstream$' | sort --reverse | head -1)}; if [ $remote ]; then git config --add remote.$remote.fetch +refs/pull/*/head:refs/remotes/${remote}/pr/*; echo \"added github PR refspec to fetch from ${remote}\" ; else echo 'no remote given nor upstream or origin remote'; fi; git fetch ${remote}; }; f"
+
+	force = push --force-with-lease
 
 [diff]
 	wordRegex = [A-z0-9_]+|[^[:space:]]
