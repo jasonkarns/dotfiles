@@ -1,5 +1,10 @@
 set nocompatible
 
+" project-specific vimrc
+set exrc
+" disable shell and write ops
+set secure
+
 " xdg setup
 set backupdir=$XDG_CACHE_HOME/vim,/var/tmp,/tmp
 set directory=$XDG_CACHE_HOME/vim,/var/tmp,/tmp
@@ -10,8 +15,8 @@ source $XDG_CONFIG_HOME/vim/plugins.vim
 source $XDG_CONFIG_HOME/vim/ui.vim
 source $XDG_CONFIG_HOME/vim/keys.vim
 
+" Use ag over grep
 if executable('ag')
-  " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
