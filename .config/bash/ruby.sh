@@ -28,10 +28,16 @@ alias be='bundle exec'
 # store rubies under brew (or /usr/local)
 export RBENV_ROOT=/usr/local/var/rbenv
 
-# initialize
-$(which rbenv &>/dev/null) && . <(rbenv init -)
+if command -v rbenv &>/dev/null; then
+  # initialize
+  . <(rbenv init -)
 
-# show active ruby version in PS1
-__rbenv_ps1 () {
-  $(which rbenv &>/dev/null) && printf "$1" "$(rbenv version-name)"
-}
+  # show active ruby version in PS1
+  __rbenv_ps1() {
+    printf "$1" "$(rbenv version-name)"
+  }
+else
+  __rbenv_ps1() {
+    : # noop
+  }
+fi

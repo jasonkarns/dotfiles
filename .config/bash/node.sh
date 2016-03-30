@@ -5,14 +5,19 @@
 # store nodes under brew (or /usr/local)
 export NODENV_ROOT=/usr/local/var/nodenv
 
-# initialize
-$(which nodenv &>/dev/null) && . <(nodenv init -)
+if command -v nodenv &>/dev/null; then
+  # initialize
+  . <(nodenv init -)
 
-__nodenv_ps1 () {
-  $(which nodenv &>/dev/null) && printf "$1" "$(nodenv version-name)"
-}
-
-alias nd=nodenv
+  # show active node version in PS1
+  __nodenv_ps1() {
+    printf "$1" "$(nodenv version-name)"
+  }
+else
+  __nodenv_ps1() {
+    : # noop
+  }
+fi
 
 ##############
 # npm        #
