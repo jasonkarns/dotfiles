@@ -45,7 +45,7 @@ BASH_CONFIG=$XDG_CONFIG_HOME/bash
 [[ -r $BASH_CONFIG/functions.sh ]] && source $BASH_CONFIG/functions.sh
 
 # source all homebrew-installed completion scripts
-$(brew --prefix &>/dev/null) && [[ -r $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
+brew --prefix &>/dev/null && [[ -r $(brew --prefix)/share/bash-completion/bash_completion ]] && source $(brew --prefix)/share/bash-completion/bash_completion
 
 
 
