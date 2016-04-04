@@ -5,6 +5,7 @@
 #  safecrlf = warn
 	hideDotFiles = dotGitOnly
 	pager = less -+$LESS -FRX
+	untrackedCache = true
 [user]
 	name = Jason Karns
 	email = jason@karns.name
