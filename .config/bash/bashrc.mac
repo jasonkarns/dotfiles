@@ -1,6 +1,1 @@
 export __CF_USER_TEXT_ENCODING="0x1F5:0:0"
-
-# Set up the session directory/file.
-SHELL_SESSION_DIR="$XDG_CACHE_HOME/bash/sessions"
-SHELL_SESSION_FILE="$SHELL_SESSION_DIR/$TERM_SESSION_ID.session"
-mkdir -p "$SHELL_SESSION_DIR"

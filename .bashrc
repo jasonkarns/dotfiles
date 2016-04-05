@@ -26,6 +26,10 @@ export HISTSIZE=10000
 export HISTIGNORE="fg*"
 export HISTFILE=$XDG_CACHE_HOME/bash/history
 
+# Set up the session directory/file.
+export SHELL_SESSION_DIR="$XDG_CACHE_HOME/bash/sessions"
+export SHELL_SESSION_FILE="$SHELL_SESSION_DIR/$TERM_SESSION_ID.session"
+
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 export MYSQL_HISTFILE=$XDG_CACHE_HOME/mysql/history
 export PSQLRC=$XDG_CONFIG_HOME/psql/config
