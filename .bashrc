@@ -48,19 +48,15 @@ BASH_CONFIG=$XDG_CONFIG_HOME/bash
 # functions
 [[ -r $BASH_CONFIG/functions.sh ]] && source $BASH_CONFIG/functions.sh
 
-# source all homebrew-installed completion scripts
+# completion
 brew --prefix &>/dev/null && [[ -r $(brew --prefix)/share/bash-completion/bash_completion ]] && source $(brew --prefix)/share/bash-completion/bash_completion
-
 
 
 # git (aliases, ps1)
 [[ -r $BASH_CONFIG/git.sh ]] && source $BASH_CONFIG/git.sh
 
-# gpg
+# gpg (and keybase)
 [[ -r $BASH_CONFIG/gpg.sh ]] && source $BASH_CONFIG/gpg.sh
-
-# keybase
-[[ -r $BASH_CONFIG/keybase-completion/keybase.sh ]] && source $BASH_CONFIG/keybase-completion/keybase.sh
 
 # node/npm
 [[ -r $BASH_CONFIG/node.sh ]] && source $BASH_CONFIG/node.sh
