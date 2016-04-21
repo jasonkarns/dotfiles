@@ -8,8 +8,8 @@ alias g='grep -I --ignore-case --recursive --exclude-dir=.git --exclude-dir=tmp'
 
 alias upbrew='brew update && brew doctor && brew outdated && brew upgrade --all && brew cleanup'
 alias upnpm='nodenv each npm update -g --quiet'
-alias upnodenv='nodenv update'
-alias uprbenv='rbenv update'
+alias upnodenv='nodenv update && nodenv update-version-defs --dry-run'
+alias uprbenv='rbenv update && rbenv update-version-defs --dry-run'
 alias upvim='vim +PluginUpdate +PluginClean +qall'
 alias upall='upbrew && upnodenv && upnpm && uprbenv && upvim'
 
