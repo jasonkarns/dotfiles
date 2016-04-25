@@ -30,6 +30,15 @@ alias npm-pristine='[ -f $(npm prefix)/npm-shrinkwrap.json ] || npm shrinkwrap &
 
 
 ##############
+# node-gyp   #
+##############
+
+# speed up node-gyp native builds
+# https://gist.github.com/ralphtheninja/f7c45bdee00784b41fed
+# https://github.com/nodejs/node-gyp/blob/8c4b0ffa503aa385f4186e028542dcedca2efeee/lib/build.js#L34
+export JOBS=max
+
+##############
 # grunt      #
 ##############
 
