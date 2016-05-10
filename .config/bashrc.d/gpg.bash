@@ -2,7 +2,12 @@ export GNUPGHOME=$XDG_CONFIG_HOME/gpg
 
 launchctl setenv GNUPGHOME "$GNUPGHOME"
 
+# keybase
+[ -r "$(dirname "${BASH_SOURCE[0]}")/keybase-completion/keybase.sh" ] && source "$(dirname "${BASH_SOURCE[0]}")/keybase-completion/keybase.sh"
+
+
 return # short circuit the gpg daemon stuff (MacGPG is handling it now)
+
 
 envfile="${GNUPGHOME}/.gpg-agent-info"
 
@@ -14,6 +19,3 @@ fi
 
 export GPG_AGENT_INFO
 export GPG_TTY="$(tty)"
-
-# keybase
-[ -r "$(dirname "${BASH_SOURCE[0]}")/keybase-completion/keybase.sh" ] && source "$(dirname "${BASH_SOURCE[0]}")/keybase-completion/keybase.sh"
