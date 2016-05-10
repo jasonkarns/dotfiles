@@ -39,7 +39,7 @@ export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
 
 # Load any supplementary scripts
-for config in $XDG_CONFIG_HOME/bash/bashrc.d/*.bash $XDG_CONFIG_HOME/bash/bashrc.d/*.bash.local; do
+for config in $XDG_CONFIG_HOME/bashrc.d/*.bash $XDG_CONFIG_HOME/bashrc.d/*.bash.local; do
   [ -r "$config" ] && source "$config"
 done
 unset -v config

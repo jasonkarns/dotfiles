@@ -16,4 +16,4 @@ export GPG_AGENT_INFO
 export GPG_TTY="$(tty)"
 
 # keybase
-[[ -r $BASH_CONFIG/keybase-completion/keybase.sh ]] && source $BASH_CONFIG/keybase-completion/keybase.sh
+[ -r "$(dirname "${BASH_SOURCE[0]}")/keybase-completion/keybase.sh" ] && source "$(dirname "${BASH_SOURCE[0]}")/keybase-completion/keybase.sh"
