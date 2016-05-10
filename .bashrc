@@ -40,9 +40,6 @@ export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
 # Load any supplementary scripts
 for config in $XDG_CONFIG_HOME/bashrc.d/*.bash $XDG_CONFIG_HOME/bashrc.d/*.bash.local; do
-  [ -r "$config" ] && source "$config"
+  test -r "$config" && source "$_"
 done
 unset -v config
-
-# completion
-brew --prefix &>/dev/null && [[ -r $(brew --prefix)/share/bash-completion/bash_completion ]] && source $(brew --prefix)/share/bash-completion/bash_completion
