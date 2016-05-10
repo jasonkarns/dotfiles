@@ -34,7 +34,7 @@
 	dc = diff --cached
 	ds = diff --stat
 	du = diff @{upstream}...
-	dw = diff --word-diff
+	dw = diff --color-words
 
 	fa = fetch --all
 	cp = cherry-pick
