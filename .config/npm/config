@@ -13,7 +13,11 @@ init-license=MIT
 
 @deque:registry=https://agora.dequecloud.com/artifactory/api/npm/attest/
 //agora.dequecloud.com/artifactory/api/npm/attest/:always-auth=true
-//agora.dequecloud.com/artifactory/api/npm/attest/:username=jason@testdouble.com
 //agora.dequecloud.com/artifactory/api/npm/attest/:email=jason@testdouble.com
+//agora.dequecloud.com/artifactory/api/npm/attest/:username=jason@testdouble.com
 //agora.dequecloud.com/artifactory/api/npm/attest/:_auth=${NPMJS_DEQUE_AUTH}
 //agora.dequecloud.com/artifactory/api/npm/attest/:_password=${NPMJS_DEQUE_PASSWORD}
+
+//artifactory.shuttercorp.net/artifactory/api/npm/absinthe/:always-auth=false
+//artifactory.shuttercorp.net/artifactory/api/npm/absinthe/:email=jkarns@shutterstock.com
+//artifactory.shuttercorp.net/artifactory/api/npm/absinthe/:username=jkarns@shutterstock.com
