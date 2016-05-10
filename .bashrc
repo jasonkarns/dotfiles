@@ -38,37 +38,11 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
 
-BASH_CONFIG=$XDG_CONFIG_HOME/bash
-
-
-# aliases
-[[ -r $BASH_CONFIG/aliases.sh ]] && source $BASH_CONFIG/aliases.sh
-[[ -r $BASH_CONFIG/aliases.sh.local ]] && source $BASH_CONFIG/aliases.sh.local
-
-# functions
-[[ -r $BASH_CONFIG/functions.sh ]] && source $BASH_CONFIG/functions.sh
+# Load any supplementary scripts
+for config in $XDG_CONFIG_HOME/bash/bashrc.d/*.bash $XDG_CONFIG_HOME/bash/bashrc.d/*.bash.local; do
+  [ -r "$config" ] && source "$config"
+done
+unset -v config
 
 # completion
 brew --prefix &>/dev/null && [[ -r $(brew --prefix)/share/bash-completion/bash_completion ]] && source $(brew --prefix)/share/bash-completion/bash_completion
-
-
-# git (aliases, ps1)
-[[ -r $BASH_CONFIG/git.sh ]] && source $BASH_CONFIG/git.sh
-
-# gpg (and keybase)
-[[ -r $BASH_CONFIG/gpg.sh ]] && source $BASH_CONFIG/gpg.sh
-
-# node/npm
-[[ -r $BASH_CONFIG/node.sh ]] && source $BASH_CONFIG/node.sh
-
-# ruby (ruby aliases, rubygems setup, bundler, rbenv setup)
-[[ -r $BASH_CONFIG/ruby.sh ]] && source $BASH_CONFIG/ruby.sh
-
-# tmux (tmux aliases, session helper)
-[[ -r $BASH_CONFIG/tmux.sh ]] && source $BASH_CONFIG/tmux.sh
-
-# machine-specific config
-[[ -r $BASH_CONFIG/bashrc.local ]] && source $BASH_CONFIG/bashrc.local
-
-# ps1 (last so that we can take advantage of all ^^)
-[[ -r $BASH_CONFIG/ps1.sh ]] && source $BASH_CONFIG/ps1.sh
