@@ -10,8 +10,8 @@ export RUBYOPT=-rubygems
 #########################
 
 export GEMRC=$XDG_CONFIG_HOME/gem/config
-# export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
-# export GEM_PATH=$XDG_DATA_HOME/gem
+export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
+# export GEM_PATH=$XDG_DATA_HOME/gem/ruby/*
 
 
 #########################
