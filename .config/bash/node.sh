@@ -1,4 +1,11 @@
 ##############
+# node       #
+##############
+
+export NODE_REPL_HISTORY=$XDG_CACHE_HOME/node/history
+
+
+##############
 # nodenv     #
 ##############
 
