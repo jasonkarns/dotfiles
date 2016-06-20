@@ -1,4 +1,8 @@
 ---
+install: --no-document
+
+update: --no-document
+
 :sources:
 - https://rubygems.org/
 - https://agora.dequecloud.com/artifactory/api/gems/attest-ruby/
