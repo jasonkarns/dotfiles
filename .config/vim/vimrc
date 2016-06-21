@@ -1,8 +1,7 @@
 set nocompatible
 
-" project-specific vimrc
+" project-specific vimrc but disable shell and write ops
 set exrc
-" disable shell and write ops
 set secure
 
 " xdg setup

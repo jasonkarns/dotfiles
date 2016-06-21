@@ -9,6 +9,7 @@
 [user]
 	name = Jason Karns
 	email = jason@karns.name
+	signingkey = A9B1B726
 
 [github]
 	user = jasonkarns
@@ -83,7 +84,7 @@
 	statusHints = false
 
 [init]
-	templatedir = ~/.config/git/template
+	; templatedir = ~/.config/git/template
 
 [color]
 	branch = auto
@@ -130,7 +131,7 @@
 	insteadOf = gh:
 	insteadOf = ghub:
 	insteadOf = github:
-	insteadOf = https://github.com/
+	; insteadOf = https://github.com/
 	insteadOf = http://github.com/
 
 [svn]

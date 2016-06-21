@@ -11,6 +11,6 @@ alias upnpm='nodenv each npm update -g --quiet'
 alias upnodenv='nodenv update && nodenv update-version-defs --dry-run'
 alias uprbenv='rbenv update && rbenv update-version-defs --dry-run'
 alias upvim='vim +PluginUpdate +PluginClean +qall'
-alias upall='upbrew && upnodenv && upnpm && uprbenv && upvim'
+alias upall='upbrew && upnodenv && uprbenv && upvim'
 
 alias iectrl="INSTALL_PATH=${IEVMS_HOME}/ievms iectrl"

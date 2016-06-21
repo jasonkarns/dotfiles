@@ -5,6 +5,7 @@
 
 # vim
 *.swp
+.vimrc
 
 # ide files
 .metadata

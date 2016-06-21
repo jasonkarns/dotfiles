@@ -10,6 +10,7 @@ alias gdword='git diff --color-words'
 alias gdc='git diff --cached'
 alias gx='gitx --all'
 
+alias hubs='GITHUB_HOST=github.shuttercorp.net hub'
 
 #########################
 # contrib
