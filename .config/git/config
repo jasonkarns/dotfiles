@@ -82,6 +82,8 @@
 	enabled = 1
 	autoupdate = true
 
+[submodule]
+	fetchJobs = 4
 [hooks]
 	global = ~/.config/git/hooks
 
