@@ -2,10 +2,11 @@
 	excludesfile = ~/.config/git/ignore
 	editor = vim
 	autocrlf = input
-#  safecrlf = warn
+	; safecrlf = warn
 	hideDotFiles = dotGitOnly
-	pager = less -+$LESS -FRX
+	pager = less
 	untrackedCache = true
+
 [user]
 	name = Jason Karns
 	email = jason@karns.name

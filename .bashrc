@@ -18,7 +18,7 @@ shopt -s dirspell globstar histappend histverify nocaseglob
 # env
 export PAGER=less
 export EDITOR=vim
-export LESS=RXi
+export LESS=FRXi
 export LESSHISTFILE=$XDG_CACHE_HOME/less/history
 
 export HISTCONTROL=erasedups
