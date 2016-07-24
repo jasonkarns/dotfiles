@@ -80,6 +80,7 @@
 	followTags = true
 [rerere]
 	enabled = 1
+	autoupdate = true
 
 [hooks]
 	global = ~/.config/git/hooks
