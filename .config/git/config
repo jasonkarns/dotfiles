@@ -51,6 +51,11 @@
 
 	force = push --force-with-lease
 
+[pager]
+	log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+	show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+	diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+
 [diff]
 	algorithm = patience
 	compactionHeuristic = true
@@ -67,6 +72,8 @@
 	tool = vimdiff
 [rebase]
 	autosquash = true
+[interactive]
+	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
 
 [commit]
 	verbose = true
@@ -125,6 +132,11 @@
 	untracked = cyan
 	branch = reverse normal
 	nobranch = red
+[color "diff-highlight"]
+	oldNormal = dim red
+	oldHighlight = red
+	newNormal = dim green
+	newHighlight = green
 
 [sendemail]
 	smtpserver = smtp.gmail.com
