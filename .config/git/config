@@ -16,8 +16,6 @@
 	user = jasonkarns
 [hub]
 	host = github.shuttercorp.net
-[hooks]
-	global = ~/.config/git/hooks
 
 [alias]
 	st = status
@@ -78,14 +76,17 @@
 [rerere]
 	enabled = 1
 
-[format]
-	pretty=format:%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%ar) %C(bold blue)%an%C(reset)
+[hooks]
+	global = ~/.config/git/hooks
+
+[init]
+	; templatedir = ~/.config/git/template
 
 [advice]
 	statusHints = false
 
-[init]
-	; templatedir = ~/.config/git/template
+[format]
+	pretty=format:%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%ar) %C(bold blue)%an%C(reset)
 
 [color]
 	branch = auto
@@ -128,17 +129,6 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 
-[url "git@github.com:"]
-	insteadOf = gh:
-	insteadOf = ghub:
-	insteadOf = github:
-	; insteadOf = https://github.com/
-	insteadOf = http://github.com/
-
-[svn]
-  authorsfile = /Users/jasonkarns/.config/git/svn-authors
-[include]
-	path = config.local
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
@@ -147,3 +137,16 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+
+[url "git@github.com:"]
+	insteadOf = gh:
+	insteadOf = ghub:
+	insteadOf = github:
+	; insteadOf = https://github.com/
+	insteadOf = http://github.com/
+
+[svn]
+	authorsfile = /Users/jasonkarns/.config/git/svn-authors
+
+[include]
+	path = config.local
