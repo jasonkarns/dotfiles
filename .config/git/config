@@ -19,7 +19,7 @@
 
 [alias]
 	st = status
-	ci = commit --verbose
+	ci = commit
 	br = branch
 	co = checkout
 	cam = commit --amend --reuse-message=HEAD
@@ -66,6 +66,8 @@
 [rebase]
 	autosquash = true
 
+[commit]
+	verbose = true
 [fetch]
 	prune = true
 [pull]
