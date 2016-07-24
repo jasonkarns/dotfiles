@@ -117,7 +117,7 @@
 	meta = reverse cyan
 	frag = ul cyan
 	func = magenta
-#  commit =
+	commit = green
 [color "status"]
 	header = normal
 	added = blue
