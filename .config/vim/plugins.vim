@@ -51,6 +51,7 @@ augroup bundles
     Plugin 'tpope/vim-eunuch'
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-rhubarb'
+    Plugin 'airblade/vim-gitgutter'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-obsession'
     " Plugin 'tpope/vim-tbone'
@@ -73,6 +74,7 @@ augroup bundles
     " Plugin 'L9'
     " Plugin 'FuzzyFinder'
     Plugin 'scrooloose/nerdtree'
+    Plugin 'Xuyuanp/nerdtree-git-plugin'
 
   " colors
     Plugin 'altercation/vim-colors-solarized'
