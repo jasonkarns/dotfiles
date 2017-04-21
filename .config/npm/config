@@ -2,7 +2,6 @@ username=jasonkarns
 email=jason.karns@gmail.com
 
 cache=${XDG_CACHE_HOME}/npm
-loglevel=silent
 
 init-author-name=Jason Karns
 init-author-email=jason.karns@gmail.com
