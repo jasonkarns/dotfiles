@@ -6,11 +6,6 @@ export XDG_DATA_DIRS=/usr/share/
 export XDG_CONFIG_DIRS=/etc/xdg
 export XDG_CACHE_HOME=/usr/local/cache
 
-# path
-# normally already added by /etc/paths but non-interactive shells don't use /etc/paths
-# so we need to add it for the remote tmux sessions (which need homebrew)
-export PATH="$PATH:~/bin"
-
 # shell options
 shopt -s dirspell globstar histappend histverify nocaseglob
 
