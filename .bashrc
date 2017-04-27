@@ -37,5 +37,4 @@ export CODEPATH="$HOME/Projects"
 # Load any supplementary scripts
 for config in $XDG_CONFIG_HOME/bashrc.d/*.bash $XDG_CONFIG_HOME/bashrc.d/*.bash.local; do
   test -r "$config" && source "$_"
-done
-unset -v config
+done; unset -v config

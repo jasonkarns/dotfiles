@@ -2,25 +2,16 @@
 code() { cd "$(find "$CODEPATH" -maxdepth 1 -type d | selecta "${1:+ -s $1}")"; }
 
 # Create a new directory and enter it
-function md() {
-  mkdir -p "$@" && cd "$@"
-}
-
+md() { mkdir -p "$@" && cd "$@"; }
 
 # find shorthand
-function f() {
-  find . -name "$1"
-}
-
+f() { find . -name "$1"; }
 
 # cd into whatever is the forefront Finder window.
-cdf() {  # short for cdfinder
-  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
-}
-
+cdf() { cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"; }
 
 # Start an HTTP server from a directory, optionally specifying the port
-function server() {
+server() {
   local port="${1:-8000}"
   open "http://localhost:${port}/"
 
