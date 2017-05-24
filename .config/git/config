@@ -173,8 +173,5 @@
 [svn]
 	authorsfile = /Users/jasonkarns/.config/git/svn-authors
 
-[includeIf "gitdir:~/Projects/shutterstock/**"]
-	path = config.shutterstock
-
 [include]
 	path = config.local
