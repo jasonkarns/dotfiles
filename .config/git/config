@@ -128,5 +128,8 @@
 	insteadOf = https://github.com/
 	insteadOf = http://github.com/
 
+[includeIf "gitdir:~/Projects/shutterstock/**"]
+	path = config.shutterstock
+
 [include]
 	path = config.local
