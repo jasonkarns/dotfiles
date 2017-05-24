@@ -1,2 +1,5 @@
 [user]
 	email = jkarns@shutterstock.com
+
+[hub]
+	host = github.shuttercorp.net

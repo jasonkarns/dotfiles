@@ -1,5 +1,5 @@
 [core]
-	excludesfile = ~/.config/git/ignore
+	excludesfile = ~/.config/git/ignore ; this is the default
 	editor = vim
 	autocrlf = input
 #  safecrlf = warn
@@ -11,8 +11,7 @@
 
 [github]
 	user = jasonkarns
-[hub]
-	host = github.shuttercorp.net
+
 [hooks]
 	global = ~/.config/git/hooks
 
