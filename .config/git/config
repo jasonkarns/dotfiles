@@ -53,6 +53,8 @@
 
 	trim = "!f() { git branch --merged | grep -v '^* ' | xargs git branch --delete; }; f"
 
+	fix-email = "filter-branch --env-filter 'if [ \"$GIT_COMMITTER_NAME\" = \"$(git config user.name)\" ]; then GIT_COMMITTER_EMAIL=\"$(git config user.email)\"; fi; if [ \"$GIT_AUTHOR_NAME\" = \"$(git config user.name)\" ]; then GIT_AUTHOR_EMAIL=\"$(git config user.email)\"; fi'"
+
 [pager]
 	log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 	show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
