@@ -19,6 +19,7 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 export HISTIGNORE="fg*"
 export HISTFILE=$XDG_DATA_HOME/bash/history
+export SHELL_SESSION_DIR=$XDG_DATA_HOME/bash/sessions
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql/history
