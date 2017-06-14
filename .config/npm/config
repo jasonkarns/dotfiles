@@ -2,6 +2,7 @@ username=jasonkarns
 email=jason.karns@gmail.com
 
 cache=${XDG_CACHE_HOME}/npm
+devdir=${XDG_CACHE_HOME}/node-gyp
 
 init-author-name=Jason Karns
 init-author-email=jason.karns@gmail.com
