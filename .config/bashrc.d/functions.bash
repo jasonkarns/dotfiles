@@ -1,5 +1,5 @@
 # fuzzy finder and path change for code projects
-code() { cd "$(find "$CODEPATH" -maxdepth 1 -type d | selecta "${1:+ -s $1}")"; }
+code() { cd "$(IFS=: && echo $CODEPATH | xargs -J % find % -maxdepth 1 -type d | sort -u | selecta "${1:+ -s $1}")"; }
 
 # Create a new directory and enter it
 md() { mkdir -p "$@" && cd "$@"; }
