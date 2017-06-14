@@ -13,17 +13,17 @@ shopt -s dirspell globstar histappend histverify nocaseglob
 export PAGER=less
 export EDITOR=vim
 export LESS=FRXi
-export LESSHISTFILE=$XDG_CACHE_HOME/less/history
+export LESSHISTFILE=$XDG_DATA_HOME/less/history
 
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 export HISTIGNORE="fg*"
-export HISTFILE=$XDG_CACHE_HOME/bash/history
+export HISTFILE=$XDG_DATA_HOME/bash/history
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
-export MYSQL_HISTFILE=$XDG_CACHE_HOME/mysql/history
+export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql/history
 export PSQLRC=$XDG_CONFIG_HOME/psql/config
-export PSQL_HISTORY=$XDG_CACHE_HOME/psql/history
+export PSQL_HISTORY=$XDG_DATA_HOME/psql/history
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
