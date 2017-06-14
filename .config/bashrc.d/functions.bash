@@ -21,4 +21,4 @@ server() {
 }
 
 # select from modified git files and open in vim
-vg() { vim $(git status -s | cut -c 3- | selecta); }
+vg() { vim $(git status --porcelain | cut -c 3- | selecta); }
