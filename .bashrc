@@ -27,7 +27,9 @@ export PSQL_HISTORY=$XDG_CACHE_HOME/psql/history
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
-export CODEPATH="$HOME/Projects"
+export CODEHOME="$HOME/Projects"
+export CODEPATH="$CODEHOME:$CODEHOME/nodenv:$CODEHOME/rbenv:$CODEHOME/td:$CODEHOME/shutterstock:$CODEHOME/linemanjs:$CODEHOME/deque"
+# $CODEHOME/3am:$CODEHOME/catalyst:$CODEHOME/comverge:$CODEHOME/csg:$CODEHOME/inn
 
 # Load any supplementary scripts
 for config in $XDG_CONFIG_HOME/bashrc.d/*.bash $XDG_CONFIG_HOME/bashrc.d/*.bash.local; do
