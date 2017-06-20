@@ -49,7 +49,7 @@ check() {
 }
 
 
-check Package 'npm install' package.json
+check Package 'npm install' npm-shrinkwrap.json package-lock.json
 
 check Gemfile 'bundle install' Gemfile Gemfile.lock
 
