@@ -37,16 +37,20 @@ remind() {
   printf "\n${magenta}> %s modified, run: \`${cyan}%s${magenta}\`${reset}\n" "$file" "$cmd"
 }
 
+check() {
+  local file="$1"
+  local cmd="$2"
+  shift 2
+  local -a files=( $@ )
+
+  if modified "${files[@]}"; then
+    remind "$file" "$cmd"
+  fi
+}
 
 
-if modified 'package.json'; then
-  remind 'Package.json' 'npm install'
-fi
+check Package 'npm install' package.json
 
-if modified 'Gemfile' 'Gemfile.lock'; then
-  remind 'Gemfile' 'bundle install'
-fi
+check Gemfile 'bundle install' Gemfile Gemfile.lock
 
-if modified 'db/migrate' 'db/schema.rb' 'db/structure.sql'; then
-  remind 'Schema' 'rake db:migrate'
-fi
+check Schema 'rake db:migrate' db/migrate db/schema.rb db/structure.sql
