@@ -51,6 +51,8 @@ check() {
 
 check Package 'npm install' npm-shrinkwrap.json package-lock.json
 
+check Package 'yarn install' yarn.lock
+
 check Gemfile 'bundle install' Gemfile Gemfile.lock
 
 check Schema 'rake db:migrate' db/migrate db/schema.rb db/structure.sql
