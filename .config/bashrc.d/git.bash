@@ -12,6 +12,17 @@ alias gx='gitx --all'
 
 alias hubs='GITHUB_HOST=github.shuttercorp.net hub'
 
+# disable DWIM guessing for branch name completion for checkout
+__git_completion_checkout_no_guess() {
+  if [[ $PWD/ =~ /shutterstock/base-web/ ]]; then
+    export GIT_COMPLETION_CHECKOUT_NO_GUESS=1
+  else
+    unset GIT_COMPLETION_CHECKOUT_NO_GUESS
+  fi
+}
+
+after_cd __git_completion_checkout_no_guess
+
 #########################
 # contrib
 #########################
