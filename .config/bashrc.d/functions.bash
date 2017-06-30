@@ -1,6 +1,14 @@
 # fuzzy finder and path change for code projects
 code() { cd "$(IFS=: && echo $CODEPATH | xargs -J % find % -maxdepth 1 -type d | sort -u | selecta "${1:+ -s $1}")"; }
 
+cd() {
+  for hook in "${BEFORE_CD_HOOKS[@]}"; do eval "$hook"; done
+
+  builtin cd "$1"
+
+  for hook in "${AFTER_CD_HOOKS[@]}"; do eval "$hook"; done
+}
+
 # Create a new directory and enter it
 md() { mkdir -p "$@" && cd "$@"; }
 

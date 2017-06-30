@@ -32,6 +32,19 @@ export CODEHOME="$HOME/Projects"
 export CODEPATH="$CODEHOME:$CODEHOME/nodenv:$CODEHOME/rbenv:$CODEHOME/td:$CODEHOME/shutterstock:$CODEHOME/linemanjs:$CODEHOME/deque"
 # $CODEHOME/3am:$CODEHOME/catalyst:$CODEHOME/comverge:$CODEHOME/csg:$CODEHOME/inn
 
+
+declare -a BEFORE_CD_HOOKS AFTER_CD_HOOKS
+
+before_cd() {
+  local hook="$1"
+  BEFORE_CD_HOOKS["${#BEFORE_CD_HOOKS[@]}"]="$hook"
+}
+
+after_cd() {
+  local hook="$1"
+  AFTER_CD_HOOKS["${#AFTER_CD_HOOKS[@]}"]="$hook"
+}
+
 # Load any supplementary scripts
 for config in $XDG_CONFIG_HOME/bashrc.d/*.bash $XDG_CONFIG_HOME/bashrc.d/*.bash.local; do
   test -r "$config" && source "$_"
