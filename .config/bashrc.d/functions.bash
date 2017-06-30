@@ -29,4 +29,4 @@ server() {
 }
 
 # select from modified git files and open in vim
-vg() { vim $(git status --porcelain | cut -c 3- | selecta); }
+vg() { vim "$(git rev-parse --show-toplevel)/$(git status --porcelain | "$XDG_CONFIG_HOME/bashrc.d/git-status-order" | cut -c 3- | selecta)"; }

@@ -1,0 +1,100 @@
+#!/usr/bin/env sh
+
+sed '
+
+#######################
+# MERGE CONFLICTS
+#######################
+
+# unmerged, both modified
+s/^UU/01/
+
+# unmerged, added by us
+s/^AU/02/
+
+# unmerged, deleted by them
+s/^UD/03/
+
+# unmerged, added by them
+s/^UA/04/
+
+# unmerged, deleted by us
+s/^DU/05/
+
+# unmerged, both added
+s/^AA/06/
+
+#######################
+# Modified in worktree
+#######################
+
+# unchanged in index
+s/^ M/11/
+
+# modified in index
+s/^MM/12/
+
+# added in index
+s/^AM/13/
+
+# renamed in index
+s/^RM/14/
+
+# copied in index
+s/^CM/15/
+
+# deleted in index
+s/^DM/16/
+
+#######################
+# Worktree matches index
+#######################
+
+# modified in index
+s/^M /21/
+
+# added in index
+s/^A /22/
+
+# renamed in index
+s/^R /24/
+
+# copied in index
+s/^C /23/
+
+# deleted in index
+s/^D /25/
+
+#######################
+# Deleted in worktree
+#######################
+
+# unchanged in index
+s/^ D/31/
+
+# modified in index
+s/^MD/32/
+
+# added in index
+s/^AD/33/
+
+# renamed in index
+s/^RD/34/
+
+# copied in index
+s/^CD/35/
+
+# deleted in index
+s/^DD/36/
+
+#######################
+# Untracked
+#######################
+
+# untracked
+s/^??/41/
+
+# ignored
+s/^!!/51/
+
+' | sort
