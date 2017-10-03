@@ -11,6 +11,7 @@ alias gdc='git diff --cached'
 alias gx='gitx --all'
 
 alias hubs='GITHUB_HOST=github.shuttercorp.net hub'
+alias gists='GITHUB_URL=https://github.shuttercorp.net gist'
 
 # disable DWIM guessing for branch name completion for checkout
 __git_completion_checkout_no_guess() {
