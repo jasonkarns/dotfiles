@@ -18,6 +18,7 @@ alias giton='export GIT_PS1_SHOWDIRTYSTATE=true && export GIT_PS1_SHOWSTASHSTATE
 alias gitoff='unset GIT_PS1_SHOWDIRTYSTATE && unset GIT_PS1_SHOWSTASHSTATE && unset GIT_PS1_SHOWUPSTREAM'
 
 alias hubs='GITHUB_HOST=github.shuttercorp.net hub'
+alias gists='GITHUB_URL=https://github.shuttercorp.net gist'
 
 # disable DWIM guessing for branch name completion for checkout
 __git_completion_checkout_no_guess() {
