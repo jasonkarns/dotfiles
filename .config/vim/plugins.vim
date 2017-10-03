@@ -24,7 +24,8 @@ augroup bundles
     " Plugin 'mattn/emmet-vim'
 
   " languages/frameworks
-    Plugin 'scrooloose/syntastic'
+    " Plugin 'scrooloose/syntastic'
+    Plugin 'w0rp/ale'
     Plugin 'vim-ruby/vim-ruby'
     " Plugin 'tpope/vim-rails'
     Plugin 'tpope/vim-bundler'
