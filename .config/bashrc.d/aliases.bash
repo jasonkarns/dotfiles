@@ -5,7 +5,7 @@ alias lsart='ls -lart'       # order by modified, latest last
 alias hrep='history | grep'  # search command history
 alias g='grep -I --ignore-case --recursive --exclude-dir=.git --exclude-dir=tmp'
 
-alias upbrew='brew update && brew doctor && brew outdated && brew upgrade && brew cleanup'
+alias upbrew='brew update ; brew doctor && brew outdated && brew upgrade && brew cleanup'
 alias upnpm='nodenv each npm update -g --quiet'
 alias upnodenv='nodenv update && nodenv update-version-defs --dry-run'
 alias uprbenv='rbenv update && rbenv update-version-defs --dry-run'
