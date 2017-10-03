@@ -30,6 +30,7 @@ VirtualBox VMs
 .dropbox
 .gem
 .gist
+.gist.*
 .heroku
 .netrc
 .pow
