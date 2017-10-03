@@ -35,10 +35,11 @@ export RBENV_ROOT=/usr/local/var/rbenv
 
 if command -v rbenv &>/dev/null; then
   # initialize
-  . <(rbenv init -)
+  eval "$(rbenv init -)"
 
   # show active ruby version in PS1
   __rbenv_ps1() {
+    # shellcheck disable=SC2059
     printf "$1" "$(rbenv version-name)"
   }
 else
