@@ -4,7 +4,7 @@ code() { cd "$(IFS=: && echo $CODEPATH | xargs -J % find % -maxdepth 1 -type d |
 cd() {
   for hook in "${BEFORE_CD_HOOKS[@]}"; do eval "$hook"; done
 
-  builtin cd "$1"
+  builtin cd "$@"
 
   for hook in "${AFTER_CD_HOOKS[@]}"; do eval "$hook"; done
 }
