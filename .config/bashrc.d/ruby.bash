@@ -18,9 +18,13 @@ export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
 # bundler
 #########################
 
+# https://github.com/bundler/bundler/pull/6024
+export BUNDLE_USER_CACHE=$XDG_CACHE_HOME/bundler
+export BUNDLE_USER_CONFIG=$XDG_CONFIG_HOME/bundler
+export BUNDLE_USER_PLUGIN=$XDG_DATA_HOME/bundler
+
 # aliases
 alias be='bundle exec'
-
 
 #########################
 # rbenv
