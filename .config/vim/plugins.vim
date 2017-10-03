@@ -36,6 +36,7 @@ augroup bundles
     Plugin 'closetag.vim'
     Plugin 'hail2u/vim-css3-syntax'
     Plugin 'pangloss/vim-javascript'
+    Plugin 'mxw/vim-jsx'
     Plugin 'kchmck/vim-coffee-script'
     Plugin 'groenewege/vim-less'
     Plugin 'nono/vim-handlebars'
