@@ -19,7 +19,8 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 export HISTIGNORE="fg*"
 export HISTFILE=$XDG_DATA_HOME/bash/history
-export SHELL_SESSION_DIR=$XDG_DATA_HOME/bash/sessions
+# SHELL_SESSION_DIR force-set in /etc/bashrc_Apple_Terminal line:98
+# because it is both set and used in that file before this one is ever executed
 
 export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql/history
