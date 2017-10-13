@@ -51,3 +51,9 @@ export JOBS=max
 
 # grunt tab completion
 # . <(grunt --completion=bash 2>/dev/null)
+
+##############
+# babel      #
+##############
+
+export BABEL_CACHE_PATH=$XDG_CACHE_HOME/babel.json
