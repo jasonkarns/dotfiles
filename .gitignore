@@ -33,10 +33,12 @@ VirtualBox VMs
 .gist.*
 .heroku
 .netrc
+.oracle_jre_usage/
 .pow
 .rnd
 .ssh
 .Trash
+.v8flags*
 .vagrant.d/
 .webdriver-sync/
 .xauthority
