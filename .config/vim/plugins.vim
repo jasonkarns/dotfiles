@@ -48,6 +48,7 @@ augroup bundles
 
   " utilities
     Plugin 'airblade/vim-gitgutter'
+    Plugin 'powerman/vim-plugin-ansiesc'
     Plugin 'tpope/vim-dispatch'
     Plugin 'tpope/vim-eunuch'
     Plugin 'tpope/vim-fugitive'
