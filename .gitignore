@@ -25,7 +25,6 @@ VirtualBox VMs
 .cache/
 
 *.local
-.android
 .cups
 .dropbox
 .gem
