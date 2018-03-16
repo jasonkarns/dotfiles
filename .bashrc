@@ -30,9 +30,8 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
 export CODEHOME="$HOME/Projects"
-export CODEPATH="$CODEHOME:$CODEHOME/nodenv:$CODEHOME/rbenv:$CODEHOME/td:$CODEHOME/shutterstock:$CODEHOME/linemanjs:$CODEHOME/deque"
+export CODEPATH="$CODEHOME:$CODEHOME/nodenv:$CODEHOME/rbenv:$CODEHOME/td:$CODEHOME/linemanjs:$CODEHOME/electricai" # deque, shutterstock
 # $CODEHOME/3am:$CODEHOME/catalyst:$CODEHOME/comverge:$CODEHOME/csg:$CODEHOME/inn
-
 
 declare -a BEFORE_CD_HOOKS AFTER_CD_HOOKS
 
