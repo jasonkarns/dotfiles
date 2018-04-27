@@ -31,7 +31,7 @@
 	d = diff
 	dc = diff --cached
 	ds = diff --stat
-	du = diff @{upstream}...
+	du = diff @{upstream}
 	dw = diff --color-words
 
 	fa = fetch --all
