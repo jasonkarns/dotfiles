@@ -19,7 +19,7 @@
 	ci = commit
 	br = branch
 	co = checkout
-	cam = commit --amend --reuse-message=HEAD
+	cam = commit --amend --no-edit
 	hist = log --graph --date=short --pretty=format:\"%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(red)|%C(reset) %s%C(red)%d %C(reset)- %an%C(reset)\"
 	glog = log --date=relative
 	graph = log --graph --all --decorate --stat --date=short
