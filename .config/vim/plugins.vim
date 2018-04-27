@@ -40,7 +40,7 @@ augroup bundles
     Plugin 'sh.vim'
     Plugin 'bats.vim'
 
-    " Plugin 'tpope/vim-rails'
+    Plugin 'tpope/vim-rails'
     Plugin 'tpope/vim-bundler'
     Plugin 'tpope/vim-rbenv'
     Plugin 'tpope/vim-rake'
