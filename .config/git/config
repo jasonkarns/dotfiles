@@ -55,12 +55,14 @@
 	fix-email = "filter-branch --env-filter 'if [ \"$GIT_COMMITTER_NAME\" = \"$(git config user.name)\" ]; then GIT_COMMITTER_EMAIL=\"$(git config user.email)\"; fi; if [ \"$GIT_AUTHOR_NAME\" = \"$(git config user.name)\" ]; then GIT_AUTHOR_EMAIL=\"$(git config user.email)\"; fi'"
 
 [pager]
+	; https://blog.github.com/2016-06-13-git-2-9-has-been-released/
 	log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 	show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 	diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 
 [diff]
 	; algorithm = patience
+	colorMoved = true
 	; retired compactionHeuristic = true
 	indentHeuristic = true
 	mnemonicPrefix = true
