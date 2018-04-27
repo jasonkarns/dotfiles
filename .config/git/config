@@ -60,10 +60,11 @@
 	diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 
 [diff]
-	algorithm = patience
-	compactionHeuristic = true
-	mnemonicprefix = true
-	renames = true
+	; algorithm = patience
+	; retired compactionHeuristic = true
+	indentHeuristic = true
+	mnemonicPrefix = true
+	renames = copies
 	wordRegex = [A-z0-9_]+|[^[:space:]]
 [difftool]
 	prompt = false
