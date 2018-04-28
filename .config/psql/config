@@ -1,0 +1,49 @@
+-- Suppress any output when setting options below
+\set QUIET
+
+
+-- Show the application_name in pg_stat_activity.
+set application_name to fatjack;
+
+
+\set HISTCONTROL ignoredups
+\set HISTFILE `echo $XDG_DATA_HOME`/psql/history- :DBNAME
+\set HISTSIZE 2000
+
+-- prompting: https://www.postgresql.org/docs/8.3/static/app-psql.html#APP-PSQL-PROMPTING
+
+
+-- Be verbose about feedback
+\set VERBOSITY verbose
+
+-- tab complete keywords to uppercase
+\set COMP_KEYWORD_CASE upper
+
+-- have a chance to fix errors
+\set ON_ERROR_ROLLBACK interactive
+
+-- Formatting for tables
+\x auto
+
+
+-- Instead of displaying nulls as blank space, which look the same as empty strings (but are not the same!), show nulls as [NULL].
+\pset null '[NULL]'
+
+-- Show pretty unicode lines between rows and columns in select results.
+\pset linestyle unicode
+
+-- Make SQL output formatting a little prettier
+\pset unicode_border_linestyle single
+\pset unicode_column_linestyle single
+\pset unicode_header_linestyle single
+
+-- Show pretty lines around the outside of select results.
+\pset border 2
+
+
+-- Within columns, wrap long lines so that select results still fit on the display.
+\pset format wrapped
+
+
+-- Re-enable standard output
+\unset QUIET
