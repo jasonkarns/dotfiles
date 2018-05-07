@@ -1,4 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
 case "$1" in
-  rebase) exec .git/hooks/post-merge ;;
+--about) echo "Generate ctags"; exit;;
+rebase) exec .git/hooks/post-merge ;;
 esac

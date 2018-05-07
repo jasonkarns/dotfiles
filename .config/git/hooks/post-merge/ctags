@@ -1,2 +1,1 @@
-#!/bin/sh
-git ctags >/dev/null 2>&1 &
+../post-checkout/ctags

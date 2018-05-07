@@ -1,2 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+case "$1" in
+--about) echo "Generate ctags"; exit;;
+esac
+
 git ctags >/dev/null 2>&1 &
