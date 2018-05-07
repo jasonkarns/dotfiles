@@ -17,25 +17,20 @@ magenta="\\033[1;31m"
 cyan="\\033[0;37m"
 reset="\\033[0m"
 
+initial_checkout() {
+  test "$old_head_ref" = "$null_ref"
+}
+
 modified_files() {
-  if [ "$old_head_ref" = "$null_ref" ]; then
-    # initial checkout (clone). all files are 'modified'
-    git ls-files
+  if initial_checkout; then
+    git ls-files -- "$@"
   else
-    # list files that changed between the old head and new head
-    git diff-tree --name-only --no-color -m "$old_head_ref" "$new_head_ref"
+    git diff-tree --name-only --no-color -m "$old_head_ref" "$new_head_ref" -- "$@"
   fi
 }
 
 modified() {
-  # files to check for modifications, as an array
-  local -a files=( $@ )
-
-  # prefix with '-e' arg
-  files=( "${files[@]/#/ -e }" )
-
-  # grep for specified files in list of modied files
-  modified_files | grep --fixed-strings ${files[*]} >/dev/null 2>&1
+  test -n "$(modified_files "$@")"
 }
 
 remind() {
