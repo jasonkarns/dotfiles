@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
-if [ "$1" = --about ]; then
-  cat <<-ABOUT
-  Prints a message if relevant files have been modified that might necessitate a command being run.
-  i.e. npm-install for package.json or rake db:migrate for db/schema.rb, etc
-ABOUT
-  exit
-fi
+set -euo pipefail
+IFS=$'\n\t'
+
+case "$1" in
+--about) echo "Reminder prompt for install/update commands if files modified"; exit;;
+esac
 
 old_head_ref=$1
 new_head_ref=$2
