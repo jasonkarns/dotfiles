@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+if [ "$1" = --about ]; then
+  cat <<-ABOUT
+  Prints a message if relevant files have been modified that might necessitate a command being run.
+  i.e. npm-install for package.json or rake db:migrate for db/schema.rb, etc
+ABOUT
+  exit
+fi
+
 old_head_ref=$1
 new_head_ref=$2
 
