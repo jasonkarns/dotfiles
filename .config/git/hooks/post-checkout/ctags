@@ -3,7 +3,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-case "$1" in
+case "${1:-}" in
 --about) echo "Generate ctags"; exit;;
 esac
 
