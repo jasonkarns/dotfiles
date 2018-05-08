@@ -26,6 +26,7 @@ export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql/history
 export PSQLRC=$XDG_CONFIG_HOME/psql/config
 export PSQL_HISTORY=$XDG_DATA_HOME/psql/history
+# shellcheck disable=SC2016
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
@@ -45,7 +46,11 @@ after_cd() {
   AFTER_CD_HOOKS["${#AFTER_CD_HOOKS[@]}"]="$hook"
 }
 
-# Load any supplementary scripts
-for config in $XDG_CONFIG_HOME/bashrc.d/*.bash $XDG_CONFIG_HOME/bashrc.d/*.bash.local; do
-  test -r "$config" && source "$_"
-done; unset -v config
+source_supplementary_scripts(){
+  for config in "$@"; do
+    # shellcheck disable=SC1090
+    test -r "$config" && source "$config"
+  done
+}
+
+source_supplementary_scripts "$XDG_CONFIG_HOME"/bashrc.d/*.bash{,.local}
