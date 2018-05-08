@@ -1,0 +1,2 @@
+# http://bitfission.com/pub/software/scm/git/docs/gitattributes.html
+Gemfile.lock merge=gemfilelock

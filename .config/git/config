@@ -76,6 +76,10 @@
 	log = 999
 	stat = true
 	tool = vimdiff
+; [merge "gemfilelock"]
+; 	name = Relocks Gemfile.lock
+; 	driver = bundle lock && git add -- Gemfile.lock
+
 [rebase]
 	autosquash = true
 [interactive]
