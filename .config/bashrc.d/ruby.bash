@@ -31,7 +31,7 @@ export BUNDLE_CONFIG=$BUNDLE_USER_CONFIG # until new version is released
 # rbenv
 #########################
 
-# store rubies under brew (or /usr/local)
+# store rubies XDG style
 export RBENV_ROOT=/usr/local/var/rbenv
 
 if command -v rbenv &>/dev/null; then
