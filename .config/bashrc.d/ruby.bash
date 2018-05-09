@@ -27,9 +27,6 @@ export BUNDLE_USER_PLUGIN=$XDG_DATA_HOME/bundler
 # above env vars aren't respected as of 1.16.1
 export BUNDLE_CONFIG=$BUNDLE_USER_CONFIG # until new version is released
 
-# aliases
-alias be='bundle exec'
-
 #########################
 # rbenv
 #########################
