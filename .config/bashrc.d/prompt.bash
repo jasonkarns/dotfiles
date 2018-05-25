@@ -6,7 +6,7 @@
 
 # source git's ps1 script
 # shellcheck source=/usr/local/etc/bash_completion.d/git-prompt.sh
-brew --prefix &>/dev/null && [[ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]] && source "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh"
+test -r "$HOMEBREW_PREFIX"/etc/bash_completion.d/git-prompt.sh && source $_
 
 # display working directory state (* for modified/+ for staged)
 GIT_PS1_SHOWDIRTYSTATE=true

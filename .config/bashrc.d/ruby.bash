@@ -49,4 +49,4 @@ else
   }
 fi
 
-export RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
+export RUBY_CONFIGURE_OPTS="--with-readline-dir=$HOMEBREW_PREFIX/opt/readline" # $(brew --prefix readline)
