@@ -29,7 +29,7 @@ export BUNDLE_CONFIG=$BUNDLE_USER_CONFIG # until new version is released
 #########################
 
 # store rubies XDG style
-export RBENV_ROOT=/usr/local/var/rbenv
+export RBENV_ROOT=$HOMEBREW_PREFIX/var/rbenv
 
 if command -v rbenv &>/dev/null; then
   # initialize

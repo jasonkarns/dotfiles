@@ -10,7 +10,7 @@ export NODE_REPL_HISTORY=$XDG_CACHE_HOME/node/history
 ##############
 
 # store nodes under brew (or /usr/local)
-export NODENV_ROOT=/usr/local/var/nodenv
+export NODENV_ROOT=$HOMEBREW_PREFIX/var/nodenv
 
 if command -v nodenv &>/dev/null; then
   # initialize
