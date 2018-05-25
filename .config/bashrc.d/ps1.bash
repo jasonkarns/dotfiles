@@ -1,9 +1,12 @@
+# shellcheck disable=SC2034
+
 #########################
 # git setup
 #########################
 
 # source git's ps1 script
-$(brew --prefix &>/dev/null) && [[ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]] && source `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+# shellcheck source=/usr/local/etc/bash_completion.d/git-prompt.sh
+brew --prefix &>/dev/null && [[ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]] && source "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh"
 
 # display working directory state (* for modified/+ for staged)
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -20,73 +23,62 @@ GIT_PS1_DESCRIBE_STYLE=branch
 # colors (solarized)
 #########################
 
-declare -A COLORS
-
-if tput setaf 1 &> /dev/null; then
-  tput sgr0
-  if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
-    COLORS+=( [base03]=$(tput setaf 234) )
-    COLORS+=( [base02]=$(tput setaf 235) )
-    COLORS+=( [base01]=$(tput setaf 240) )
-    COLORS+=( [base00]=$(tput setaf 241) )
-    COLORS+=( [base0]=$(tput setaf 244) )
-    COLORS+=( [base1]=$(tput setaf 245) )
-    COLORS+=( [base2]=$(tput setaf 254) )
-    COLORS+=( [base3]=$(tput setaf 230) )
-    COLORS+=( [yellow]=$(tput setaf 136) )
-    COLORS+=( [orange]=$(tput setaf 166) )
-    COLORS+=( [red]=$(tput setaf 160) )
-    COLORS+=( [magenta]=$(tput setaf 125) )
-    COLORS+=( [violet]=$(tput setaf 61) )
-    COLORS+=( [blue]=$(tput setaf 33) )
-    COLORS+=( [cyan]=$(tput setaf 37) )
-    COLORS+=( [green]=$(tput setaf 64) )
-  else
-    COLORS+=( [base03]=$(tput setaf 8) )
-    COLORS+=( [base02]=$(tput setaf 0) )
-    COLORS+=( [base01]=$(tput setaf 10) )
-    COLORS+=( [base00]=$(tput setaf 11) )
-    COLORS+=( [base0]=$(tput setaf 12) )
-    COLORS+=( [base1]=$(tput setaf 14) )
-    COLORS+=( [base2]=$(tput setaf 7) )
-    COLORS+=( [base3]=$(tput setaf 15) )
-    COLORS+=( [yellow]=$(tput setaf 3) )
-    COLORS+=( [orange]=$(tput setaf 9) )
-    COLORS+=( [red]=$(tput setaf 1) )
-    COLORS+=( [magenta]=$(tput setaf 5) )
-    COLORS+=( [violet]=$(tput setaf 13) )
-    COLORS+=( [blue]=$(tput setaf 4) )
-    COLORS+=( [cyan]=$(tput setaf 6) )
-    COLORS+=( [green]=$(tput setaf 2) )
-  fi
-  COLORS+=( [bold]=$(tput bold) )
-  COLORS+=( [reset]=$(tput sgr0) )
-else
-  # Linux console colors. I don't have the energy
-  # to figure out the Solarized values
-  COLORS+=( [magenta]="\033[1;31m" )
-  COLORS+=( [orange]="\033[1;33m" )
-  COLORS+=( [green]="\033[1;32m" )
-  COLORS+=( [purple]="\033[1;35m" )
-  COLORS+=( [white]="\033[1;37m" )
-  COLORS+=( [bold]="" )
-  COLORS+=( [reset]="\033[m" )
-fi
-
 __color() {
-  echo "\[${COLORS[$1]}\]"
+  local -a code
+
+  test "$(tput colors)" -ge 256
+  local colorbit=$?
+
+  while [ $# -gt 0 ]; do
+    code=()
+
+    case "$1" in
+    base0) code=(244 12) ;;
+    base1) code=(245 14) ;;
+    base2) code=(254 7) ;;
+    base3) code=(230 15) ;;
+    base00) code=(241 11) ;;
+    base01) code=(240 10) ;;
+    base02) code=(235 0) ;;
+    base03) code=(234 8) ;;
+    yellow) code=(136 3) ;;
+    orange) code=(166 9) ;;
+    red) code=(160 1) ;;
+    magenta) code=(125 5) ;;
+    violet) code=(61 13) ;;
+    blue) code=(33 4) ;;
+    cyan) code=(37 6) ;;
+    green) code=(64 2) ;;
+
+    reset) tput sgr0;;
+    reverse) tput rev;;
+    underline) tput smul;;
+    bold | dim | smul | rmul | rev | smso | rmso ) tput "$1";;
+
+    *) printf "%s" "$1";;
+
+    esac;
+
+    shift
+
+    [ -n "${code[*]}" ] && tput setaf "${code[$colorbit]}"
+  done
 }
 
 __ps1() {
-  local ruby_version='$(__rbenv_ps1 "[%s] ")'
-  local node_version='$(__nodenv_ps1 "[%s] ")'
-  local cwd='\w'
-  local git_state='$(__git_ps1 " (%s `git rev-parse --abbrev-ref @{u} 2>/dev/null`)")'
-  local prompt='\$ '
+  local prior_status=$?
 
-  echo $(__color yellow)$node_version$(__color red)$ruby_version$(__color cyan)$cwd$(__color base2)$git_state
-  echo '\[${COLORS[$prompt_color]}\]'$prompt$(__color reset)
+  __nodenv_ps1 "$(__color yellow)[%s] "
+
+  __rbenv_ps1 "$(__color red)[%s] "
+
+  __color cyan '\w' # CWD
+
+  __git_ps1 "$(__color base2) (%s $(git rev-parse --abbrev-ref '@{u}' 2>/dev/null))"
+
+  __color "$(if [ $prior_status -eq 0 ]; then echo base2; else echo red; fi)" "\\n\$ "
+
+  __color reset
 }
 
-export PROMPT_COMMAND='if [ $? -eq 0 ]; then prompt_color=base2; else prompt_color=red; fi;'$PROMPT_COMMAND
-export PS1=$( __ps1 )
+export PROMPT_COMMAND='PS1=$(__ps1); '$PROMPT_COMMAND
