@@ -1,3 +1,5 @@
+# shellcheck disable=SC2034
+
 # http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
 # XDG
 export XDG_DATA_HOME=/usr/local/share
@@ -24,8 +26,8 @@ export PSQL_HISTORY=$XDG_DATA_HOME/psql/history
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
-export CODEHOME="$HOME/Projects"
-export CODEPATH="$CODEHOME:$CODEHOME/nodenv:$CODEHOME/rbenv:$CODEHOME/td:$CODEHOME/linemanjs:$CODEHOME/electricai" # deque, shutterstock
+CODEHOME="$HOME/Projects"
+CODEPATH="$CODEHOME:$CODEHOME/nodenv:$CODEHOME/rbenv:$CODEHOME/td:$CODEHOME/linemanjs:$CODEHOME/electricai" # deque, shutterstock
 # $CODEHOME/3am:$CODEHOME/catalyst:$CODEHOME/comverge:$CODEHOME/csg:$CODEHOME/inn
 
 declare -a BEFORE_CD_HOOKS AFTER_CD_HOOKS
@@ -43,7 +45,7 @@ after_cd() {
 source_supplementary_scripts(){
   for config in "$@"; do
     # shellcheck disable=SC1090
-    test -r "$config" && source "$config"
+    test -r "$config" && source "$_"
   done
 }
 
