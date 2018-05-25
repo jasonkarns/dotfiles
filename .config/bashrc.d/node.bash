@@ -14,10 +14,11 @@ export NODENV_ROOT=$HOMEBREW_PREFIX/var/nodenv
 
 if command -v nodenv &>/dev/null; then
   # initialize
-  . <(nodenv init -)
+  eval "$(nodenv init -)"
 
   # show active node version in PS1
   __nodenv_ps1() {
+    # shellcheck disable=SC2059
     printf "$1" "$(nodenv version-name)"
   }
 else
