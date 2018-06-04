@@ -17,6 +17,7 @@ alias gfa='git fa'
 alias giton='export GIT_PS1_SHOWDIRTYSTATE=true && export GIT_PS1_SHOWSTASHSTATE=true && export GIT_PS1_SHOWUPSTREAM=verbose'
 alias gitoff='unset GIT_PS1_SHOWDIRTYSTATE && unset GIT_PS1_SHOWSTASHSTATE && unset GIT_PS1_SHOWUPSTREAM'
 
+alias hubs='GITHUB_HOST=github.shuttercorp.net hub'
 
 #alias gbc='git branch --contains'
 #alias glp='git log -m -p -- '
