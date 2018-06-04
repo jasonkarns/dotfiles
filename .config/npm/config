@@ -18,7 +18,3 @@ init-license=MIT
 //agora.dequecloud.com/artifactory/api/npm/attest-virtual/:username=jason@testdouble.com
 //agora.dequecloud.com/artifactory/api/npm/attest-virtual/:_auth=${NPMJS_DEQUE_AUTH}
 //agora.dequecloud.com/artifactory/api/npm/attest-virtual/:_password=${NPMJS_DEQUE_PASSWORD}
-
-//artifactory.shuttercorp.net/artifactory/api/npm/absinthe/:always-auth=false
-//artifactory.shuttercorp.net/artifactory/api/npm/absinthe/:email=jkarns@shutterstock.com
-//artifactory.shuttercorp.net/artifactory/api/npm/absinthe/:username=jkarns@shutterstock.com

@@ -1,8 +1,0 @@
-[user]
-	email = jkarns@shutterstock.com
-
-[hub]
-	host = github.shuttercorp.net
-
-[url "git@github.shuttercorp.net:"]
-	insteadOf = https://github.shuttercorp.net/
