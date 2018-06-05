@@ -23,14 +23,13 @@ GIT_PS1_DESCRIBE_STYLE=branch
 # colors (solarized)
 #########################
 
+test "$(tput colors)" -ge 256
+__colorbit=$?
+
 __color() {
-  local -a code
-
-  test "$(tput colors)" -ge 256
-  local colorbit=$?
-
   while [ $# -gt 0 ]; do
-    code=()
+    local -a code=()
+    local control='' special=''
 
     case "$1" in
     base0) code=(244 12) ;;
@@ -50,18 +49,24 @@ __color() {
     cyan) code=(37 6) ;;
     green) code=(64 2) ;;
 
-    reset) tput sgr0;;
-    reverse) tput rev;;
-    underline) tput smul;;
-    bold | dim | smul | rmul | rev | smso | rmso ) tput "$1";;
+    reset) control=sgr0;;
+    reverse) control=rev;;
+    underline) control=smul;;
+    bold | dim | smul | rmul | rev | smso | rmso ) control=$1;;
 
-    *) printf "%s" "$1";;
+    *) printf "%s" "$1"; shift; continue;;
 
-    esac;
+    esac
 
     shift
 
-    [ -n "${code[*]}" ] && tput setaf "${code[$colorbit]}"
+    if [ -n "$control" ]; then
+      special=$(tput "$control")
+    elif [ -n "${code[*]}" ]; then
+      special=$(tput setaf "${code[$__colorbit]}")
+    fi
+
+    printf "\\[%s\\]" "$special"
   done
 }
 
