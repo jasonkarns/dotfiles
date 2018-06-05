@@ -6,7 +6,7 @@
 
 # source git's ps1 script
 # shellcheck source=/usr/local/etc/bash_completion.d/git-prompt.sh
-test -r "$HOMEBREW_PREFIX"/etc/bash_completion.d/git-prompt.sh && source $_
+test -r "$HOMEBREW_PREFIX"/etc/bash_completion.d/git-prompt.sh && source "$_"
 
 # display working directory state (* for modified/+ for staged)
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -76,7 +76,7 @@ __ps1() {
 
   __git_ps1 "$(__color base2) (%s $(git rev-parse --abbrev-ref '@{u}' 2>/dev/null))"
 
-  __color "$(if [ $prior_status -eq 0 ]; then echo base2; else echo red; fi)" "\\n\$ "
+  __color "$(if [ $prior_status -eq 0 ]; then echo base2; else echo red; fi)" "\\n\\$ "
 
   __color reset
 }
