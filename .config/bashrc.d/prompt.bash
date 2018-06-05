@@ -81,4 +81,4 @@ __ps1() {
   __color reset
 }
 
-export PROMPT_COMMAND='PS1=$(__ps1); '$PROMPT_COMMAND
+PROMPT_COMMAND='PS1=$(__ps1); '$PROMPT_COMMAND
