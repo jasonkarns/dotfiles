@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+#
+# Summary: Change github remote URLs between SSH and HTTPS protocols.
+#
+# Usage: git-switch-remote-proto (--ssh | --https) [ <remote>... ]
+#
+#   --ssh     Change URL to SSH protocol
+#   --https   Change URL to HTTPS protocol
+#   <remote>  List of remote names to change.
+#             If omitted, defaults to all named remotes.
+#
+
+set -euo pipefail
+
+change_url() {
+  local remote="${1?}" user repo old new proto=${2?}
+
+  old=$(git remote get-url "$remote")
+
+  if [[ ! $old =~ github.com(:|/)(.*)/(.*) ]]; then
+    {
+      echo "Could not identify user or repo from remote url."
+      echo "It is possible this repo is already using HTTPS instead of SSH."
+      exit 1
+    } >&2
+  fi
+
+  user="${BASH_REMATCH[2]}"
+  repo="${BASH_REMATCH[3]%.git}"
+  new="${proto}$user/$repo.git"
+
+  cat <<-MSG
+	Changing $remote remote url
+	  from: $old
+	  to:   $new
+	MSG
+
+  ( set -x ; git remote set-url "$remote" "$new" )
+}
+
+remotes() {
+  if (( $# > 0 )); then
+    echo "$@"
+  else
+    git remote
+  fi
+}
+
+case "${1-}" in
+--ssh) proto="git@github.com:";;
+--https) proto="https://github.com/";;
+*) echo "Target protocol required (--ssh, --https)" >&2; exit 1;;
+esac
+
+shift
+
+for remote in $(remotes "$@"); do
+  change_url "$remote" "$proto"
+done
