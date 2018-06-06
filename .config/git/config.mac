@@ -1,2 +1,5 @@
 [credential]
   helper = osxkeychain
+
+[includeIf "gitdir:/usr/local/Homebrew/"]
+	path = config.homebrew
