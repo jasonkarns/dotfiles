@@ -1,2 +1,5 @@
 [user]
 	email = jason+electric.ai@testdouble.com
+
+[alias]
+	ch = "!f() { git commit --allow-empty -m \"[branch CH${1#CH}]\"; }; f"
