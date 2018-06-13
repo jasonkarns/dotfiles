@@ -1,5 +1,7 @@
 # shellcheck disable=SC2034
 
+PATH=$HOME/bin:$PATH
+
 # http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
 # XDG
 export XDG_DATA_HOME=/usr/local/share
