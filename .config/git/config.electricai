@@ -3,3 +3,6 @@
 
 [alias]
 	ch = "!f() { git commit --only --allow-empty -m \"[branch CH${1#CH}] [CH${1#CH}](https://app.clubhouse.io/electric/story/${1#CH})\"; }; f"
+
+[remote "heroku"]
+	skipFetchAll = true
