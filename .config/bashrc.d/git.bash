@@ -10,6 +10,8 @@ alias gdword='git diff --color-words'
 alias gdc='git diff --cached'
 alias gx='gitx --all'
 
+alias hs='hub sync'
+
 #########################
 # contrib
 #########################
