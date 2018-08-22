@@ -37,7 +37,7 @@
 	fa = fetch --all
 	cp = cherry-pick
 	ctags = "! git ls-files | ctags --tag-relative=yes --extras=+f -L - -f $(git rev-parse --git-path tags) --languages=-sql"
-	req = pull-request
+	req = pull-request --push
 	ff = merge --ff-only
 
 	churn = "!f() { git --no-pager log --all --find-renames --find-copies --name-only --format='format:' \"$@\" | grep -v '^$' | sort | uniq -c | sort -nr | head; }; f"
