@@ -1,0 +1,25 @@
+IRB.conf.merge!(
+  AUTO_INDENT: true,
+  SAVE_HISTORY: 1000,
+  HISTORY_FILE: File.join(ENV.fetch('XDG_DATA_HOME', '~/.local/share'), 'irb/history'),
+  PROMPT_MODE: :SIMPLE,
+  USE_READLINE: true,
+)
+
+
+require 'irb/completion'
+require 'awesome_print'
+require 'utility_belt'
+
+AwesomePrint.irb!
+
+# load project-level .irbrc if it exists (in cwd)
+=begin
+if Dir.pwd.downcase != File.expand_path("~").downcase
+  local_irbrc = File.expand_path '.irbrc'
+  if File.exist? local_irbrc
+    puts "Loading #{local_irbrc}"
+    load local_irbrc
+  end
+end
+=end
