@@ -3,6 +3,9 @@ email=jason.karns@gmail.com
 
 cache=${XDG_CACHE_HOME}/npm
 devdir=${XDG_CACHE_HOME}/node-gyp
+init-module=${XDG_CONFIG_HOME}/npm/init-module.js
+; prefix=${XDG_DATA_HOME}/npm
+; tmp=${XDG_RUNTIME_DIR}/npm
 
 init-author-name=Jason Karns
 init-author-email=jason.karns@gmail.com

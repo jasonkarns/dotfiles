@@ -2,7 +2,7 @@
 # node       #
 ##############
 
-export NODE_REPL_HISTORY=$XDG_CACHE_HOME/node/history
+export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/history
 
 
 ##############
