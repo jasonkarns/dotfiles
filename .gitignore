@@ -37,7 +37,6 @@ VirtualBox VMs
 .ssh
 .Trash
 .v8flags*
-.vagrant.d/
 .webdriver-sync/
 .zinc/
 .passenger/native_support/

@@ -31,6 +31,8 @@ export PGSERVICEFILE=$XDG_CONFIG_HOME/pg/pg_service.conf
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
 
 export RANDFILE=$XDG_DATA_HOME/openssl/rnd
+export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
+export VAGRANT_ALIAS_FILE=$XDG_DATA_HOME/vagrant/aliases
 
 export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
 
