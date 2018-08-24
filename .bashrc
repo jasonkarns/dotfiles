@@ -23,8 +23,10 @@ export LESSHISTFILE=$XDG_DATA_HOME/less/history
 export LESSKEY=$XDG_CONFIG_HOME/less/lesskey
 
 export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql/history
-export PSQLRC=$XDG_CONFIG_HOME/psql/config
-export PSQL_HISTORY=$XDG_DATA_HOME/psql/history
+export PSQLRC=$XDG_CONFIG_HOME/pg/config
+export PSQL_HISTORY=$XDG_DATA_HOME/pg/history
+export PGPASSFILE=$XDG_CONFIG_HOME/pg/pgpass
+export PGSERVICEFILE=$XDG_CONFIG_HOME/pg/pg_service.conf
 
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
 
