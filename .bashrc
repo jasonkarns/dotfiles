@@ -20,10 +20,18 @@ export PAGER=less
 export EDITOR=vim
 export LESS=FRXi
 export LESSHISTFILE=$XDG_DATA_HOME/less/history
+export LESSKEY=$XDG_CONFIG_HOME/less/lesskey
 
 export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql/history
 export PSQLRC=$XDG_CONFIG_HOME/psql/config
 export PSQL_HISTORY=$XDG_DATA_HOME/psql/history
+
+export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
+
+export RANDFILE=$XDG_DATA_HOME/openssl/rnd
+
+export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
+
 # shellcheck disable=SC2016
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export IEVMS_HOME=$XDG_DATA_HOME/ievms
