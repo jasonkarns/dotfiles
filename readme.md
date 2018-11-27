@@ -2,7 +2,7 @@ Installation
 ============
 
 1. `git clone --no-checkout https://github.com/jasonkarns/dotfiles.git`
-2. `git config core.worktree "../../"`
+2. `git config core.worktree "$HOME"`
 3. `git config core.sparsecheckout true`
 4. write .git/info/sparse-checkout
 5. write .git/info/exclude
