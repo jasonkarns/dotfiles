@@ -1,2 +1,4 @@
 [user]
 	email = jason+github@testdouble.com
+[remote "origin"]
+	tagOpt = --no-tags
