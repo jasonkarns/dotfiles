@@ -1,4 +1,10 @@
-#! /bin/bash
+#! /usr/bin/env bash
+
+# This script must be sourced.
+# It will be sourced automatically by bash-completion if written to:
+# - $(brew --prefix)/etc/bash_completion.d/ (for mac homebrew)
+# - $BASH_COMPLETION_USER_DIR/completions/
+# - $XDG_DATA_HOME/bash-completion
 
 _cli_bash_autocomplete() {
     local cur opts
