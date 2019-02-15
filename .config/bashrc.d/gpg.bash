@@ -2,9 +2,6 @@ export GNUPGHOME=$XDG_CONFIG_HOME/gpg
 
 launchctl setenv GNUPGHOME "$GNUPGHOME"
 
-# keybase
-test -r "$(dirname "${BASH_SOURCE[0]}")/keybase-completion/keybase.sh" && source "$_"
-
 
 return # short circuit the gpg daemon stuff (MacGPG is handling it now)
 
