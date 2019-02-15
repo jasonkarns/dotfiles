@@ -22,6 +22,9 @@ export LESS=FRXi
 export LESSHISTFILE=$XDG_DATA_HOME/less/history
 export LESSKEY=$XDG_CONFIG_HOME/less/lesskey
 
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
+export MACHINE_STORAGE_PATH=$XDG_DATA_HOME/docker-machine
+
 export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql/history
 export PSQLRC=$XDG_CONFIG_HOME/pg/config
 export PSQL_HISTORY=$XDG_DATA_HOME/pg/history
