@@ -1,6 +1,9 @@
 username=jasonkarns
 email=jason.karns@gmail.com
 
+loglevel=warn
+scripts-prepend-node-path=auto
+@nodenv:registry=https://registry.npmjs.org/
 cache=${XDG_CACHE_HOME}/npm
 devdir=${XDG_CACHE_HOME}/node-gyp
 init-module=${XDG_CONFIG_HOME}/npm/init-module.js
