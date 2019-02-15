@@ -3,24 +3,18 @@ email=jason.karns@gmail.com
 
 loglevel=warn
 scripts-prepend-node-path=auto
-@nodenv:registry=https://registry.npmjs.org/
+
 cache=${XDG_CACHE_HOME}/npm
 devdir=${XDG_CACHE_HOME}/node-gyp
-init-module=${XDG_CONFIG_HOME}/npm/init-module.js
 ; prefix=${XDG_DATA_HOME}/npm
 ; tmp=${XDG_RUNTIME_DIR}/npm
 
+init-module=${XDG_CONFIG_HOME}/npm/init-module.js
 init-author-name=Jason Karns
 init-author-email=jason.karns@gmail.com
 init-author-url=http://jason.karns.name/
 init-version=0.0.0
 init-license=MIT
 
+@nodenv:registry=https://registry.npmjs.org/
 //registry.npmjs.org/:_authToken=${NPMJS_AUTHTOKEN}
-
-@deque:registry=https://agora.dequecloud.com/artifactory/api/npm/attest-virtual/
-//agora.dequecloud.com/artifactory/api/npm/attest-virtual/:always-auth=true
-//agora.dequecloud.com/artifactory/api/npm/attest-virtual/:email=jason@testdouble.com
-//agora.dequecloud.com/artifactory/api/npm/attest-virtual/:username=jason@testdouble.com
-//agora.dequecloud.com/artifactory/api/npm/attest-virtual/:_auth=${NPMJS_DEQUE_AUTH}
-//agora.dequecloud.com/artifactory/api/npm/attest-virtual/:_password=${NPMJS_DEQUE_PASSWORD}
