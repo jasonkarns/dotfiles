@@ -57,10 +57,8 @@ after_cd() {
 }
 
 source_supplementary_scripts(){
-  for config in "$@"; do
-    # shellcheck disable=SC1090
-    test -r "$config" && source "$_"
-  done
+  # shellcheck disable=SC1090
+  for config in "$@"; do test -r "$config" && source "$_"; done
 }
 
-source_supplementary_scripts "$XDG_CONFIG_HOME"/bashrc.d/*.bash{,.local}
+source_supplementary_scripts "$XDG_CONFIG_HOME"/bashrc.d/**/*.bash{,.local}
