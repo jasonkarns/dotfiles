@@ -14,7 +14,7 @@ export NODENV_ROOT=$HOMEBREW_PREFIX/var/nodenv
 
 if command -v nodenv &>/dev/null; then
   # initialize
-  eval "$(nodenv init -)"
+  eval "$(nodenv init - --no-rehash)"
 
   # show active node version in PS1
   __nodenv_ps1() {
