@@ -15,4 +15,5 @@ else
 fi
 
 export GPG_AGENT_INFO
-export GPG_TTY="$(tty)"
+GPG_TTY="$(tty)"
+export GPG_TTY
