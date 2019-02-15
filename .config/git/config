@@ -40,6 +40,8 @@
 	req = pull-request --push
 	ff = merge --ff-only
 
+	rebase = "rebase --preserve-merges"
+
 	churn = "!f() { git --no-pager log --all --find-renames --find-copies --name-only --format='format:' \"$@\" | grep -v '^$' | sort | uniq -c | sort -nr | head; }; f"
 
 	crawl = "!f() { next_commit=$(git rev-list --reverse HEAD..$1 | head -1); : ${next_commit:=$1}; git checkout $next_commit; }; f"
