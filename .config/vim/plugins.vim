@@ -38,7 +38,9 @@ augroup bundles
     " Plugin 'briancollins/vim-jst'
     " Plugin 'elzr/vim-json'
     Plugin 'sh.vim'
-    Plugin 'bats.vim'
+    " main bats.vim plugin just treats them as sh
+    " Plugin 'bats.vim'
+    Plugin 'aliou/bats.vim'
 
     Plugin 'tpope/vim-rails'
     Plugin 'tpope/vim-bundler'
