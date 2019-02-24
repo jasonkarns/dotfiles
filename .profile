@@ -1,5 +1,7 @@
 # shellcheck disable=SC2034
 
+# http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
+
 PATH=$HOME/bin:$PATH
 
 # XDG
@@ -40,4 +42,5 @@ CODEPATH="$CODE$(printf ":$CODE/%s" nodenv rbenv td linemanjs github 3am)"
 export CODEPATH
 unset CODE
 
+[ -f .config/bashrc.d/brew.sh ] && . .config/bashrc.d/brew.sh
 [ -f .bashrc ] && . .bashrc

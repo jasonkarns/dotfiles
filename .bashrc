@@ -1,9 +1,3 @@
-# shellcheck disable=SC2034
-
-# http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
-
-HOMEBREW_PREFIX=/usr/local
-
 # shell options
 shopt -s dirspell globstar histappend histverify nocaseglob
 
