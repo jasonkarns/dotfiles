@@ -6,9 +6,6 @@ code() {
 # Create a new directory and enter it
 md() { mkdir -p "$@" && cd "$@"; }
 
-# find shorthand
-f() { find . -name "$1"; }
-
 # cd into whatever is the forefront Finder window.
 cdf() { cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"; }
 
@@ -21,6 +18,3 @@ server() {
   # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
-
-# select from modified git files and open in vim
-vg() { vim "$(git rev-parse --show-toplevel)/$(git status --porcelain | "$XDG_CONFIG_HOME/bashrc.d/git-status-order" | cut -c 3- | selecta)"; }
