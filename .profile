@@ -42,6 +42,7 @@ CODEPATH="$CODE$(printf ":$CODE/%s" nodenv rbenv td linemanjs github 3am)"
 export CODEPATH
 unset CODE
 
-[ -f .config/bashrc.d/brew.sh ] && . .config/bashrc.d/brew.sh
-
-[ -f .bashrc ] && . .bashrc
+for config in "$XDG_CONFIG_HOME"/bashrc.d/*.sh .bashrc; do
+  # shellcheck disable=SC1090
+  test -r "$config" && . "$_"
+done
