@@ -43,4 +43,5 @@ export CODEPATH
 unset CODE
 
 [ -f .config/bashrc.d/brew.sh ] && . .config/bashrc.d/brew.sh
+
 [ -f .bashrc ] && . .bashrc

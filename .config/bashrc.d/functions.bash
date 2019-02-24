@@ -1,12 +1,6 @@
 # fuzzy finder and path change for code projects
-code() { cd "$(IFS=: && echo $CODEPATH | xargs -J % find % -maxdepth 1 -type d | sort -u | selecta "${1:+ -s $1}")"; }
-
-cd() {
-  for hook in "${BEFORE_CD_HOOKS[@]}"; do eval "$hook"; done
-
-  builtin cd "$@"
-
-  for hook in "${AFTER_CD_HOOKS[@]}"; do eval "$hook"; done
+code() {
+  cd "$(IFS=: && echo $CODEPATH | xargs -J % find % -maxdepth 1 -type d | sort -u | selecta "${1:+ -s $1}")" || return
 }
 
 # Create a new directory and enter it
