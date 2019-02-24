@@ -1,4 +1,4 @@
-# shellcheck disable=SC2034
+# shellcheck shell=bash disable=SC2034
 
 # http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
 
@@ -42,7 +42,7 @@ CODEPATH="$CODE$(printf ":$CODE/%s" nodenv rbenv td linemanjs github 3am)"
 export CODEPATH
 unset CODE
 
-for config in "$XDG_CONFIG_HOME"/bashrc.d/*.sh .bashrc; do
+for config in "$XDG_CONFIG_HOME"/bashrc.d/*.sh{,.local} .bashrc; do
   # shellcheck disable=SC1090
   test -r "$config" && . "$_"
 done
