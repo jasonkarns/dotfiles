@@ -4,7 +4,7 @@ set nocompatible
 set exrc
 set secure
 
-" xdg setup
+" xdg setup:  https://tlvince.com/vim-respect-xdg
 set backupdir=$XDG_CACHE_HOME/vim,/var/tmp,/tmp
 set directory=$XDG_CACHE_HOME/vim,/var/tmp,/tmp
 set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
