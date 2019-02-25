@@ -70,6 +70,15 @@ __color() {
   done
 }
 
+if command -v rbenv &>/dev/null; then
+  __rbenv_ps1() {
+    # shellcheck disable=SC2059
+    printf "$1" "$(rbenv version-name)"
+  }
+else
+  __rbenv_ps1() { :; }
+fi
+
 __ps1() {
   local prior_status=$?
 

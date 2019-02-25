@@ -45,18 +45,7 @@ export BUNDLE_CONFIG=$BUNDLE_USER_CONFIG # until new version is released
 export RBENV_ROOT=$HOMEBREW_PREFIX/var/rbenv
 
 if command -v rbenv &>/dev/null; then
-  # initialize
   eval "$(rbenv init -)"
-
-  # show active ruby version in PS1
-  __rbenv_ps1() {
-    # shellcheck disable=SC2059
-    printf "$1" "$(rbenv version-name)"
-  }
-else
-  __rbenv_ps1() { :; }
 fi
-
-export -f __rbenv_ps1
 
 export RUBY_CONFIGURE_OPTS="--with-readline-dir=$HOMEBREW_PREFIX/opt/readline"
