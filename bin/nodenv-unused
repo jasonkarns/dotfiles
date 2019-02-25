@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+xenv="$(basename "${BASH_SOURCE[0]%-*}")"
+
+case "$xenv" in
+nodenv) file=.node-version;;
+rbenv) file=.ruby-version;;
+esac
+
+cd ~/Projects
+
+find . -name "$file" -maxdepth 3 -print0 | xargs -0 cat | sort | uniq \
+| xargs -L1 "$xenv" prefix | xargs -L1 readlink | sort | uniq \
+| comm -13 - <("$xenv" versions --bare --skip-aliases)
