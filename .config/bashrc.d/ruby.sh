@@ -57,4 +57,6 @@ else
   __rbenv_ps1() { :; }
 fi
 
+export -f __rbenv_ps1
+
 export RUBY_CONFIGURE_OPTS="--with-readline-dir=$HOMEBREW_PREFIX/opt/readline"
