@@ -2,6 +2,9 @@
 # ruby
 #########################
 
+# ruby is now keg_only in homebrew: https://github.com/Homebrew/homebrew-core/commit/b4bf45228a
+PATH="$HOMEBREW_PREFIX/opt/ruby/bin:$PATH"
+
 #########################
 # irb
 #########################
@@ -11,6 +14,9 @@ export IRBRC=$XDG_CONFIG_HOME/irb/config
 #########################
 # rubygems
 #########################
+
+# ruby's gem dir is version-specific
+PATH="$(gem env gemdir)/bin:$PATH"
 
 export GEMRC=$XDG_CONFIG_HOME/gem/config.yml
 export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
@@ -48,9 +54,7 @@ if command -v rbenv &>/dev/null; then
     printf "$1" "$(rbenv version-name)"
   }
 else
-  __rbenv_ps1() {
-    : # noop
-  }
+  __rbenv_ps1() { :; }
 fi
 
-export RUBY_CONFIGURE_OPTS="--with-readline-dir=$HOMEBREW_PREFIX/opt/readline" # $(brew --prefix readline)
+export RUBY_CONFIGURE_OPTS="--with-readline-dir=$HOMEBREW_PREFIX/opt/readline"
