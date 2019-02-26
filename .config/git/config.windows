@@ -12,3 +12,5 @@
 [mergetool "winmerge"]
   cmd = 'c:/program files/winmerge/winmergeu.exe' \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
   trustExitCode = false
+
+# vi: ft=gitconfig

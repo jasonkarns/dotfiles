@@ -6,3 +6,5 @@
 
 [remote "heroku"]
 	skipFetchAll = true
+
+# vi: ft=gitconfig

@@ -3,3 +3,5 @@
 
 [includeIf "gitdir:/usr/local/Homebrew/"]
 	path = config.homebrew
+
+# vi: ft=gitconfig

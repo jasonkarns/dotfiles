@@ -1,2 +1,4 @@
 [profile electric]
 region = us-east-1
+
+# vi: ft=dosini
