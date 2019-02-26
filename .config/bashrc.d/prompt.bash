@@ -70,6 +70,23 @@ __color() {
   done
 }
 
+#########################
+# node version
+#########################
+
+if command -v nodenv &>/dev/null; then
+  __ps1_nodenv_color="$(__color yellow)"
+
+  __ps1_nodenv() {
+    printf "%s[%s] " "$__ps1_nodenv_color" "$(nodenv version-name)"
+  }
+else
+  __ps1_nodenv() { :; }
+fi
+#########################
+# ruby version
+#########################
+
 if command -v rbenv &>/dev/null; then
   __ps1_rbenv_color="$(__color red)"
 
@@ -84,7 +101,7 @@ fi
 __ps1() {
   local prior_status=$?
 
-  __nodenv_ps1 "$(__color yellow)[%s] "
+  __ps1_nodenv
 
   __ps1_rbenv
 

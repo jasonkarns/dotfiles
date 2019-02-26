@@ -13,18 +13,7 @@ export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/history
 export NODENV_ROOT=$HOMEBREW_PREFIX/var/nodenv
 
 if command -v nodenv &>/dev/null; then
-  # initialize
   eval "$(nodenv init - --no-rehash)"
-
-  # show active node version in PS1
-  __nodenv_ps1() {
-    # shellcheck disable=SC2059
-    printf "$1" "$(nodenv version-name)"
-  }
-else
-  __nodenv_ps1() {
-    : # noop
-  }
 fi
 
 ##############
