@@ -51,15 +51,22 @@ __color() {
   done
 }
 
+__ps1_red=$(__color red)
+__ps1_yellow=$(__color yellow)
+__ps1_cyan=$(__color cyan)
+__ps1_white=$(__color base2)
+
+__ps1_reset_color=$(__color reset)
+
+unset __colorbit
+
 #########################
 # node version
 #########################
 
 if command -v nodenv &>/dev/null; then
-  __ps1_nodenv_color="$(__color yellow)"
-
   __ps1_nodenv() {
-    printf "%s[%s] " "$__ps1_nodenv_color" "$(nodenv version-name)"
+    printf -v "$1" -- "[%s] " "$(nodenv version-name)"
   }
 else
   __ps1_nodenv() { :; }
@@ -70,65 +77,57 @@ fi
 #########################
 
 if command -v rbenv &>/dev/null; then
-  __ps1_rbenv_color="$(__color red)"
-
   __ps1_rbenv() {
-    printf "%s[%s] " "$__ps1_rbenv_color" "$(rbenv version-name)"
+    printf -v "$1" -- "[%s] " "$(rbenv version-name)"
   }
 else
   __ps1_rbenv() { :; }
 fi
 
 #########################
-# cwd
-#########################
-
-__ps1_cwd="$(__color cyan '\w')"
-
-#########################
 # git
 #########################
 
-# git's ps1 script already sourced by bash completion
-# /usr/local/etc/bash_completion.d/git-prompt.sh
+  # git's ps1 script already sourced by bash completion
+  # /usr/local/etc/bash_completion.d/git-prompt.sh
 
-GIT_PS1_SHOWDIRTYSTATE=1 # display working directory state (* for modified/+ for staged)
-GIT_PS1_SHOWSTASHSTATE=1 # display stashed state ($ if there are stashed files)
-GIT_PS1_SHOWUPSTREAM=auto # display HEAD vs upstream state
-GIT_PS1_SHOWUNTRACKEDFILES= # display untracked state(% if there are untracked files)
-GIT_PS1_SHOWCOLORHINTS=1
-GIT_PS1_DESCRIBE_STYLE=branch # detached-head description
+__ps1_git() {
+  GIT_PS1_SHOWDIRTYSTATE=1 # display working directory state (* for modified/+ for staged)
+  GIT_PS1_SHOWSTASHSTATE=1 # display stashed state ($ if there are stashed files)
+  GIT_PS1_SHOWUPSTREAM=auto # display HEAD vs upstream state
+  GIT_PS1_SHOWUNTRACKEDFILES= # display untracked state(% if there are untracked files)
+  GIT_PS1_SHOWCOLORHINTS=
+  GIT_PS1_DESCRIBE_STYLE=branch # detached-head description
 
-__ps1_git_color="$(__color base2)"
+  __git_ps1 "" "" " (%s $(git rev-parse --abbrev-ref '@{u}' 2>/dev/null))"
+  printf -v "$1" -- "$PS1"
+}
 
 #########################
 # prompt status
 #########################
 
-__ps1_success_color="$(__color base2)"
-__ps1_error_color="$(__color red)"
-__ps1_reset_color="$(__color reset)"
+__ps1_prompt() {
+  local status_color
 
-__ps1() {
-  local prior_status=$?
-
-  __ps1_nodenv
-
-  __ps1_rbenv
-
-  printf "$__ps1_cwd"
-
-  __git_ps1 "$__ps1_git_color (%s $(git rev-parse --abbrev-ref '@{u}' 2>/dev/null))"
-
-  if [ $prior_status -eq 0 ]; then
-    echo "$__ps1_success_color"
+  if [ "$2" -eq 0 ]; then
+    status_color=$__ps1_white
   else
-    echo "$__ps1_error_color"
+    status_color=$__ps1_red
   fi
 
-  printf "\\$ %s" "$__ps1_reset_color"
+  printf -v "$1" -- "$status_color"
 }
 
-PROMPT_COMMAND='PS1=$(time __ps1); '$PROMPT_COMMAND
+__ps1() {
+  local prior_status=$? cwd='\w' prompt node ruby git
 
-unset __colorbit
+  __ps1_prompt prompt $prior_status
+  __ps1_nodenv node
+  __ps1_rbenv ruby
+  __ps1_git git
+
+  printf -v PS1 -- "$__ps1_yellow$node$__ps1_red$ruby$__ps1_cyan$cwd$__ps1_white$git\\n$prompt\\$ $__ps1_reset_color"
+}
+
+PROMPT_COMMAND='__ps1; '$PROMPT_COMMAND
