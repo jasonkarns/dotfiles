@@ -1,23 +1,4 @@
-# shellcheck disable=SC2034
-
-#########################
-# git setup
-#########################
-
-# source git's ps1 script
-# shellcheck source=/usr/local/etc/bash_completion.d/git-prompt.sh
-test -r "$HOMEBREW_PREFIX"/etc/bash_completion.d/git-prompt.sh && source "$_"
-
-# display working directory state (* for modified/+ for staged)
-GIT_PS1_SHOWDIRTYSTATE=true
-# display stashed state ($ if there are stashed files)
-GIT_PS1_SHOWSTASHSTATE=true
-# display HEAD vs upstream state
-GIT_PS1_SHOWUPSTREAM="auto"
-# use colors
-GIT_PS1_SHOWCOLORHINTS=true
-# detached-head description
-GIT_PS1_DESCRIBE_STYLE=branch
+# shellcheck disable=2034,2059
 
 #########################
 # colors (solarized)
@@ -83,6 +64,7 @@ if command -v nodenv &>/dev/null; then
 else
   __ps1_nodenv() { :; }
 fi
+
 #########################
 # ruby version
 #########################
@@ -97,6 +79,33 @@ else
   __ps1_rbenv() { :; }
 fi
 
+#########################
+# cwd
+#########################
+
+__ps1_cwd="$(__color cyan '\w')"
+
+#########################
+# git
+#########################
+
+# git's ps1 script already sourced by bash completion
+# /usr/local/etc/bash_completion.d/git-prompt.sh
+
+# display working directory state (* for modified/+ for staged)
+GIT_PS1_SHOWDIRTYSTATE=1
+# display stashed state ($ if there are stashed files)
+GIT_PS1_SHOWSTASHSTATE=1
+# display HEAD vs upstream state
+GIT_PS1_SHOWUPSTREAM=auto
+# display untracked state(% if there are untracked files)
+GIT_PS1_SHOWUNTRACKEDFILES=
+# use colors
+GIT_PS1_SHOWCOLORHINTS=1
+# detached-head description
+GIT_PS1_DESCRIBE_STYLE=branch
+
+__ps1_git_color="$(__color base2)"
 
 __ps1() {
   local prior_status=$?
@@ -105,9 +114,9 @@ __ps1() {
 
   __ps1_rbenv
 
-  __color cyan '\w' # CWD
+  printf "$__ps1_cwd"
 
-  __git_ps1 "$(__color base2) (%s $(git rev-parse --abbrev-ref '@{u}' 2>/dev/null))"
+  __git_ps1 "$__ps1_git_color (%s $(git rev-parse --abbrev-ref '@{u}' 2>/dev/null))"
 
   __color "$(if [ $prior_status -eq 0 ]; then echo base2; else echo red; fi)" "\\n\\$ "
 
