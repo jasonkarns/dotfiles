@@ -92,20 +92,22 @@ __ps1_cwd="$(__color cyan '\w')"
 # git's ps1 script already sourced by bash completion
 # /usr/local/etc/bash_completion.d/git-prompt.sh
 
-# display working directory state (* for modified/+ for staged)
-GIT_PS1_SHOWDIRTYSTATE=1
-# display stashed state ($ if there are stashed files)
-GIT_PS1_SHOWSTASHSTATE=1
-# display HEAD vs upstream state
-GIT_PS1_SHOWUPSTREAM=auto
-# display untracked state(% if there are untracked files)
-GIT_PS1_SHOWUNTRACKEDFILES=
-# use colors
+GIT_PS1_SHOWDIRTYSTATE=1 # display working directory state (* for modified/+ for staged)
+GIT_PS1_SHOWSTASHSTATE=1 # display stashed state ($ if there are stashed files)
+GIT_PS1_SHOWUPSTREAM=auto # display HEAD vs upstream state
+GIT_PS1_SHOWUNTRACKEDFILES= # display untracked state(% if there are untracked files)
 GIT_PS1_SHOWCOLORHINTS=1
-# detached-head description
-GIT_PS1_DESCRIBE_STYLE=branch
+GIT_PS1_DESCRIBE_STYLE=branch # detached-head description
 
 __ps1_git_color="$(__color base2)"
+
+#########################
+# prompt status
+#########################
+
+__ps1_success_color="$(__color base2)"
+__ps1_error_color="$(__color red)"
+__ps1_reset_color="$(__color reset)"
 
 __ps1() {
   local prior_status=$?
@@ -118,9 +120,15 @@ __ps1() {
 
   __git_ps1 "$__ps1_git_color (%s $(git rev-parse --abbrev-ref '@{u}' 2>/dev/null))"
 
-  __color "$(if [ $prior_status -eq 0 ]; then echo base2; else echo red; fi)" "\\n\\$ "
+  if [ $prior_status -eq 0 ]; then
+    echo "$__ps1_success_color"
+  else
+    echo "$__ps1_error_color"
+  fi
 
-  __color reset
+  printf "\\$ %s" "$__ps1_reset_color"
 }
 
-PROMPT_COMMAND='PS1=$(__ps1); '$PROMPT_COMMAND
+PROMPT_COMMAND='PS1=$(time __ps1); '$PROMPT_COMMAND
+
+unset __colorbit
