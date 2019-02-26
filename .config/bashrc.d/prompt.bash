@@ -71,20 +71,22 @@ __color() {
 }
 
 if command -v rbenv &>/dev/null; then
-  __rbenv_ps1() {
-    # shellcheck disable=SC2059
-    printf "$1" "$(rbenv version-name)"
+  __ps1_rbenv_color="$(__color red)"
+
+  __ps1_rbenv() {
+    printf "%s[%s] " "$__ps1_rbenv_color" "$(rbenv version-name)"
   }
 else
-  __rbenv_ps1() { :; }
+  __ps1_rbenv() { :; }
 fi
+
 
 __ps1() {
   local prior_status=$?
 
   __nodenv_ps1 "$(__color yellow)[%s] "
 
-  __rbenv_ps1 "$(__color red)[%s] "
+  __ps1_rbenv
 
   __color cyan '\w' # CWD
 
