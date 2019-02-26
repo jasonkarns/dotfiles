@@ -23,3 +23,5 @@ if Dir.pwd.downcase != File.expand_path("~").downcase
   end
 end
 =end
+
+# vi: ft=ruby

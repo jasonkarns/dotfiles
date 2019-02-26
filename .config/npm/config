@@ -18,3 +18,5 @@ init-license=MIT
 
 @nodenv:registry=https://registry.npmjs.org/
 //registry.npmjs.org/:_authToken=${NPMJS_AUTHTOKEN}
+
+# vi: ft=dosini

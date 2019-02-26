@@ -47,3 +47,5 @@ set application_name to fatjack;
 
 -- Re-enable standard output
 \unset QUIET
+
+# vi: ft=sql

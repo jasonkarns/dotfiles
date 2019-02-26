@@ -8,3 +8,5 @@ export __CF_USER_TEXT_ENCODING="0x1F5:0:0"
 
 # need to explicitly enable b/c `histappend` disables it
 SHELL_SESSION_HISTORY=1
+
+# vi: ft=sh
