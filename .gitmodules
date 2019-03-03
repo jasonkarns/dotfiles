@@ -1,6 +1,3 @@
-[submodule "keybase-completion"]
-	path = .config/bashrc.d/keybase-completion
-	url = https://github.com/dtiersch/keybase-completion
 [submodule ".config/vim/vundle.vim"]
 	path = .config/vim/vundle.vim
 	url = git@github.com:gmarik/vundle.vim.git
