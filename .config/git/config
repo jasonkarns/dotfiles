@@ -187,6 +187,8 @@
 
 [includeIf "gitdir:/usr/local/*/Homebrew/"]
 	path = config.homebrew
+[includeIf "gitdir:~/Library/Caches/Homebrew/"]
+	path = config.homebrew
 
 # First URL rewrite appears to win,
 # so these need to _follow_ the other config includes.
