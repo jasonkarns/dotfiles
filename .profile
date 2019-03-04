@@ -10,6 +10,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_DIRS=/usr/share/
 export XDG_CONFIG_DIRS=/etc/xdg
 export XDG_CACHE_HOME=/usr/local/cache
+export XDG_RUNTIME_DIR=$TMPDIR
 
 # env
 export EDITOR=vim
