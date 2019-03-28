@@ -27,7 +27,7 @@ set application_name to fatjack;
 
 
 -- Instead of displaying nulls as blank space, which look the same as empty strings (but are not the same!), show nulls as [NULL].
-\pset null '[NULL]'
+\pset null 'ø'
 
 -- Show pretty unicode lines between rows and columns in select results.
 \pset linestyle unicode
