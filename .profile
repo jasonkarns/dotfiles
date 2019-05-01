@@ -43,7 +43,7 @@ printf -v CODEPATH -- ":$codehome/%s" nodenv rbenv td linemanjs github 3am
 export CODEPATH=${codehome}${CODEPATH}
 unset codehome
 
-for config in "$XDG_CONFIG_HOME"/bashrc.d/*.sh{,.local} .bashrc; do
+for config in "$XDG_CONFIG_HOME"/bashrc.d/*.sh{,.local} ~/.bashrc; do
   # shellcheck disable=SC1090
   test -r "$config" && . "$_"
 done
