@@ -185,9 +185,7 @@
 [includeIf "gitdir:~/Projects/github/"]
 	path = config.github
 
-[includeIf "gitdir:/usr/local/*/Homebrew/"]
-	path = config.homebrew
-[includeIf "gitdir:~/Library/Caches/Homebrew/"]
+[includeIf "gitdir:Homebrew/"]
 	path = config.homebrew
 
 # First URL rewrite appears to win,
