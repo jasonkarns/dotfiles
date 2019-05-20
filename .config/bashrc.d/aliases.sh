@@ -7,7 +7,10 @@ alias g='grep -I --ignore-case --recursive --exclude-dir=.git --exclude-dir=tmp'
 # select from modified git files and open in vim
 alias vg='vim "$(git rev-parse --show-toplevel)/$(git status --porcelain | "$XDG_CONFIG_HOME/bashrc.d/git-status-order" | cut -c 3- | selecta)"'
 
-alias upbrew='brew update ; brew doctor && brew outdated && brew upgrade'
+alias confirm='read -rp "Continue? [Y/n]
+" -t10 && [[ "$REPLY" =~ ^[Yy]?$ ]]'
+
+alias upbrew='brew update ; brew doctor || confirm && brew outdated && brew upgrade'
 alias upgpg='keybase pgp pull'
 alias upnpm='nodenv each npm update -g --quiet'
 alias upnodenv='nodenv update && nodenv update-version-defs --dry-run'
