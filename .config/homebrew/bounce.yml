@@ -1,8 +1,0 @@
-# https://github.com/jasonkarns/homebrew-bundle/tree/bouncer
----
-brew:
-  - docker
-  - docker-machine
-cask:
-mac_app_store:
-tap:
