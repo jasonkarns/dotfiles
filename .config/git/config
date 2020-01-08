@@ -101,6 +101,9 @@
 [rerere]
 	enabled = 1
 	autoupdate = true
+[stash]
+	showPatch = true
+	showStat = true
 
 [submodule]
 	fetchJobs = 4
