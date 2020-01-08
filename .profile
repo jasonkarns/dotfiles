@@ -47,3 +47,7 @@ for config in "$XDG_CONFIG_HOME"/bashrc.d/*.sh{,.local} ~/.bashrc; do
   # shellcheck disable=SC1090
   test -r "$config" && . "$_"
 done
+
+# force cd to be called even when Terminal.app is opened in a directory
+# this ensures the cd hooks are called
+cd .
