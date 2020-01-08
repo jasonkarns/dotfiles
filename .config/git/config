@@ -8,8 +8,8 @@
 
 [user]
 	name = Jason Karns
-	email = jason@karns.name
-	signingkey = A9B1B726
+	email = jason.karns@gmail.com
+	signingkey = 4F072FBC1ACA2746
 
 [github]
 	user = jasonkarns
