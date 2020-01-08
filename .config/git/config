@@ -40,7 +40,7 @@
 	req = pull-request --push
 	ff = merge --ff-only
 
-	rebase = "rebase --preserve-merges"
+	rebase = "rebase --rebase-merges"
 
 	churn = "!f() { git --no-pager log --all --find-renames --find-copies --name-only --format='format:' \"$@\" | grep -v '^$' | sort | uniq -c | sort -nr | head; }; f"
 
@@ -93,7 +93,7 @@
 [fetch]
 	prune = true
 [pull]
-	rebase = preserve
+	rebase = merges
 	tags = true
 [push]
 	default = upstream
