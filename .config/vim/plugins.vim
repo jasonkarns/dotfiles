@@ -11,6 +11,7 @@ augroup bundles
     Plugin 'gmarik/vundle.vim'
 
   " syntax utilities
+    Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-endwise'
     Plugin 'tpope/vim-surround'
