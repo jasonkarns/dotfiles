@@ -12,7 +12,7 @@ export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/history
 # store nodes under brew (or /usr/local)
 export NODENV_ROOT=$HOMEBREW_PREFIX/var/nodenv
 
-if command -v nodenv &>/dev/null; then
+if command -v nodenv >/dev/null 2>&1; then
   eval "$(nodenv init - --no-rehash)"
 fi
 
