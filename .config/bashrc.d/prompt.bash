@@ -69,6 +69,7 @@ if command -v nodenv &>/dev/null; then
     printf -v "$1" -- "[%s] " "$(nodenv version-name)"
   }
 else
+  echo "nodenv not found; skipping nodenv PS1 configuration" >&2
   __ps1_nodenv() { :; }
 fi
 
@@ -81,6 +82,7 @@ if command -v rbenv &>/dev/null; then
     printf -v "$1" -- "[%s] " "$(rbenv version-name)"
   }
 else
+  echo "rbenv not found; skipping rbenv PS1 configuration" >&2
   __ps1_rbenv() { :; }
 fi
 
@@ -88,20 +90,26 @@ fi
 # git
 #########################
 
-  # git's ps1 script already sourced by bash completion
+  # git's ps1 script should already sourced by bash completion
   # /usr/local/etc/bash_completion.d/git-prompt.sh
 
-__ps1_git() {
-  GIT_PS1_SHOWDIRTYSTATE=1 # display working directory state (* for modified/+ for staged)
-  GIT_PS1_SHOWSTASHSTATE=1 # display stashed state ($ if there are stashed files)
-  GIT_PS1_SHOWUPSTREAM=auto # display HEAD vs upstream state
-  GIT_PS1_SHOWUNTRACKEDFILES= # display untracked state(% if there are untracked files)
-  GIT_PS1_SHOWCOLORHINTS=
-  GIT_PS1_DESCRIBE_STYLE=branch # detached-head description
+if command -v __git_ps1 &>/dev/null; then
+  __ps1_git() {
+    GIT_PS1_SHOWDIRTYSTATE=1 # display working directory state (* for modified/+ for staged)
+    GIT_PS1_SHOWSTASHSTATE=1 # display stashed state ($ if there are stashed files)
+    GIT_PS1_SHOWUPSTREAM=auto # display HEAD vs upstream state
+    GIT_PS1_SHOWUNTRACKEDFILES= # display untracked state(% if there are untracked files)
+    GIT_PS1_SHOWCOLORHINTS=
+    GIT_PS1_DESCRIBE_STYLE=branch # detached-head description
 
-  __git_ps1 "" "" " (%s $(git rev-parse --abbrev-ref '@{u}' 2>/dev/null))"
-  printf -v "$1" -- "$PS1"
-}
+    __git_ps1 "" "" " (%s $(git rev-parse --abbrev-ref '@{u}' 2>/dev/null))"
+    printf -v "$1" -- "$PS1"
+  }
+else
+  echo "git-prompt not found; skipping git PS1 configuration" >&2
+  __ps1_git() { :; }
+fi
+
 
 #########################
 # prompt status
