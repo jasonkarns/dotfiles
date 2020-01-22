@@ -6,4 +6,5 @@ for config in "$XDG_CONFIG_HOME"/bashrc.d/**/*.bash{,.local}; do
   test -r "$config" && . "$_"
 done
 
+# all bashrc.d configs are sourced now, we can unset helpers
 unset __chwd_hook
