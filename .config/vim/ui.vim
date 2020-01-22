@@ -39,12 +39,16 @@
 
   " colorscheme
   syntax on
-  colorscheme solarized
+  try
+    colorscheme solarized
     if has('gui_running')
       set background=light
     else
       set background=dark
     endif
+  catch
+    echo "solarized theme unavailable"
+  endtry
 
   " guioptions
   set guioptions-=T " kill the toolbar in MacVim

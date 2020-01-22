@@ -5,12 +5,14 @@ augroup bundles
   filetype off                   " required for vundle
 
   set rtp+=$XDG_CONFIG_HOME/vim/vundle.vim        " add vundle to runtime path
-  call vundle#begin("$XDG_DATA_HOME/vim/bundle")  " invoke vundle
 
-  " let Vundle manage vundle
+  try
+    call vundle#begin("$XDG_DATA_HOME/vim/bundle")  " invoke vundle
+
+    " let Vundle manage vundle
     Plugin 'gmarik/vundle.vim'
 
-  " syntax utilities
+    " syntax utilities
     Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-endwise'
@@ -23,7 +25,7 @@ augroup bundles
     Plugin 'closetag.vim'
     Plugin 'godlygeek/tabular'
 
-  " languages/frameworks
+    " languages/frameworks
     Plugin 'w0rp/ale'
 
     Plugin 'sheerun/vim-polyglot'
@@ -49,7 +51,7 @@ augroup bundles
     Plugin 'tpope/vim-rake'
 
 
-  " utilities
+    " utilities
     Plugin 'airblade/vim-gitgutter'
     Plugin 'powerman/vim-plugin-ansiesc'
     Plugin 'tpope/vim-dispatch'
@@ -60,24 +62,26 @@ augroup bundles
     Plugin 'tpope/vim-obsession'
     Plugin 'tpope/vim-tbone'
     " disabling rsi for now because it breaks <ESC> in macros
-"    Plugin 'tpope/vim-rsi'
+    " Plugin 'tpope/vim-rsi'
     Plugin 'tpope/vim-projectile'
     Plugin 'tpope/vim-dotenv'
     Plugin 'editorconfig/editorconfig-vim'
     Plugin 'sjl/gundo.vim'
 
-  " finder
+    " finder
     Plugin 'tpope/vim-vinegar'
     " Plugin 'ack.vim'
     Plugin 'rking/ag.vim'
     Plugin 'kien/ctrlp.vim'
-    " Plugin 'scrooloose/nerdtree'
-    " Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-  " colors
+    " colors
     Plugin 'altercation/vim-colors-solarized'
 
-  call vundle#end()
+    call vundle#end()
+  catch
+    echo "vundle wasn't found"
+  endtry
+
   filetype plugin indent on
 
 augroup END
