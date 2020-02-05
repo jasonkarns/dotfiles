@@ -1,8 +1,3 @@
 browser-launcher/
 browser-launcher2/
 configstore/
-heroku/client
-heroku/usage
-heroku/autoupdate.*
-heroku/cacert.pem
-heroku/heroku-cli
