@@ -15,16 +15,21 @@ Pictures
 Projects
 Public
 Sites
+.Trash
 
 .cache/
 
 *.local
+
+# wontfix
+# https://github.com/apple/cups/issues/4243
 .cups
+.netrc
+# https://bugzilla.mindrot.org/show_bug.cgi?id=2050
+.ssh
+
 .dropbox
 .gist
 .gist.*
-.netrc
 .oracle_jre_usage/
-.ssh
-.Trash
 .zinc/
