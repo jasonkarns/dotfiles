@@ -21,7 +21,6 @@ Sites
 *.local
 .cups
 .dropbox
-.gem
 .gist
 .gist.*
 .heroku

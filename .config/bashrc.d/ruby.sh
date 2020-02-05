@@ -19,9 +19,8 @@ export IRBRC=$XDG_CONFIG_HOME/irb/config
 PATH="$(gem env gemdir)/bin:$PATH"
 
 export GEMRC=$XDG_CONFIG_HOME/gem/config.yml
-export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem/specs
-# export GEM_HOME=$XDG_DATA_HOME/gem
-# export GEM_PATH=$XDG_DATA_HOME/gem/ruby/*
+export GEM_HOME=$XDG_DATA_HOME/gem
+export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem
 
 
 #########################
