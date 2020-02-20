@@ -156,11 +156,18 @@
 	newHighlight = green
 
 [sendemail]
-	smtpserver = smtp.gmail.com
-	smtpserverport = 587
-	smtpencryption = tls
-	smtpuser = jason@testdouble.com
-	smtppass = { see .config/git/config.local }
+	confirm = auto
+	identity = jasonkarns
+	smtpEncryption = tls
+	smtpServer = smtp.gmail.com
+	smtpServerPort = 587
+	smtpPass = { see .config/git/config.local }
+[sendemail "jasonkarns"]
+	smtpUser = jason.karns@gmail.com
+[sendemail "testdouble"]
+	smtpUser = jason@testdouble.com
+[sendemail "github"]
+	smtpUser = jasonkarns@github.com
 
 [filter "media"]
 	clean = git-media-clean %f
