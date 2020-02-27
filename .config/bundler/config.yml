@@ -7,5 +7,5 @@ BUNDLE_GEM__MIT: "true"
 BUNDLE_GEM__TEST: "false"
 BUNDLE_INIT_GEMS_RB: "true"
 BUNDLE_SUPPRESS_INSTALL_USING_MESSAGES: "true"
-
 BUNDLE_LOCAL__RAKE_TO_RULE_THEM_ALL: "/Users/jasonkarns/Projects/rake_to_rule_them_all"
+BUNDLE_BUILD__NOKOGIRI: ""
