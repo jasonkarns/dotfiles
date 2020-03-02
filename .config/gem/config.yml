@@ -1,7 +1,9 @@
 ---
-install: --no-document --no-user-install
+install: --env-shebang --no-document --no-user-install
 
-update: --no-document --no-user-install
+update: --env-shebang --no-document --no-user-install
+
+pristine: --env-shebang
 
 uninstall: --user-install
 
