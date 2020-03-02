@@ -15,12 +15,14 @@ export IRBRC=$XDG_CONFIG_HOME/irb/config
 # rubygems
 #########################
 
-# ruby's gem dir is version-specific
-PATH="$(gem env gemdir)/bin:$PATH"
-
 export GEMRC=$XDG_CONFIG_HOME/gem/config.yml
+
+# share gems across rubies b/c bundler is a thing
 export GEM_HOME=$XDG_DATA_HOME/gem
-export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem
+export GEM_SPEC_CACHE=$GEM_HOME/specs
+
+# ensure gem executables are in PATH
+PATH="${GEM_HOME:=$(gem env gemdir)}/bin:$PATH"
 
 
 #########################
