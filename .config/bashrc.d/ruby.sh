@@ -3,7 +3,7 @@
 #########################
 
 # ruby is now keg_only in homebrew: https://github.com/Homebrew/homebrew-core/commit/b4bf45228a
-PATH="$HOMEBREW_PREFIX/opt/ruby/bin:$PATH"
+PATH="${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/ruby/bin:$PATH"
 
 #########################
 # irb
@@ -43,10 +43,10 @@ export BUNDLE_CONFIG=$BUNDLE_USER_CONFIG # until new version is released
 #########################
 
 # store rubies XDG style
-export RBENV_ROOT=$HOMEBREW_PREFIX/var/rbenv
+export RBENV_ROOT=${HOMEBREW_PREFIX:=$(brew --prefix)}/var/rbenv
 
 if command -v rbenv &>/dev/null; then
   eval "$(rbenv init -)"
 fi
 
-export RUBY_CONFIGURE_OPTS="--with-readline-dir=$HOMEBREW_PREFIX/opt/readline"
+export RUBY_CONFIGURE_OPTS="--with-readline-dir=${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/readline"
