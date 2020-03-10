@@ -45,7 +45,7 @@ export BUNDLE_CONFIG=$BUNDLE_USER_CONFIG # until new version is released
 # store rubies XDG style
 export RBENV_ROOT=${HOMEBREW_PREFIX:=$(brew --prefix)}/var/rbenv
 
-if command -v rbenv &>/dev/null; then
+if command -v rbenv >/dev/null 2>/dev/null; then
   eval "$(rbenv init -)"
 fi
 
