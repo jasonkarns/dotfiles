@@ -15,6 +15,3 @@ alias hs='hub sync'
 #########################
 # contrib
 #########################
-
-# new-workdir
-PATH="$PATH:/usr/local/share/git-core/contrib/workdir"
