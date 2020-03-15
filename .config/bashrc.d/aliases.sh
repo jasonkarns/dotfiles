@@ -13,7 +13,7 @@ alias confirm='read -rp "Continue? [Y/n]
 alias upbrew='brew update ; brew doctor || confirm && brew outdated && brew upgrade'
 alias upgpg='keybase pgp pull'
 alias upnpm='NODENV_VERSION=system npm update -g --quiet'
-alias upnodenv='nodenv update && nodenv update-version-defs --dry-run'
+alias upnodenv='nodenv update && nodenv rehash && nodenv update-version-defs --dry-run'
 alias uprbenv='rbenv update && rbenv rehash && rbenv update-version-defs --dry-run'
 alias upvim='vim +PluginUpdate +PluginClean +qall'
 alias upall='upbrew && upnodenv && uprbenv && upvim && upgpg && upnpm'
