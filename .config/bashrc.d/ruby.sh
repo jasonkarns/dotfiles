@@ -46,7 +46,7 @@ export BUNDLE_CONFIG=$BUNDLE_USER_CONFIG # until new version is released
 export RBENV_ROOT=${HOMEBREW_PREFIX:=$(brew --prefix)}/var/rbenv
 
 if command -v rbenv >/dev/null 2>/dev/null; then
-  eval "$(rbenv init -)"
+  eval "$(rbenv init - --no-rehash)"
 fi
 
 readline_dir="${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/readline"
