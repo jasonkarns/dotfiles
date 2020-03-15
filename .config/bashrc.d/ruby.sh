@@ -49,4 +49,8 @@ if command -v rbenv >/dev/null 2>/dev/null; then
   eval "$(rbenv init -)"
 fi
 
-export RUBY_CONFIGURE_OPTS="--with-readline-dir=${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/readline"
+readline_dir="${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/readline"
+if [ -r "$readline_dir" ]; then
+  export RUBY_CONFIGURE_OPTS="--with-readline-dir=$readline_dir"
+fi
+unset readline_dir
