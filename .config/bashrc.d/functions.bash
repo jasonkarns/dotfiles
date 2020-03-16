@@ -18,3 +18,14 @@ server() {
   # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
+
+# auto-register bash completion for tools that support `--generate-bash-completion`
+# example usage: `complete -F _cli_bash_autocomplete keybase`
+_cli_bash_autocomplete() {
+  local cur opts
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  opts=$( "${COMP_WORDS[@]:0:$COMP_CWORD}" --generate-bash-completion )
+  mapfile -t COMPREPLY < <(compgen -W "${opts}" -- "${cur}")
+
+  return 0
+}
