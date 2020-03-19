@@ -3,15 +3,12 @@
 # It should be sourced by bashrc so it will take effect for interactive shells.
 # The wrapper functions are not exported, so they shouldn't impact scripts.
 
-declare -ag __chwd_hooks
+__CHWD_HOOKS=""
 
 # The prototype function which will be defined per builtin
 __chwd__() {
   builtin __chwd__ "$@" || return
-
-  for __hook in "${__chwd_hooks[@]}"; do
-    eval "$__hook"
-  done || true
+  eval $__CHWD_HOOKS || true
 }
 
 for c in cd popd pushd; do
@@ -21,7 +18,7 @@ for c in cd popd pushd; do
 done && unset __chwd__
 
 __chwd_hook() {
-  __chwd_hooks+=("$1")
+  __CHWD_HOOKS+="${1%;}; "
 }
 
 __chwd_entering() {
