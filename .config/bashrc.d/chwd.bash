@@ -10,7 +10,7 @@ __chwd__() {
   builtin __chwd__ "$@" || return
 
   for __hook in "${__chwd_hooks[@]}"; do
-    eval "$__hook" || break
+    eval "$__hook"
   done || true
 }
 
@@ -22,4 +22,12 @@ done && unset __chwd__
 
 __chwd_hook() {
   __chwd_hooks+=("$1")
+}
+
+__chwd_entering() {
+  __chwd_hook "[[ \"\$PWD\" == \"$1\"* ]] && [[ \"\$OLDPWD\" != \"$1\"* ]] && $2;"
+}
+
+__chwd_leaving() {
+  __chwd_hook "[[ \"\$PWD\" != \"$1\"* ]] && [[ \"\$OLDPWD\" == \"$1\"* ]] && $2;"
 }
