@@ -6,3 +6,6 @@ export HOMEBREW_PREFIX=/usr/local
 export HOMEBREW_NO_ANALYTICS=1
 
 export HOMEBREW_CACHE="$XDG_CACHE_HOME/Homebrew"
+
+# don't install the following formula when running brew-bundle
+export HOMEBREW_BUNDLE_BREW_SKIP="awssume docker docker-machine"
