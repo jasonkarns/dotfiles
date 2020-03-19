@@ -2,8 +2,17 @@
 
 export GIT_COMPLETION_CHECKOUT_NO_GUESS=0
 
-__chwd_hook '[[ "$PWD" != "$HOME/Projects/github/github"* ]]; GIT_COMPLETION_CHECKOUT_NO_GUESS=$?'
-__chwd_hook 'if [[ "$PWD" == "$HOME/Projects/github/github"* ]]; \
-              then HOMEBREW_BUNDLE_BREW_SKIP="awssume docker docker-machine"; \
-              else unset HOMEBREW_BUNDLE_BREW_SKIP; \
-            fi'
+github_dotcom_enter() {
+  echo "entering github"
+  GIT_COMPLETION_CHECKOUT_NO_GUESS=0
+  PATH="$HOME/Projects/github/github/bin:$PATH"
+}
+
+github_dotcom_leave() {
+  echo "leaving github"
+  GIT_COMPLETION_CHECKOUT_NO_GUESS=1
+  PATH="${PATH#$HOME/Projects/github/github/bin:}"
+}
+
+__chwd_entering '$HOME/Projects/github/github' 'github_dotcom_enter'
+__chwd_leaving '$HOME/Projects/github/github' 'github_dotcom_leave'
