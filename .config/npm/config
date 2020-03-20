@@ -12,7 +12,7 @@ devdir=${XDG_CACHE_HOME}/node-gyp
 init-module=${XDG_CONFIG_HOME}/npm/init-module.js
 init-author-name=Jason Karns
 init-author-email=jason.karns@gmail.com
-init-author-url=http://jason.karns.name/
+init-author-url=http://jasonkarns.com
 init-version=0.0.0
 init-license=MIT
 
