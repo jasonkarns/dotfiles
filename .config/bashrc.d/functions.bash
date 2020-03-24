@@ -1,13 +1,14 @@
 # fuzzy finder and path change for code projects
 code() {
+  # shellcheck disable=2086
   cd "$(IFS=: && echo $CODEPATH | xargs -J % find % -maxdepth 1 -type d | sort -u | selecta "${1:+ -s $1}")" || return
 }
 
 # Create a new directory and enter it
-md() { mkdir -p "$@" && cd "$@"; }
+md() { mkdir -p "$@" && cd "$@" || return; }
 
 # cd into whatever is the forefront Finder window.
-cdf() { cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"; }
+cdf() { cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return; }
 
 # Start an HTTP server from a directory, optionally specifying the port
 server() {
