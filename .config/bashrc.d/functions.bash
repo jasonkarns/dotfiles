@@ -7,6 +7,9 @@ code() {
 # Create a new directory and enter it
 md() { mkdir -p "$@" && cd "$@" || return; }
 
+# Create a temp directory and enter it
+mdtmp() { cd "$(mktemp -d)" || return; }
+
 # cd into whatever is the forefront Finder window.
 cdf() { cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return; }
 
