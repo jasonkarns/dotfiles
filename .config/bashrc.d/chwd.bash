@@ -20,8 +20,17 @@ done && unset __chwd_proto__
 __chwd_hook() {
   case "$1" in
   --eval) eval "$__CHWD_HOOKS" || true;;
-  --entering) shift; __chwd_hook "[[ \"\$PWD\" == \"$1\"* ]] && [[ \"\$OLDPWD\" != \"$1\"* ]] && $2;" ;;
-  --leaving) shift; __chwd_hook "[[ \"\$PWD\" != \"$1\"* ]] && [[ \"\$OLDPWD\" == \"$1\"* ]] && $2;" ;;
-  *) __CHWD_HOOKS+="${1%;}; "
+
+  --entering) __chwd_hook "if [[ \"\$PWD\" == \"$2\"* ]] && [[ \"\$OLDPWD\" != \"$2\"* ]]; then
+  $(cat -)
+fi" ;;
+
+  --leaving) __chwd_hook "if [[ \"\$PWD\" != \"$2\"* ]] && [[ \"\$OLDPWD\" == \"$2\"* ]]; then
+  $(cat -)
+fi" ;;
+
+  *) __CHWD_HOOKS+="
+$1
+"
   esac
 }
