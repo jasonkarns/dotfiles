@@ -14,5 +14,5 @@ github_dotcom_leave() {
   PATH="${PATH#$HOME/Projects/github/github/bin:}"
 }
 
-__chwd_entering '$HOME/Projects/github/github' 'github_dotcom_enter'
-__chwd_leaving '$HOME/Projects/github/github' 'github_dotcom_leave'
+__chwd_hook --entering ~/Projects/github/github 'github_dotcom_enter'
+__chwd_hook --leaving ~/Projects/github/github 'github_dotcom_leave'
