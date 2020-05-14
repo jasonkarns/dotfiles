@@ -66,7 +66,7 @@ unset __colorbit
 
 if command -v nodenv &>/dev/null; then
   __ps1_nodenv() {
-    printf -v "$1" -- "[%s] " "$(nodenv version-name)"
+    printf -v "$1" -- "[%s] " "$(nodenv version-name 2>/dev/null)"
   }
 else
   echo "nodenv not found; skipping nodenv PS1 configuration" >&2
@@ -79,7 +79,7 @@ fi
 
 if command -v rbenv &>/dev/null; then
   __ps1_rbenv() {
-    printf -v "$1" -- "[%s] " "$(rbenv version-name)"
+    printf -v "$1" -- "[%s] " "$(rbenv version-name 2>/dev/null)"
   }
 else
   echo "rbenv not found; skipping rbenv PS1 configuration" >&2
