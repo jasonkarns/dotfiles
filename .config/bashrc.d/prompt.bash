@@ -110,6 +110,18 @@ else
   __ps1_git() { :; }
 fi
 
+#########################
+# command duration
+#########################
+
+declare -i __DURATION
+
+__timer() {
+  __DURATION=$((SECONDS - __TIMER))
+  unset __TIMER
+}
+
+trap ': ${__TIMER:=$SECONDS}' DEBUG
 
 #########################
 # prompt status
@@ -138,4 +150,4 @@ __ps1() {
   printf -v PS1 -- "$__ps1_yellow$node$__ps1_red$ruby$__ps1_cyan$cwd$__ps1_white$git\\n$prompt\\$ $__ps1_reset_color"
 }
 
-PROMPT_COMMAND='__ps1; '$PROMPT_COMMAND
+PROMPT_COMMAND='__ps1; '$PROMPT_COMMAND'; __timer'
