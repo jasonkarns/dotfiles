@@ -9,4 +9,5 @@
 export BASH_COMPLETION_COMPAT_DIR="${HOMEBREW_PREFIX:=$(brew --prefix)}/etc/bash_completion.d"
 
 # init bash-completion@2
-test -r "${HOMEBREW_PREFIX:=$(brew --prefix)}/etc/profile.d/bash_completion.sh" && . "$_"
+completion=${HOMEBREW_PREFIX:=$(brew --prefix)}/etc/profile.d/bash_completion.sh
+test -r "$completion" && . "$completion"
