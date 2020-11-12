@@ -1,7 +1,7 @@
 [user]
 	email = jason+github@testdouble.com
 [sendemail]
-	identity = github
+	smtpUser = jasonkarns@github.com
 [remote "origin"]
 	tagOpt = --no-tags
 

@@ -168,8 +168,6 @@
 	smtpUser = jason.karns@gmail.com
 [sendemail "testdouble"]
 	smtpUser = jason@testdouble.com
-[sendemail "github"]
-	smtpUser = jasonkarns@github.com
 
 [filter "media"]
 	clean = git-media-clean %f
