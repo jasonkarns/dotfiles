@@ -7,8 +7,7 @@ alias g='grep -I --ignore-case --recursive --exclude-dir=.git --exclude-dir=tmp'
 # select from modified git files and open in vim
 alias vg='vim "$(git rev-parse --show-toplevel)/$(git status --porcelain | "$XDG_CONFIG_HOME/bashrc.d/git-status-order" | cut -c 3- | selecta)"'
 
-alias confirm='read -rp "Continue? [Y/n]
-" -t10 && [[ "$REPLY" =~ ^[Yy]?$ ]]'
+alias confirm='read -p "Press any key to continue anyway or Ctrl-C to quit"'
 
 alias upbrew='brew update ; brew doctor || confirm && brew outdated && brew upgrade'
 alias upgpg='keybase pgp pull'
