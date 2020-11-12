@@ -1,0 +1,7 @@
+[user]
+	email = jason+singlestone@testdouble.com
+
+[interactive]
+	diffFilter = cat
+
+# vi: ft=gitconfig

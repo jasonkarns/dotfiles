@@ -195,6 +195,9 @@
 [includeIf "gitdir:~/Projects/github/"]
 	path = config.github
 
+[includeIf "gitdir:~/Projects/singlestone/"]
+	path = config.singlestone
+
 [includeIf "gitdir:Homebrew/"]
 	path = config.homebrew
 
