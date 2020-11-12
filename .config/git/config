@@ -90,6 +90,8 @@
 [commit]
 	verbose = true
 	gpgsign = true
+[tag]
+	gpgsign = true
 [fetch]
 	prune = true
 [pull]
