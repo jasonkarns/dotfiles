@@ -121,6 +121,10 @@ __timer() {
   unset __TIMER
 }
 
+__duration() {
+  echo "$( bc -l <<< "scale=2; $__DURATION / 60") minutes"
+}
+
 trap ': ${__TIMER:=$SECONDS}' DEBUG
 
 #########################
