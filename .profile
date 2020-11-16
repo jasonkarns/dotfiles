@@ -1,4 +1,5 @@
-# shellcheck shell=bash disable=SC2034
+# vi: ft=bash
+# shellcheck disable=SC2034
 
 # http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
 

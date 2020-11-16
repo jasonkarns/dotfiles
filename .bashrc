@@ -1,3 +1,5 @@
+# vi: ft=bash
+
 # shell options
 shopt -s dirspell globstar histappend histverify nocaseglob nullglob
 
