@@ -39,13 +39,13 @@ export VAGRANT_ALIAS_FILE=$XDG_DATA_HOME/vagrant/aliases
 export IEVMS_HOME=$XDG_DATA_HOME/ievms
 
 codehome="$HOME/Projects"
-printf -v CODEPATH -- ":$codehome/%s" bats nodenv rbenv td linemanjs github 3am singlestone
+printf -v CODEPATH -- ":$codehome/%s" bats nodenv rbenv td linemanjs github 3am singlestone pga
 export CODEPATH=${codehome}${CODEPATH}
 unset codehome
 
 for config in "$XDG_CONFIG_HOME"/bashrc.d/*.sh{,.local} ~/.bashrc; do
   # shellcheck disable=SC1090
-  test -r "$config" && . "$_"
+  test -r "$config" && . "$config"
 done
 unset config
 
