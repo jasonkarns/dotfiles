@@ -73,6 +73,7 @@
 [difftool]
 	prompt = false
 [merge]
+	autoStash = true
 	defaultToUpstream = true
 	ff = false
 	log = 999
@@ -83,7 +84,8 @@
 ; 	driver = bundle lock && git add -- Gemfile.lock
 
 [rebase]
-	autosquash = true
+	autoSquash = true
+	autoStash = true
 [interactive]
 	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
 
