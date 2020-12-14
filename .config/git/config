@@ -197,6 +197,9 @@
 [includeIf "gitdir:~/Projects/github/"]
 	path = config.github
 
+[includeIf "gitdir:~/Projects/pga/"]
+	path = config.pga
+
 [includeIf "gitdir:~/Projects/singlestone/"]
 	path = config.singlestone
 
