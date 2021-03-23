@@ -63,7 +63,7 @@ augroup bundles
     Plugin 'tpope/vim-tbone'
     " disabling rsi for now because it breaks <ESC> in macros
     " Plugin 'tpope/vim-rsi'
-    Plugin 'tpope/vim-projectile'
+    Plugin 'tpope/vim-projectionist'
     Plugin 'tpope/vim-dotenv'
     Plugin 'editorconfig/editorconfig-vim'
     Plugin 'sjl/gundo.vim'
