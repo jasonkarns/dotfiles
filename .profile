@@ -3,11 +3,11 @@
 
 # http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
 
-PATH=$HOME/bin:$PATH
+PATH=${HOME:?}/bin:/usr/local/sbin:$PATH
 
 # XDG
 export XDG_DATA_HOME=/usr/local/share
-export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG_HOME=${HOME:?}/.config
 export XDG_DATA_DIRS=/usr/share/
 export XDG_CONFIG_DIRS=/etc/xdg
 export XDG_CACHE_HOME=/usr/local/cache
@@ -16,35 +16,35 @@ export XDG_RUNTIME_DIR=$TMPDIR
 # env
 export EDITOR=vim
 export PAGER=less
-export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
+export INPUTRC=${XDG_CONFIG_HOME:?}/readline/inputrc
 export LESS=FRXi
-export LESSHISTFILE=$XDG_DATA_HOME/less/history
-export LESSKEY=$XDG_CONFIG_HOME/less/lesskey
-export RANDFILE=$XDG_DATA_HOME/openssl/rnd
-export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
+export LESSHISTFILE=${XDG_DATA_HOME:?}/less/history
+export LESSKEY=${XDG_CONFIG_HOME:?}/less/lesskey
+export RANDFILE=${XDG_DATA_HOME:?}/openssl/rnd
+export XAUTHORITY=${XDG_RUNTIME_DIR:?}/Xauthority
 
-export VIMINIT="let \$MYVIMRC=\"$XDG_CONFIG_HOME/vim/vimrc\" | source \$MYVIMRC"
+export VIMINIT="let \$MYVIMRC=\"${XDG_CONFIG_HOME:?}/vim/vimrc\" | source \$MYVIMRC"
 
 # databass
-export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql/history
-export PSQLRC=$XDG_CONFIG_HOME/pg/config
-export PSQL_HISTORY=$XDG_DATA_HOME/pg/history
-export PGPASSFILE=$XDG_CONFIG_HOME/pg/pgpass
-export PGSERVICEFILE=$XDG_CONFIG_HOME/pg/pg_service.conf
+export MYSQL_HISTFILE=${XDG_DATA_HOME:?}/mysql/history
+export PSQLRC=${XDG_CONFIG_HOME:?}/pg/config
+export PSQL_HISTORY=${XDG_DATA_HOME:?}/pg/history
+export PGPASSFILE=${XDG_CONFIG_HOME:?}/pg/pgpass
+export PGSERVICEFILE=${XDG_CONFIG_HOME:?}/pg/pg_service.conf
 
 # virtual
-export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
-export MACHINE_STORAGE_PATH=$XDG_DATA_HOME/docker-machine
-export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
-export VAGRANT_ALIAS_FILE=$XDG_DATA_HOME/vagrant/aliases
-export IEVMS_HOME=$XDG_DATA_HOME/ievms
+export DOCKER_CONFIG=${XDG_CONFIG_HOME:?}/docker
+export MACHINE_STORAGE_PATH=${XDG_DATA_HOME:?}/docker-machine
+export VAGRANT_HOME=${XDG_DATA_HOME:?}/vagrant
+export VAGRANT_ALIAS_FILE=${XDG_DATA_HOME:?}/vagrant/aliases
+export IEVMS_HOME=${XDG_DATA_HOME:?}/ievms
 
-codehome="$HOME/Projects"
-printf -v CODEPATH -- ":$codehome/%s" bats nodenv rbenv td linemanjs github 3am singlestone pga
-export CODEPATH=${codehome}${CODEPATH}
+codehome="${HOME:?}/Projects"
+printf -v CODEPATH -- ":${codehome:?}/%s" bats nodenv rbenv td linemanjs github 3am singlestone pga
+export CODEPATH=${codehome:?}${CODEPATH:?}
 unset codehome
 
-for config in "$XDG_CONFIG_HOME"/bashrc.d/*.sh{,.local} ~/.bashrc; do
+for config in "${XDG_CONFIG_HOME:?}"/bashrc.d/*.sh{,.local} ~/.bashrc; do
   # shellcheck disable=SC1090
   test -r "$config" && . "$config"
 done
