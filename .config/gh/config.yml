@@ -1,0 +1,4 @@
+git_protocol: ssh
+prompt: enabled
+aliases:
+    co: '!gh pr checkout "${1:-$(gh pr list -L100 | fzf | cut -f1)}"'
