@@ -1,0 +1,9 @@
+# First URL rewrite appears to win
+# rewrite remotes to use ssh
+[url "git@github.com:"]
+	insteadOf = gh:
+	insteadOf = github:
+	insteadOf = http://github.com/
+	insteadOf = https://github.com/
+
+# vi: ft=gitconfig

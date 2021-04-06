@@ -190,27 +190,3 @@
 
 [include]
 	path = config.local
-
-[includeIf "gitdir:~/Projects/electricai/"]
-	path = config.electricai
-
-[includeIf "gitdir:~/Projects/github/"]
-	path = config.github
-
-[includeIf "gitdir:~/Projects/pga/"]
-	path = config.pga
-
-[includeIf "gitdir:~/Projects/singlestone/"]
-	path = config.singlestone
-
-[includeIf "gitdir:Homebrew/"]
-	path = config.homebrew
-
-# First URL rewrite appears to win,
-# so these need to _follow_ the other config includes.
-[url "git@github.com:"]
-	insteadOf = gh:
-	insteadOf = ghub:
-	insteadOf = github:
-	insteadOf = http://github.com/
-	insteadOf = https://github.com/

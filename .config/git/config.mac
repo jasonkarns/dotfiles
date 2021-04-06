@@ -1,4 +1,7 @@
 [credential]
   helper = osxkeychain
 
+[includeIf "gitdir:Homebrew/"]
+	path = config.homebrew
+
 # vi: ft=gitconfig
