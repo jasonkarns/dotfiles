@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cd ~
+
+cat .bash_history >> "${XDG_DATA_HOME:?}/bash/history"
+rm .bash_history
+
+mv .bash_sessions/* "${XDG_DATA_HOME:?}/bash/sessions/"
+rm -rf .bash_sessions
+
+sudo sed -i'' -e $'s| *SHELL_SESSION_DIR="$HOME/.bash_sessions"|HISTFILE="/usr/local/share/bash/history"\\nSHELL_SESSION_DIR="/usr/local/share/bash/sessions"|' /etc/bashrc_Apple_Terminal
+
+echo "Restart the shell"
