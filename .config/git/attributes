@@ -1,2 +1,4 @@
 # http://bitfission.com/pub/software/scm/git/docs/gitattributes.html
 Gemfile.lock merge=gemfilelock
+
+db/structure.sql merge=merge-structure-sql

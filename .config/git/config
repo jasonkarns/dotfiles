@@ -1,5 +1,6 @@
 [core]
 	excludesfile = ~/.config/git/ignore ; this is the default
+	attributesfile = ~/.config/git/attributes ; this is the default
 	editor = vim
 	autocrlf = input
 	; safecrlf = warn
@@ -82,6 +83,9 @@
 ; [merge "gemfilelock"]
 ; 	name = Relocks Gemfile.lock
 ; 	driver = bundle lock && git add -- Gemfile.lock
+[merge "merge-structure-sql"] ; https://rubygems.org/gems/git-merge-structure-sql
+	name = Rails structure.sql merge driver
+	driver = git-merge-structure-sql %A %O %B
 
 [rebase]
 	autoSquash = true
