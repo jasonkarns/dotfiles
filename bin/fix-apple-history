@@ -4,11 +4,15 @@ set -euo pipefail
 
 cd ~
 
-cat .bash_history >> "${XDG_DATA_HOME:?}/bash/history"
-rm .bash_history
+if [ -f .bash_history ]; then
+  cat .bash_history >> "${XDG_DATA_HOME:?}/bash/history"
+  rm .bash_history
+fi
 
-mv .bash_sessions/* "${XDG_DATA_HOME:?}/bash/sessions/"
-rm -rf .bash_sessions
+if [ -d .bash_sessions ]; then
+  mv .bash_sessions/* "${XDG_DATA_HOME:?}/bash/sessions/"
+  rm -rf .bash_sessions
+fi
 
 sudo sed -i'' -e $'s| *SHELL_SESSION_DIR="$HOME/.bash_sessions"|HISTFILE="/usr/local/share/bash/history"\\nSHELL_SESSION_DIR="/usr/local/share/bash/sessions"|' /etc/bashrc_Apple_Terminal
 
