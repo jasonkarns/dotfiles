@@ -2,6 +2,14 @@
 
 set -euo pipefail
 
+# set default data_home when invoked via Automator
+while getopts "d:" opt; do
+  case "$opt" in
+  d) : "${XDG_DATA_HOME:=$OPTARG}" ;;
+  *) break ;;
+  esac
+done
+
 cd ~
 
 if [ -f .bash_history ]; then
