@@ -40,7 +40,7 @@ export VAGRANT_ALIAS_FILE=${XDG_DATA_HOME:?}/vagrant/aliases
 export IEVMS_HOME=${XDG_DATA_HOME:?}/ievms
 
 codehome="${HOME:?}/Projects"
-printf -v CODEPATH -- ":${codehome:?}/%s" bats nodenv rbenv td linemanjs github 3am singlestone pga
+printf -v CODEPATH -- ":${codehome:?}/%s" bats nodenv rbenv td linemanjs github 3am artium
 export CODEPATH=${codehome:?}${CODEPATH:?}
 unset codehome
 
