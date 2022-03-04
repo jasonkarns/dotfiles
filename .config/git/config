@@ -73,6 +73,8 @@
 	wordRegex = [A-z0-9_]+|[^[:space:]]
 [difftool]
 	prompt = false
+[diff "rails_credentials"]
+	textconv = bin/rails credentials:diff
 [merge]
 	autoStash = true
 	defaultToUpstream = true
