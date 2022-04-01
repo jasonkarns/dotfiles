@@ -28,7 +28,6 @@ Sites
 # https://bugzilla.mindrot.org/show_bug.cgi?id=2050
 .ssh
 
-.dropbox
 .gist
 .gist.*
 .oracle_jre_usage/
