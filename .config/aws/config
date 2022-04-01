@@ -1,4 +1,39 @@
-[profile electric]
+# vi: ft=dosini
+
+[default]
 region = us-east-1
 
-# vi: ft=dosini
+[profile pga-dev]
+sso_account_id = 696154229471
+sso_role_name = Admin
+sso_start_url = https://pgahq.awsapps.com/start/
+sso_region = us-east-1
+region = us-east-1
+output = json
+
+[profile pga-qa]
+sso_account_id = 916520487680
+sso_role_name = Admin
+sso_start_url = https://pgahq.awsapps.com/start/
+sso_region = us-east-1
+region = us-east-1
+output = json
+
+[profile pga-qa-readonly]
+sso_account_id = 916520487680
+sso_role_name = DeveloperRead
+sso_start_url = https://pgahq.awsapps.com/start/
+sso_region = us-east-1
+region = us-east-1
+output = json
+
+[profile pga-prod-readonly]
+sso_account_id = 903002330563
+sso_role_name = PGAComDeveloper
+sso_start_url = https://pgahq.awsapps.com/start/
+sso_region = us-east-1
+region = us-east-1
+output = json
+
+[profile electric]
+region = us-east-1
