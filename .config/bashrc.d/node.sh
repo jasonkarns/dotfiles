@@ -2,15 +2,15 @@
 # node       #
 ##############
 
-export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/history
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/history"
 
 
 ##############
 # nodenv     #
 ##############
 
-# store nodes under brew (or /usr/local)
-export NODENV_ROOT=${HOMEBREW_PREFIX:=$(brew --prefix)}/var/nodenv
+# store nodes XDG style
+export NODENV_ROOT=/opt/nodenv
 
 if command -v nodenv >/dev/null 2>&1; then
   eval "$(nodenv init - --no-rehash)"
@@ -20,7 +20,7 @@ fi
 # npm        #
 ##############
 
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
 
 ##############
 # node-gyp   #
@@ -42,4 +42,4 @@ export JOBS=max
 # babel      #
 ##############
 
-export BABEL_CACHE_PATH=$XDG_CACHE_HOME/babel.json
+export BABEL_CACHE_PATH="$XDG_CACHE_HOME/babel.json"
