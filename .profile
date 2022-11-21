@@ -6,7 +6,7 @@
 PATH=${HOME:?}/bin:/usr/local/sbin:$PATH
 
 # XDG
-export XDG_DATA_HOME=/usr/local/share
+export XDG_DATA_HOME=${HOME:?}/.local/share
 export XDG_CONFIG_HOME=${HOME:?}/.config
 export XDG_DATA_DIRS=/usr/share/
 export XDG_CONFIG_DIRS=/etc/xdg
