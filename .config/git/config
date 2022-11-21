@@ -106,6 +106,7 @@
 	rebase = merges
 	tags = true
 [push]
+	autoSetupRemote = true
 	default = upstream
 	followTags = true
 [rerere]
