@@ -59,9 +59,9 @@
 
 [pager]
 	; https://blog.github.com/2016-06-13-git-2-9-has-been-released/
-	log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
-	show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
-	diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+	log = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
+	show = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
+	diff = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
 
 [diff]
 	; algorithm = patience
@@ -93,7 +93,7 @@
 	autoSquash = true
 	autoStash = true
 [interactive]
-	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
+	diffFilter = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight
 
 [commit]
 	verbose = true
