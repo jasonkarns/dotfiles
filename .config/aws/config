@@ -3,6 +3,34 @@
 [default]
 region = us-east-1
 
+[profile mhq-shared]
+region = us-gov-west-1
+sso_region = us-gov-west-1
+sso_account_id = 030893355295
+sso_role_name = MoveHQReadOnly
+sso_start_url = https://start.us-gov-home.awsapps.com/directory/d-98672cf721
+
+[profile mhq-dev]
+region = us-gov-west-1
+sso_region = us-gov-west-1
+sso_account_id = 030904255701
+sso_role_name = MoveHQReadOnly
+sso_start_url = https://start.us-gov-home.awsapps.com/directory/d-98672cf721
+
+[profile mhq-qa]
+region = us-gov-west-1
+sso_region = us-gov-west-1
+sso_account_id = 030906654674
+sso_role_name = MoveHQReadOnly
+sso_start_url = https://start.us-gov-home.awsapps.com/directory/d-98672cf721
+
+[profile mhq-prod]
+region = us-gov-west-1
+sso_region = us-gov-west-1
+sso_account_id = 030918202884
+sso_role_name = MoveHQReadOnly
+sso_start_url = https://start.us-gov-home.awsapps.com/directory/d-98672cf721
+
 [profile pga-dev]
 sso_account_id = 696154229471
 sso_role_name = Admin
