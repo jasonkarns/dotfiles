@@ -51,6 +51,14 @@ fi
 
 readline_dir="${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/readline"
 if [ -r "$readline_dir" ]; then
-  export RUBY_CONFIGURE_OPTS="--with-readline-dir=$readline_dir"
+  RUBY_CONFIGURE_OPTS="--with-readline-dir=$readline_dir${RUBY_CONFIGURE_OPTS:+ $RUBY_CONFIGURE_OPTS}"
 fi
 unset readline_dir
+
+# openssl_dir="${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/openssl@1.1"
+# if [ -r "$openssl_dir" ]; then
+#   RUBY_CONFIGURE_OPTS="--with-openssl-dir=$openssl_dir${RUBY_CONFIGURE_OPTS:+ $RUBY_CONFIGURE_OPTS}"
+# fi
+# unset openssl_dir
+
+export RUBY_CONFIGURE_OPTS
