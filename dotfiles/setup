@@ -12,9 +12,8 @@ cd "${HOME}"
   git config core.worktree "$HOME"
   git config core.sparseCheckout true
   printf '/*\n!readme.md' | git sparse-checkout set --stdin
-  echo "gitdir: ~/dotfiles/.git" > ~/git
-  git config alias.regit '!mv ~/{,.}git'
-  git config alias.ungit '!mv ~/{.,}git'
+  git config alias.regit '!cp ~/{,.}git'
+  git config alias.ungit '!rm ~/.git'
   git checkout main
   git submodule update
 }
