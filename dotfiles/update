@@ -3,4 +3,8 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-brew bundle --file=~/.config/Brewfile
+export HOMEBREW_BUNDLE_FILE=~/.config/Brewfile
+brew bundle check || {
+  echo "==> Installing Homebrew dependencies…"
+  brew bundle
+}

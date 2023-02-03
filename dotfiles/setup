@@ -7,7 +7,7 @@ cd "${HOME}"
 [ -d dotfiles ] || { # assume dotfiles existence is configured
   git clone --no-checkout https://github.com/jasonkarns/dotfiles.git
 
-  # Configure dotfiles
+  echo "==> Configuring Dotfiles…"
   cd dotfiles
   git config core.worktree "$HOME"
   git config core.sparseCheckout true
@@ -21,6 +21,7 @@ cd "${HOME}"
 
 # Install homebrew
 command -v brew &>/dev/null || {
+  echo "==> Installing Homebrew…"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
