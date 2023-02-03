@@ -22,6 +22,6 @@ if [ -d .bash_sessions ]; then
   rm -rf .bash_sessions
 fi
 
-sudo sed -i'' -e $'s| *SHELL_SESSION_DIR="$HOME/.bash_sessions"|HISTFILE="/usr/local/share/bash/history"\\nSHELL_SESSION_DIR="/usr/local/share/bash/sessions"|' /etc/bashrc_Apple_Terminal
+sudo sed -i '' -e $'s| *SHELL_SESSION_DIR="$HOME/.bash_sessions"|HISTFILE="${XDG_DATA_HOME:?}/bash/history"\\nSHELL_SESSION_DIR="${XDG_DATA_HOME:?}/bash/sessions"|' /etc/bashrc_Apple_Terminal
 
 echo "Restart the shell"
