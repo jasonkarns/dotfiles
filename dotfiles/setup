@@ -13,7 +13,7 @@ git config core.worktree "$HOME"
 git config core.sparseCheckout true
 printf '/*\n!readme.md' | git sparse-checkout set --stdin
 echo "gitdir: ~/dotfiles/.git" > ~/git
-git config alias.regit 'regit = !mv ~/{,.}git'
+git config alias.regit '!mv ~/{,.}git'
 git config alias.ungit '!mv ~/{.,}git'
 git checkout main
 git submodule update
@@ -23,4 +23,4 @@ command -v brew &>/dev/null || {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
-# brew bundle --file=.config/Brewfile
+update
