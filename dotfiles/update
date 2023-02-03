@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-cd "$(dirname "$0")"
+cd ~
 
 export HOMEBREW_BUNDLE_FILE=~/.config/Brewfile
 brew bundle check || {
   echo "==> Installing Homebrew dependencies…"
   brew bundle
 }
+
+open .config/Solarized-JK.terminal
+defaults write com.apple.Terminal "Default Window Settings" -string "Solarized-JK"
+defaults write com.apple.Terminal "Startup Window Settings" -string "Solarized-JK"
