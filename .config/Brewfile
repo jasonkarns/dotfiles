@@ -119,7 +119,7 @@ cask "keybase"
 # cask "laullon-gitx"
 # cask "launchrocket"
 cask "licecap"
-cask "macvim"
+cask "macvim", args: ["force"] # conflicts with vim
 # cask "muzzle"
 # cask "ngrok"
 # cask "opera"
