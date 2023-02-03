@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-cd "$(dirname "$0")" # run from dotfiles dir
+
+cd "${HOME}"
+[ -d dotfiles ] || {
+  git clone --no-checkout https://github.com/jasonkarns/dotfiles.git
+}
 
 # Configure dotfiles
+cd dotfiles
 git config core.worktree "$HOME"
 git config core.sparseCheckout true
 printf '/*\n!readme.md' | git sparse-checkout set --stdin
