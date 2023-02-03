@@ -3,11 +3,10 @@
 IRB.conf.merge!(
   AUTO_INDENT: true,
   SAVE_HISTORY: 1000,
-  HISTORY_FILE: File.join(ENV.fetch('XDG_DATA_HOME', '~/.local/share'), 'irb/history'),
+  HISTORY_FILE: File.join(ENV.fetch('XDG_DATA_HOME', '~/.local/share'), 'irb_history'),
   PROMPT_MODE: :SIMPLE,
   USE_READLINE: true
 )
-
 
 require 'irb/completion'
 require 'awesome_print'
