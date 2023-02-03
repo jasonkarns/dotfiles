@@ -3,20 +3,21 @@
 set -euo pipefail
 
 cd "${HOME}"
-[ -d dotfiles ] || {
-  git clone --no-checkout https://github.com/jasonkarns/dotfiles.git
-}
 
-# Configure dotfiles
-cd dotfiles
-git config core.worktree "$HOME"
-git config core.sparseCheckout true
-printf '/*\n!readme.md' | git sparse-checkout set --stdin
-echo "gitdir: ~/dotfiles/.git" > ~/git
-git config alias.regit '!mv ~/{,.}git'
-git config alias.ungit '!mv ~/{.,}git'
-git checkout main
-git submodule update
+[ -d dotfiles ] || { # assume dotfiles existence is configured
+  git clone --no-checkout https://github.com/jasonkarns/dotfiles.git
+
+  # Configure dotfiles
+  cd dotfiles
+  git config core.worktree "$HOME"
+  git config core.sparseCheckout true
+  printf '/*\n!readme.md' | git sparse-checkout set --stdin
+  echo "gitdir: ~/dotfiles/.git" > ~/git
+  git config alias.regit '!mv ~/{,.}git'
+  git config alias.ungit '!mv ~/{.,}git'
+  git checkout main
+  git submodule update
+}
 
 # Install homebrew
 command -v brew &>/dev/null || {
