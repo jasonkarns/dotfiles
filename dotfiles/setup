@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+cd "$(dirname "$0")" # run from dotfiles dir
+
+# Configure dotfiles
+git config core.worktree "$HOME"
+git config core.sparseCheckout true
+printf '/*\n!readme.md' | git sparse-checkout set --stdin
+echo "gitdir: ~/dotfiles/.git" > ~/git
+git config alias.regit 'regit = !mv ~/{,.}git'
+git config alias.ungit '!mv ~/{.,}git'
+git checkout main
+git submodule update
+
+# Install homebrew
+command -v brew &>/dev/null || {
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
+# brew bundle --file=.config/Brewfile
