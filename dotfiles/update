@@ -6,10 +6,11 @@ cd ~
 clone_repos() { while read -r repo; do git clone "https://github.com/$repo.git"; done; }
 
 export HOMEBREW_BUNDLE_FILE=~/.config/Brewfile
-brew bundle check || {
+if brew bundle check; then upbrew
+else
   echo "==> Installing Homebrew dependencies…"
-  brew bundle
-}
+  brew bundle --no-lock
+fi
 
 if [ -d /opt/rbenv/plugins ]; then uprbenv
 else echo "==> Setting up rbenv…"
@@ -44,6 +45,9 @@ else echo "==> Setting up nodenv…"
 PLUGINS
   )
 fi
+
+echo "==> Setting up vim…"
+upvim
 
 open .config/Solarized-JK.terminal
 defaults write com.apple.Terminal "Default Window Settings" -string "Solarized-JK"
