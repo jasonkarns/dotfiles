@@ -97,7 +97,7 @@ cask "1password"
 cask "1password-cli"
 cask "alfred"
 # cask "betterzipql"
-# cask "colloquy"
+cask "choosy"
 cask "docker"
 cask "firefox"
 cask "font-fira-code"
@@ -121,11 +121,16 @@ cask "postman"
 # cask "qlstephen"
 # cask "quicklook-json"
 # cask "sequel-pro"
+cask "slack"
 # cask "suspicious-package"
 # cask "time-out"
 # cask "tunnelblick"
 # cask "viscosity"
 # cask "webpquicklook"
 cask "zoom"
+
+mas "1Password for Safari", id: 1569813296
+mas "Moom", id: 419330170
+mas "Shush - Microphone Manager", id: 496437906
 
 # vi: ft=ruby
