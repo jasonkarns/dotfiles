@@ -3,6 +3,8 @@
 set -euo pipefail
 cd ~
 
+echo "==> Customizing Mac Preferences…"
+
 # Terminal
 # open -g .config/Solarized-JK.terminal
 # defaults write -app Terminal "Default Window Settings" -string "Solarized-JK"

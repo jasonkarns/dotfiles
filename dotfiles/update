@@ -6,13 +6,18 @@ cd ~
 clone_repos() { while read -r repo; do git clone "https://github.com/$repo.git"; done; }
 
 export HOMEBREW_BUNDLE_FILE=~/.config/Brewfile
-if brew bundle check; then upbrew
+if brew bundle check; then
+  brew doctor
+  brew outdated
+  brew upgrade
 else
   echo "==> Installing Homebrew dependencies…"
   brew bundle --no-lock
 fi
 
-if [ -d /opt/rbenv/plugins ]; then uprbenv
+if [ -d /opt/rbenv/plugins ]; then
+  rbenv update
+  rbenv rehash
 else echo "==> Setting up rbenv…"
   sudo install -m 0755 -o "$USER" -d /opt/rbenv/plugins
   ( cd /opt/rbenv/plugins; clone_repos <<PLUGINS
@@ -30,7 +35,9 @@ PLUGINS
   )
 fi
 
-if [ -d /opt/nodenv/plugins ]; then upnodenv
+if [ -d /opt/nodenv/plugins ]; then
+  nodenv update
+  nodenv rehash
 else echo "==> Setting up nodenv…"
   sudo install -m 0755 -o "$USER" -d /opt/nodenv/plugins
   ( cd /opt/nodenv/plugins; clone_repos <<PLUGINS
@@ -47,6 +54,6 @@ PLUGINS
 fi
 
 echo "==> Setting up vim…"
-upvim
+vim +PluginUpdate +PluginClean +qall
 
 dotfiles/prefs
