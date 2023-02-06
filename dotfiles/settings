@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+cd ~
+
+# Terminal
+# open -g .config/Solarized-JK.terminal
+# defaults write -app Terminal "Default Window Settings" -string "Solarized-JK"
+# defaults write -app Terminal "Startup Window Settings" -string "Solarized-JK"
+# TODO confirm
+command -v bash | xargs defaults write -app Terminal Shell -string
+
+# Mail
+# FIXME these aren't taking effect
+sudo defaults write com.apple.universalaccess com.apple.custommenu.apps -array-add "com.apple.mail"
+defaults write -app Mail NSUserKeyEquivalents -dict-add "Archive" -string '@e'
+defaults write -app Mail NSUserKeyEquivalents -dict-add "Find..." -string '@~f'
+defaults write -app Mail NSUserKeyEquivalents -dict-add "Mailbox Search" -string '@f'
+
+# Calendar
+defaults write com.apple.iCal NSRequiresAquaSystemAppearance -bool true # force light mode
+
+# Keyboard
+defaults write "Apple Global Domain" KeyRepeat -int 2 # key repeat rate
+defaults write "Apple Global Domain" InitialKeyRepeat -int 15 # delay until repeat
+defaults write "Apple Global Domain" AppleKeyboardUIMode -int 2 # tab-able UI
+defaults write "com.apple.HIToolbox" AppleFnUsageType -int 0 # globe key - do nothing
+
+# Spotlight: Option+Space
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '{enabled=1;value={parameters=(32,49,524288);type=standard;};}'
+
+
+# Display
+defaults write "Apple Global Domain" AppleInterfaceStyle -string Dark # darkmode
+defaults write "Apple Global Domain" AppleInterfaceStyleSwitchesAutomatically -bool false # disable auto
+
+# Dock
+defaults write com.apple.dock autohide -bool true # autohide dock
+defaults write com.apple.dock orientation -string right # dock to right
+defaults write com.apple.dock show-recents -bool false # don't show recent apps
+
+# Hot Corners
+defaults write com.apple.dock wvous-bl-corner -int 2 # mission control
+defaults write com.apple.dock wvous-br-corner -int 4 # desktop
+defaults write com.apple.dock wvous-tr-corner -int 12 # notification center
+
+# Mission Control
+defaults write com.apple.dock expose-group-apps -bool true # group by application
+
+# MenuBar
+defaults write com.apple.Siri StatusMenuVisible -bool false # hide siri
+# FIXME
+defaults write com.apple.controlcenter "NSStatusItem Visible WiFi" -bool false # hide wifi
+defaults write com.apple.TextInputMenuAgent "NSStatusItem Visible Item-0" -bool false # hide spotlight
+
+# Text Substitution
+defaults write -g NSAutomaticCapitalizationEnabled -bool false
+defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
+defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false

@@ -49,6 +49,4 @@ fi
 echo "==> Setting up vim…"
 upvim
 
-open .config/Solarized-JK.terminal
-defaults write com.apple.Terminal "Default Window Settings" -string "Solarized-JK"
-defaults write com.apple.Terminal "Startup Window Settings" -string "Solarized-JK"
+dotfiles/settings
