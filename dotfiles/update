@@ -49,4 +49,4 @@ fi
 echo "==> Setting up vim…"
 upvim
 
-dotfiles/settings
+dotfiles/prefs
