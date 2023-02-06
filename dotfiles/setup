@@ -17,6 +17,24 @@ cd "${HOME}"
   git checkout main
 }
 
+
+localconf='.config/bashrc.d/config.sh.local'
+[ -f "$localconf" ] || {
+  echo "==> Scaffolding ${localconf}…"
+  cat > "$localconf" <<'TMPL'
+# vi: ft=bash
+#
+# machine-specific and sensitive config
+# this file is not versioned
+
+for config in "${XDG_CONFIG_HOME:?}"/bashrc.d/*.sh.mac; do
+  test -r "$config" && . "$config"
+done
+
+# probably add some env vars like NPMJS_AUTHTOKEN and GHPR_AUTHTOKEN
+TMPL
+}
+
 # Install homebrew
 command -v brew &>/dev/null || {
   echo "==> Installing Homebrew…"
