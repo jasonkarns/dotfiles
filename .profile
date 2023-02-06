@@ -1,5 +1,4 @@
 # vi: ft=bash
-# shellcheck disable=SC2034
 
 # http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
 
@@ -45,7 +44,6 @@ export CODEPATH=${codehome:?}${CODEPATH:?}
 unset codehome
 
 for config in "${XDG_CONFIG_HOME:?}"/bashrc.d/*.sh{,.local} ~/.bashrc; do
-  # shellcheck disable=SC1090
   test -r "$config" && . "$config"
 done
 unset config
