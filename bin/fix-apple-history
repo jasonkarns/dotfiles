@@ -12,6 +12,8 @@ done
 
 cd ~
 
+mkdir -p ${XDG_DATA_HOME:?}/bash/sessions/
+
 if [ -f .bash_history ]; then
   cat .bash_history >> "${XDG_DATA_HOME:?}/bash/history"
   rm .bash_history
