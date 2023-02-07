@@ -41,4 +41,31 @@ done
 TMPL
 }
 
+localconf='.ssh/config'
+[ -f "$localconf" ] || {
+  echo "==> Scaffolding ${localconf}…"
+  cat > "$localconf" <<'TMPL'
+# https://github.com/drduh/YubiKey-Guide#optional-save-public-key-for-identity-file-configuration
+
+Host github
+  IdentityFile ~/.ssh/id_rsa_yubikey_C0D44FDCF5A289F2.pub
+
+Include config.stribika
+TMPL
+}
+
+localconf='.config/git/config.local'
+[ -f "$localconf" ] || {
+  echo "==> Scaffolding ${localconf}…"
+  cat > "$localconf" <<'TMPL'
+[include]
+  path = config.mac
+
+[includeIf "gitdir:~/Projects/"]
+	path = config.projects
+
+# vi: ft=gitconfig
+TMPL
+}
+
 dotfiles/update
