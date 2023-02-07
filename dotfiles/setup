@@ -15,6 +15,10 @@ cd "${HOME}"
   git config alias.regit '!cp ~/{,.}git'
   git config alias.ungit '!rm ~/.git'
   git checkout main
+
+  [[ "$(git remote get-url origin)" =~ git@github ]] || {
+    git remote set-url origin git@github.com:jasonkarns/dotfiles.git
+  }
 }
 
 
