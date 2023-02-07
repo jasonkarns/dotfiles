@@ -18,6 +18,12 @@ cd "${HOME}"
 }
 
 
+# Install homebrew
+command -v brew &>/dev/null || {
+  echo "==> Installing Homebrew…"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
 localconf='.config/bashrc.d/config.sh.local'
 [ -f "$localconf" ] || {
   echo "==> Scaffolding ${localconf}…"
@@ -33,12 +39,6 @@ done
 
 # probably add some env vars like NPMJS_AUTHTOKEN and GHPR_AUTHTOKEN
 TMPL
-}
-
-# Install homebrew
-command -v brew &>/dev/null || {
-  echo "==> Installing Homebrew…"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
 dotfiles/update
