@@ -1,67 +1,81 @@
 # vi: ft=dosini
 
 [default]
-region = us-east-1
+region = us-gov-west-1
+
+[sso-session mhq-sso]
+sso_region = us-gov-west-1
+sso_start_url = https://start.us-gov-home.awsapps.com/directory/d-98672cf721
 
 [profile mhq-shared]
 region = us-gov-west-1
-sso_region = us-gov-west-1
+sso_session = mhq-sso
 sso_account_id = 030893355295
 sso_role_name = MoveHQReadOnly
-sso_start_url = https://start.us-gov-home.awsapps.com/directory/d-98672cf721
+[profile mhq-shared-secrets]
+region = us-gov-west-1
+sso_session = mhq-sso
+sso_account_id = 030893355295
+sso_role_name = MoveHQ-SecretsManagerFullAccess
+; profile name that mctl uses and depot depends on
+[profile shared-services-MoveHQ-SecretsManagerFullAccess]
+region = us-gov-west-1
+sso_session = mhq-sso
+sso_account_id = 030893355295
+sso_role_name = MoveHQ-SecretsManagerFullAccess
 
 [profile mhq-dev]
 region = us-gov-west-1
-sso_region = us-gov-west-1
+sso_session = mhq-sso
 sso_account_id = 030904255701
-sso_role_name = MoveHQReadOnly
-sso_start_url = https://start.us-gov-home.awsapps.com/directory/d-98672cf721
+sso_role_name = AdministratorAccess
 
 [profile mhq-qa]
 region = us-gov-west-1
-sso_region = us-gov-west-1
+sso_session = mhq-sso
 sso_account_id = 030906654674
 sso_role_name = MoveHQReadOnly
-sso_start_url = https://start.us-gov-home.awsapps.com/directory/d-98672cf721
+[profile mhq-qa-secrets]
+region = us-gov-west-1
+sso_session = mhq-sso
+sso_account_id = 030906654674
+sso_role_name = MoveHQ-SecretsManagerFullAccess
+
+[profile mhq-staging]
+region = us-gov-west-1
+sso_session = mhq-sso
+sso_account_id = 114276103460
+sso_role_name = MoveHQReadOnly
+[profile mhq-staging-secrets]
+region = us-gov-west-1
+sso_session = mhq-sso
+sso_account_id = 114276103460
+sso_role_name = MoveHQ-SecretsManagerFullAccess
+[profile mhq-staging-eks]
+region = us-gov-west-1
+sso_session = mhq-sso
+sso_account_id = 114276103460
+sso_role_name = MoveHQ-EKS-Access
+
+[profile mhq-uat]
+region = us-gov-west-1
+sso_session = mhq-sso
+sso_account_id = 114263745813
+sso_role_name = MoveHQReadOnly
+[profile mhq-uat-secrets]
+region = us-gov-west-1
+sso_session = mhq-sso
+sso_account_id = 114263745813
+sso_role_name = MoveHQ-SecretsManagerFullAccess
+
+[profile mhq-demo]
+region = us-gov-west-1
+sso_session = mhq-sso
+sso_account_id = 142679344782
+sso_role_name = MoveHQReadOnly
 
 [profile mhq-prod]
 region = us-gov-west-1
-sso_region = us-gov-west-1
+sso_session = mhq-sso
 sso_account_id = 030918202884
 sso_role_name = MoveHQReadOnly
-sso_start_url = https://start.us-gov-home.awsapps.com/directory/d-98672cf721
-
-[profile pga-dev]
-sso_account_id = 696154229471
-sso_role_name = Admin
-sso_start_url = https://pgahq.awsapps.com/start/
-sso_region = us-east-1
-region = us-east-1
-output = json
-
-[profile pga-qa]
-sso_account_id = 916520487680
-sso_role_name = Admin
-sso_start_url = https://pgahq.awsapps.com/start/
-sso_region = us-east-1
-region = us-east-1
-output = json
-
-[profile pga-qa-readonly]
-sso_account_id = 916520487680
-sso_role_name = DeveloperRead
-sso_start_url = https://pgahq.awsapps.com/start/
-sso_region = us-east-1
-region = us-east-1
-output = json
-
-[profile pga-prod-readonly]
-sso_account_id = 903002330563
-sso_role_name = PGAComDeveloper
-sso_start_url = https://pgahq.awsapps.com/start/
-sso_region = us-east-1
-region = us-east-1
-output = json
-
-[profile electric]
-region = us-east-1
