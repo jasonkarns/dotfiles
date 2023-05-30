@@ -12,12 +12,18 @@ region = us-gov-west-1
 sso_session = mhq-sso
 sso_account_id = 030893355295
 sso_role_name = MoveHQReadOnly
+; dupe of above but with profile name that mctl uses
+[profile shared-services-MoveHQReadOnly]
+region = us-gov-west-1
+sso_session = mhq-sso
+sso_account_id = 030893355295
+sso_role_name = MoveHQReadOnly
 [profile mhq-shared-secrets]
 region = us-gov-west-1
 sso_session = mhq-sso
 sso_account_id = 030893355295
 sso_role_name = MoveHQ-SecretsManagerFullAccess
-; profile name that mctl uses and depot depends on
+; dupe of above but with profile name that mctl uses and depot depends on
 [profile shared-services-MoveHQ-SecretsManagerFullAccess]
 region = us-gov-west-1
 sso_session = mhq-sso

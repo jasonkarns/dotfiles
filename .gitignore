@@ -27,3 +27,7 @@ Public
 .gist.*
 .oracle_jre_usage/
 .zinc/
+
+# AWS CLI SUCKS:
+/.aws/cli/cache
+/.aws/sso/cache
