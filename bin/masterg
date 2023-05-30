@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -euo pipefail
+
+VOLUME=VAULT
+KEYFILE=E87D122AA9B1B726.master.key
+OLD_GNUPGHOME=$GNUPGHOME
+
+
+echo "==> Creating temp GnuPG homedir"
+tmpdir=$(mktemp -d gpg.XXXXXX)
+export GNUPGHOME=${tmpdir:?}
+echo "==> GNUPGHOME was: $OLD_GNUPGHOME"
+echo "              now: $GNUPGHOME"
+
+
+gpg --import "/Volumes/${VOLUME:?}/${KEYFILE:?}"
+
+
+cat <<- 'MSG'
+  ====================
+  = Now safe to eject!
+  ====================
+MSG
+
+#TODO find a way to set keyring and no-default-keyring options "in the environment"
+
+if (($#)); then
+  # Launch GnuPG from the temporary directory,
+  # with the default public keyring
+  # and with any arguments given to us on the command line
+  gpg --keyring "${OLD_GNUPGHOME:-$HOME/.gnupg}/pubring.gpg" --no-default-keyring "$@"
+else
+  echo "==> Restricted shell with custom GNUPGHOME; \`exit' when done"
+  echo "==> Probably want:"
+  echo "    gpg --keyring ${OLD_GNUPGHOME:-$HOME/.gnupg}/pubring.gpg --no-default-keyring --edit-key jasonkarns"
+  bash --norc -ir
+fi
+
+
+echo "==> Removing tmdir"
+[ -f "$tmpdir/S.gpg-agent" ] && gpg-connect-agent KILLAGENT /bye
+rm -rf "$tmpdir"
