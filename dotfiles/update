@@ -56,4 +56,8 @@ fi
 echo "==> Setting up vim…"
 vim +PluginUpdate +PluginClean +qall
 
+echo "==> Fixing completions…"
+ln -s "${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/fzf/shell/completion.bash" "${BASH_COMPLETION_COMPAT_DIR:?}/fzf"
+rm -f "${BASH_COMPLETION_COMPAT_DIR:?}"/hub.*
+
 dotfiles/prefs

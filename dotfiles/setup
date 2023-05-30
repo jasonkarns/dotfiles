@@ -72,4 +72,6 @@ localconf='.config/git/config.local'
 TMPL
 }
 
+# Remove hub's completion script
+
 dotfiles/update
