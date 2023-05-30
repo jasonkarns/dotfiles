@@ -62,3 +62,10 @@ unset readline_dir
 # unset openssl_dir
 
 export RUBY_CONFIGURE_OPTS
+
+#########################
+# others
+#########################
+
+# https://github.com/castwide/solargraph/issues/664
+export SOLARGRAPH_CACHE="$XDG_CACHE_HOME/solargraph"
