@@ -26,7 +26,7 @@ augroup bundles
     Plugin 'godlygeek/tabular'
 
     " languages/frameworks
-    Plugin 'w0rp/ale'
+    Plugin 'dense-analysis/ale'
 
     Plugin 'sheerun/vim-polyglot'
     " following all provided by vim-polyglot
