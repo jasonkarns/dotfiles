@@ -9,7 +9,7 @@ alias vg='vim "$(git rev-parse --show-toplevel)/$(git status --porcelain | "$XDG
 
 alias confirm='read -p "Press any key to continue anyway or Ctrl-C to quit"'
 
-alias upbrew='brew doctor || confirm && brew outdated && brew upgrade --ignore-pinned'
+alias upbrew='brew doctor || confirm && brew outdated && brew upgrade --ignore-pinned && brew autoremove'
 alias upgpg='keybase pgp pull'
 alias upnpm='NODENV_VERSION=system npm update -g --quiet'
 alias upnodenv='nodenv update && nodenv rehash'
