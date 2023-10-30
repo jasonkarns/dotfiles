@@ -1,0 +1,3 @@
+# vi: ft=ruby
+
+Pry.config.history_file = File.join(ENV.fetch('XDG_STATE_HOME', '~/.local/state'), 'pry_history')
