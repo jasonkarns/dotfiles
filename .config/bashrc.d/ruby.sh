@@ -6,6 +6,12 @@
 PATH="${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/ruby/bin:$PATH"
 
 #########################
+# debug
+#########################
+
+export RUBY_DEBUG_HISTORY_FILE="$XDG_STATE_HOME/rdbg_history"
+
+#########################
 # irb
 #########################
 
