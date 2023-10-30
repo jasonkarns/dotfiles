@@ -19,7 +19,7 @@ export EDITOR=vim
 export PAGER=less
 export INPUTRC=${XDG_CONFIG_HOME:?}/readline/inputrc
 export LESS=FRXi
-export LESSHISTFILE=${XDG_DATA_HOME:?}/less/history
+export LESSHISTFILE=${XDG_STATE_HOME:?}/lesshst
 export LESSKEY=${XDG_CONFIG_HOME:?}/less/lesskey
 export RANDFILE=${XDG_DATA_HOME:?}/openssl/rnd
 export XAUTHORITY=${XDG_RUNTIME_DIR:?}/Xauthority
@@ -27,9 +27,9 @@ export XAUTHORITY=${XDG_RUNTIME_DIR:?}/Xauthority
 export VIMINIT="let \$MYVIMRC=\"${XDG_CONFIG_HOME:?}/vim/vimrc\" | source \$MYVIMRC"
 
 # databass
-export MYSQL_HISTFILE=${XDG_DATA_HOME:?}/mysql/history
+export MYSQL_HISTFILE=${XDG_STATE_HOME:?}/mysql_history
 export PSQLRC=${XDG_CONFIG_HOME:?}/pg/config
-export PSQL_HISTORY=${XDG_DATA_HOME:?}/pg/history
+export PSQL_HISTORY=${XDG_STATE_HOME:?}/psql_history
 export PGPASSFILE=${XDG_CONFIG_HOME:?}/pg/pgpass
 export PGSERVICEFILE=${XDG_CONFIG_HOME:?}/pg/pg_service.conf
 
