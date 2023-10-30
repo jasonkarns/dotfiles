@@ -5,25 +5,25 @@ set -euo pipefail
 # set default data_home when invoked via Automator
 while getopts "d:" opt; do
   case "$opt" in
-  d) : "${XDG_DATA_HOME:=$OPTARG}" ;;
+  d) : "${XDG_STATE_HOME:=$OPTARG}" ;;
   *) break ;;
   esac
 done
 
 cd ~
 
-mkdir -p ${XDG_DATA_HOME:?}/bash/sessions/
+mkdir -p "${XDG_STATE_HOME:?}/bash/sessions/"
 
 if [ -f .bash_history ]; then
-  cat .bash_history >> "${XDG_DATA_HOME:?}/bash/history"
+  cat .bash_history >> "${XDG_STATE_HOME:?}/bash_history"
   rm .bash_history
 fi
 
 if [ -d .bash_sessions ]; then
-  mv .bash_sessions/* "${XDG_DATA_HOME:?}/bash/sessions/"
+  mv .bash_sessions/* "${XDG_STATE_HOME:?}/bash_sessions/"
   rm -rf .bash_sessions
 fi
 
-sudo sed -i'' -e $'s| *SHELL_SESSION_DIR="$HOME/.bash_sessions"|HISTFILE="/usr/local/share/bash/history"\\nSHELL_SESSION_DIR="/usr/local/share/bash/sessions"|' /etc/bashrc_Apple_Terminal
+sudo sed -i '' -e $'s| *SHELL_SESSION_DIR="$HOME/.bash_sessions"|HISTFILE="'"${XDG_STATE_HOME:?}"'/bash_history"\\nSHELL_SESSION_DIR="'"${XDG_STATE_HOME:?}"'/bash_sessions"|' /etc/bashrc_Apple_Terminal
 
 echo "Restart the shell"
