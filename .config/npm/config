@@ -17,9 +17,9 @@ init-version=0.0.0
 init-license=MIT
 
 @nodenv:registry=https://registry.npmjs.org/
-//registry.npmjs.org/:_authToken=${NPMJS_AUTHTOKEN}
+; //registry.npmjs.org/:_authToken=${NPMJS_AUTHTOKEN}
 
 @github:registry=https://npm.pkg.github.com/
-//npm.pkg.github.com/:_authToken=${GHPR_AUTHTOKEN}
+; //npm.pkg.github.com/:_authToken=${GHPR_AUTHTOKEN}
 
 # vi: ft=dosini
