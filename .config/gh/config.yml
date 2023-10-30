@@ -2,3 +2,7 @@ git_protocol: ssh
 prompt: enabled
 aliases:
     co: '!gh pr checkout "${1:-$(gh pr list -L100 | fzf | cut -f1)}"'
+    prc: | # makes pr create respect non-default HEAD: `git remote set-head origin other`
+        !base="$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null || true)"
+        [ -z "$base" ] || set -- -B"${base#origin/}" "$@"
+        gh pr create "$@"
