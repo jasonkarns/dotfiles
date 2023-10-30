@@ -15,7 +15,7 @@ export RUBY_DEBUG_HISTORY_FILE="$XDG_STATE_HOME/rdbg_history"
 # irb
 #########################
 
-export IRBRC="$XDG_CONFIG_HOME/irb/config"
+export IRBRC="$XDG_CONFIG_HOME/irb/irbrc"
 
 #########################
 # rubygems
