@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# set default data_home when invoked via Automator
+# set default XDG_STATE_HOME when invoked via Automator
 while getopts "d:" opt; do
   case "$opt" in
   d) : "${XDG_STATE_HOME:=$OPTARG}" ;;
@@ -12,15 +12,18 @@ done
 
 cd ~
 
-mkdir -p "${XDG_STATE_HOME:?}/bash_sessions/"
+histfile=${XDG_STATE_HOME:?}/bash_history
+seshdir=${XDG_STATE_HOME:?}/bash_sessions/
+
+mkdir -p "$seshdir"
 
 if [ -f .bash_history ]; then
-  cat .bash_history >> "${XDG_STATE_HOME:?}/bash_history"
+  cat .bash_history >> "$histfile"
   rm .bash_history
 fi
 
 if [ -d .bash_sessions ]; then
-  mv .bash_sessions/* "${XDG_STATE_HOME:?}/bash_sessions/"
+  mv .bash_sessions/* "$seshdir"
   rm -rf .bash_sessions
 fi
 
