@@ -32,9 +32,9 @@ if (($#)); then
   gpg --keyring "${OLD_GNUPGHOME:-$HOME/.gnupg}/pubring.gpg" --no-default-keyring "$@"
 else
   echo "==> Restricted shell with custom GNUPGHOME; \`exit' when done"
-  echo "==> Probably want:"
-  echo "    gpg --keyring ${OLD_GNUPGHOME:-$HOME/.gnupg}/pubring.gpg --no-default-keyring --edit-key jasonkarns"
-  bash --norc -ir
+  echo "==> Probably want (already in clipboard):"
+  echo "    gpg --keyring ${OLD_GNUPGHOME:-$HOME/.gnupg}/pubring.gpg --no-default-keyring --edit-key jasonkarns" | tee >(pbcopy)
+  HISTFILE=$GNUPGHOME/bash_history bash --norc -ir
 fi
 
 
