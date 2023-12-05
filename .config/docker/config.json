@@ -1,6 +1,5 @@
 {
 	"auths": {
-		"030893355295.dkr.ecr.us-gov-west-1.amazonaws.com": {},
 		"https://index.docker.io/v1/": {}
 	},
 	"credsStore": "osxkeychain"
