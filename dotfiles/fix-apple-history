@@ -29,4 +29,5 @@ fi
 
 sudo sed -i '' -e $'s| *SHELL_SESSION_DIR="$HOME/.bash_sessions"|HISTFILE="'"${XDG_STATE_HOME:?}"'/bash_history"\nSHELL_SESSION_DIR="'"${XDG_STATE_HOME:?}"'/bash_sessions"|' /etc/bashrc_Apple_Terminal
 
-echo "Restart the shell"
+#TODO skip the echo on second invocation; likely only echoing when sed makes the substitution
+echo "Restart the shell and run again"
