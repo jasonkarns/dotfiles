@@ -1,0 +1,5 @@
+# https://yamllint.readthedocs.io/en/stable/configuration.html
+
+extends: relaxed
+
+# vi: ft=yaml
