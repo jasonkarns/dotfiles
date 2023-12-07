@@ -26,6 +26,8 @@ export XAUTHORITY=${XDG_RUNTIME_DIR:?}/Xauthority
 
 export VIMINIT="let \$MYVIMRC=\"${XDG_CONFIG_HOME:?}/vim/vimrc\" | source \$MYVIMRC"
 
+export OP_CONFIG_DIR=${XDG_STATE_HOME:?}/op
+
 # databass
 export MYSQL_HISTFILE=${XDG_STATE_HOME:?}/mysql_history
 export PSQLRC=${XDG_CONFIG_HOME:?}/pg/config
