@@ -90,6 +90,7 @@ brew "tree"
 brew "vim"
 brew "watch"
 brew "wget"
+brew "xdg-ninja"
 brew "yarn-completion"
 brew "ykman"
 # brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
