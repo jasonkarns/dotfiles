@@ -2,7 +2,7 @@
 # GPG
 ##########
 
-export GNUPGHOME=${XDG_CONFIG_HOME:?}/gpg
+export GNUPGHOME="${XDG_CONFIG_HOME:?}"/gpg
 
 launchctl setenv GNUPGHOME "$GNUPGHOME"
 
@@ -16,6 +16,8 @@ export SSH_AUTH_SOCK
 
 gpgconf --launch gpg-agent
 
+# may need following if using pinentry-curses or tty
+# gpg-connect-agent updatestartuptty /bye > /dev/null
 ##########
 # Keybase
 ##########
