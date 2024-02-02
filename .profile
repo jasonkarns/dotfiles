@@ -1,4 +1,4 @@
-# vi: ft=bash
+# vi: ft=sh
 
 # http://blog.jcoglan.com/2013/02/12/tab-completion-for-your-command-line-apps/
 
@@ -40,10 +40,8 @@ export VAGRANT_HOME=${XDG_DATA_HOME:?}/vagrant
 export VAGRANT_ALIAS_FILE=${XDG_DATA_HOME:?}/vagrant/aliases
 export IEVMS_HOME=${XDG_DATA_HOME:?}/ievms
 
-codehome="${HOME:?}/Projects"
-printf -v CODEPATH -- ":${codehome:?}/%s" bats nodenv rbenv td linemanjs github 3am movehq
-export CODEPATH=${codehome:?}${CODEPATH:?}
-unset codehome
+# overridden by machine-specific .local
+export CODEPATH=${HOME:?}/Projects
 
 for config in "${XDG_CONFIG_HOME:?}"/bashrc.d/*.sh{,.local} ~/.bashrc; do
   test -r "$config" && . "$config"
