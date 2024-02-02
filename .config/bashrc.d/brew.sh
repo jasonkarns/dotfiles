@@ -15,8 +15,9 @@ export MANPATH="${HOMEBREW_PREFIX:?}/share/man${MANPATH+:$MANPATH}:"
 export INFOPATH="${HOMEBREW_PREFIX:?}/share/info:${INFOPATH:-}"
 
 # explicitly skip formulae from Brewfiles; space-separated
-# export HOMEBREW_BUNDLE_BREW_SKIP=
-# export HOMEBREW_BUNDLE_CASK_SKIP=
-# export HOMEBREW_BUNDLE_MAS_SKIP=
-# export HOMEBREW_BUNDLE_WHALEBREW_SKIP=
-# export HOMEBREW_BUNDLE_TAP_SKIP=
+# set the vars so they can be appended elsewhere
+export HOMEBREW_BUNDLE_BREW_SKIP=
+export HOMEBREW_BUNDLE_CASK_SKIP=
+export HOMEBREW_BUNDLE_MAS_SKIP=
+export HOMEBREW_BUNDLE_WHALEBREW_SKIP=
+export HOMEBREW_BUNDLE_TAP_SKIP=

@@ -1,9 +1,11 @@
+# vi: ft=ruby
+
+# TODO look into https://github.com/buo/homebrew-cask-upgrade
+
 tap "github/gh"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
 tap "nodenv/nodenv"
 # tap "universal-ctags/universal-ctags"
@@ -20,7 +22,6 @@ brew "coreutils"
 brew "curl"
 # brew "docker-compose-completion"
 brew "dos2unix"
-brew "exa"
 brew "findutils"
 # brew "fish"
 brew "node"
@@ -65,6 +66,7 @@ brew "openssh"
 brew "tmux"
 brew "overmind"
 # brew "pidof"
+# brew "pinentry-mac" # gpg-suite cask instead
 brew "rails-completion"
 brew "rake-completion"
 # brew "rakudo-star"
@@ -99,7 +101,7 @@ cask "alfred"
 # cask "betterzipql"
 cask "choosy"
 cask "docker"
-cask "figma"
+# cask "figma"
 cask "firefox"
 cask "font-fira-code"
 # cask "gitter"
@@ -110,7 +112,7 @@ cask "keybase"
 # cask "launchrocket"
 cask "licecap"
 # cask "macvim", args: ["force"] # conflicts with vim
-cask "miro"
+# cask "miro"
 # cask "muzzle"
 # cask "ngrok"
 cask "notion"
@@ -131,10 +133,11 @@ cask "tableplus"
 # cask "tunnelblick"
 # cask "viscosity"
 # cask "webpquicklook"
+cask "yubico-authenticator"
+cask "yubico-yubikey-manager"
 cask "zoom"
 
 mas "1Password for Safari", id: 1569813296
+mas "Ka-Block!", id: 1335413823
 mas "Moom", id: 419330170
 mas "Shush - Microphone Manager", id: 496437906
-
-# vi: ft=ruby
