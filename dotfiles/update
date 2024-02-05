@@ -1,63 +1,99 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -euo pipefail
 cd ~
 
 clone_repos() { while read -r repo; do git clone "https://github.com/$repo.git"; done; }
+confirm() { read -rp "Press any key to continue anyway or Ctrl-C to quit"; }
 
-export HOMEBREW_BUNDLE_FILE=~/.config/Brewfile
-if brew bundle check; then
-  brew doctor
-  brew outdated
-  brew upgrade
-else
-  echo "==> Installing Homebrew dependencies…"
-  brew bundle --no-lock
-fi
+# TODO tweak this so it doesn't run the doctor/outdated/upgrade/autoremove bits multiple times when running for multiple files.
+upbrew() {
+  brew doctor || confirm
 
-if [ -d /opt/rbenv/plugins ]; then
-  rbenv update
-  rbenv rehash
-else echo "==> Setting up rbenv…"
-  sudo install -m 0755 -o "$USER" -d /opt/rbenv/plugins
-  ( cd /opt/rbenv/plugins; clone_repos <<PLUGINS
-  tpope/rbenv-aliases
-  ianheggie/rbenv-binstubs
-  aripollak/rbenv-bundler-ruby-version
-  tpope/rbenv-ctags
-  sstephenson/rbenv-default-gems
-  chriseppstein/rbenv-each
-  ianheggie/rbenv-env
-  mlafeldt/rbenv-man
-  rkh/rbenv-update
-  jasonkarns/ruby-build-update-defs
+  export HOMEBREW_BUNDLE_FILE=${1:-~/.config/Brewfile}
+  if brew bundle check; then echo "==> Updating Homebrew dependencies…"
+    brew outdated
+    brew upgrade
+    brew autoremove
+  else
+    echo "==> Installing Homebrew dependencies…"
+    brew bundle --no-lock
+  fi
+}
+
+uprbenv(){
+  if [ -d /opt/rbenv/plugins ]; then echo "==> Updating rbenv…"
+    rbenv update
+    rbenv rehash
+  else echo "==> Setting up rbenv…"
+    sudo install -o "$USER" -g staff -d /opt/rbenv
+    install -o "$USER" -g staff -d /opt/rbenv/plugins
+    ( cd /opt/rbenv/plugins; clone_repos <<-PLUGINS
+      tpope/rbenv-aliases
+      ianheggie/rbenv-binstubs
+      aripollak/rbenv-bundler-ruby-version
+      tpope/rbenv-ctags
+      sstephenson/rbenv-default-gems
+      chriseppstein/rbenv-each
+      ianheggie/rbenv-env
+      mlafeldt/rbenv-man
+      rkh/rbenv-update
+      jasonkarns/ruby-build-update-defs
 PLUGINS
-  )
-fi
+    )
+  fi
+}
 
-if [ -d /opt/nodenv/plugins ]; then
-  nodenv update
-  nodenv rehash
-else echo "==> Setting up nodenv…"
-  sudo install -m 0755 -o "$USER" -d /opt/nodenv/plugins
-  ( cd /opt/nodenv/plugins; clone_repos <<PLUGINS
-  nodenv/node-build-update-defs
-  nodenv/nodenv-aliases
-  nodenv/nodenv-default-packages
-  nodenv/nodenv-each
-  nodenv/nodenv-man
-  nodenv/nodenv-package-json-engine
-  nodenv/nodenv-package-rehash
-  nodenv/nodenv-update
+upnodenv(){
+  if [ -d /opt/nodenv/plugins ]; then echo "==> Updating nodenv…"
+    nodenv update
+    nodenv rehash
+  else echo "==> Setting up nodenv…"
+    sudo install -o "$USER" -g staff -d /opt/nodenv
+    install -o "$USER" -g staff -d /opt/nodenv/plugins
+    ( cd /opt/nodenv/plugins; clone_repos <<-PLUGINS
+      nodenv/node-build-update-defs
+      nodenv/nodenv-aliases
+      nodenv/nodenv-default-packages
+      nodenv/nodenv-each
+      nodenv/nodenv-man
+      nodenv/nodenv-package-json-engine
+      nodenv/nodenv-package-rehash
+      nodenv/nodenv-update
 PLUGINS
-  )
-fi
+    )
+  fi
+}
 
-echo "==> Setting up vim…"
-vim +PluginUpdate +PluginClean +qall
+upvim(){
+  echo "==> Setting up vim…"
+  vim +PluginUpdate +PluginClean +qall
+}
 
-echo "==> Fixing completions…"
-ln -s "${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/fzf/shell/completion.bash" "${BASH_COMPLETION_COMPAT_DIR:?}/fzf"
+upnpm(){
+  echo "==> Updating npm…"
+  NODENV_VERSION=system npm update -g --quiet
+}
+
+upgpg(){
+  if command -v keybase; then echo "==> Updating keybase/gpg…"
+    keybase pgp pull
+  else
+    echo "==> Skipping keybase…"
+  fi
+}
+
+
+upbrew
+upbrew ~/.config/Brewfile.local
+uprbenv
+upnodenv
+upvim
+upnpm
+upgpg
+
+echo "==> Fixing shell completions…"
+ln -sf "${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/fzf/shell/completion.bash" "${BASH_COMPLETION_COMPAT_DIR:?}/fzf"
 rm -f "${BASH_COMPLETION_COMPAT_DIR:?}"/hub.*
 
 dotfiles/prefs
