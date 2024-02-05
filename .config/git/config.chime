@@ -1,0 +1,13 @@
+[user]
+	email = jason.karns@ext.chime.com
+
+[commit]
+	gpgsign = true # overriding the 'false' from config.homebrew
+
+[url "git@github.com:"]
+	insteadOf = gh:
+	insteadOf = github:
+	insteadOf = http://github.com/
+	insteadOf = https://github.com/
+
+# vi: ft=gitconfig
