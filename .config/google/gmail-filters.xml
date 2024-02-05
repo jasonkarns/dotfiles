@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#filtering-email-notifications -->
+
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:apps='http://schemas.google.com/apps/2006'>
+	<title>Mail Filters</title>
+	<id>tag:mail.google.com,2008:filters:z0000001707148717687*5467318923992392569</id>
+	<updated>2024-02-05T15:58:55Z</updated>
+	<author>
+		<name>Jason Karns</name>
+		<email>jason@testdouble.com</email>
+	</author>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='assign@noreply.github.com'/>
+		<apps:property name='label' value='gh/assign'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='author@noreply.github.com'/>
+		<apps:property name='label' value='gh/author'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='ci_activity@noreply.github.com'/>
+		<apps:property name='label' value='gh/ci_activity'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='comment@noreply.github.com'/>
+		<apps:property name='label' value='gh/comment'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='manual@noreply.github.com'/>
+		<apps:property name='label' value='gh/manual'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='mention@noreply.github.com'/>
+		<apps:property name='label' value='gh/mention'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='push@noreply.github.com'/>
+		<apps:property name='label' value='gh/push'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='review_requested@noreply.github.com'/>
+		<apps:property name='label' value='gh/review_requested'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='security_alert@noreply.github.com'/>
+		<apps:property name='label' value='gh/security_alert'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='state_change@noreply.github.com'/>
+		<apps:property name='label' value='gh/state_change'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='subscribed@noreply.github.com'/>
+		<apps:property name='label' value='gh/subscribed'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='team_mention@noreply.github.com'/>
+		<apps:property name='label' value='gh/team_mention'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
+		<updated>2024-02-05T15:58:55Z</updated>
+		<content></content>
+		<apps:property name='from' value='notifications@github.com'/>
+		<apps:property name='to' value='your_activity@noreply.github.com'/>
+		<apps:property name='label' value='gh/your_activity'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='sizeOperator' value='s_sl'/>
+		<apps:property name='sizeUnit' value='s_smb'/>
+	</entry>
+</feed>
