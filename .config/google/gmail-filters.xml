@@ -12,6 +12,16 @@
 	<entry>
 		<category term='filter'></category>
 		<title>Mail Filter</title>
+		<updated>2024-02-06T16:14:42Z</updated>
+		<content></content>
+		<apps:property name='from' value='github.com -notifications@github.com'/>
+		<apps:property name='label' value='gh'/>
+		<apps:property name='shouldArchive' value='true'/>
+		<apps:property name='shouldAlwaysMarkAsImportant' value='true'/>
+	</entry>
+	<entry>
+		<category term='filter'></category>
+		<title>Mail Filter</title>
 		<updated>2024-02-05T15:58:55Z</updated>
 		<content></content>
 		<apps:property name='from' value='notifications@github.com'/>
