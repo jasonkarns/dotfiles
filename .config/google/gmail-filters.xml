@@ -28,8 +28,6 @@
 		<apps:property name='to' value='assign@noreply.github.com'/>
 		<apps:property name='label' value='gh/assign'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -40,8 +38,6 @@
 		<apps:property name='to' value='author@noreply.github.com'/>
 		<apps:property name='label' value='gh/author'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -52,8 +48,6 @@
 		<apps:property name='to' value='ci_activity@noreply.github.com'/>
 		<apps:property name='label' value='gh/ci_activity'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -64,8 +58,6 @@
 		<apps:property name='to' value='comment@noreply.github.com'/>
 		<apps:property name='label' value='gh/comment'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -76,8 +68,6 @@
 		<apps:property name='to' value='manual@noreply.github.com'/>
 		<apps:property name='label' value='gh/manual'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -88,8 +78,6 @@
 		<apps:property name='to' value='mention@noreply.github.com'/>
 		<apps:property name='label' value='gh/mention'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -100,8 +88,6 @@
 		<apps:property name='to' value='push@noreply.github.com'/>
 		<apps:property name='label' value='gh/push'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -112,8 +98,6 @@
 		<apps:property name='to' value='review_requested@noreply.github.com'/>
 		<apps:property name='label' value='gh/review_requested'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -124,8 +108,6 @@
 		<apps:property name='to' value='security_alert@noreply.github.com'/>
 		<apps:property name='label' value='gh/security_alert'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -136,8 +118,6 @@
 		<apps:property name='to' value='state_change@noreply.github.com'/>
 		<apps:property name='label' value='gh/state_change'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -148,8 +128,6 @@
 		<apps:property name='to' value='subscribed@noreply.github.com'/>
 		<apps:property name='label' value='gh/subscribed'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -160,8 +138,6 @@
 		<apps:property name='to' value='team_mention@noreply.github.com'/>
 		<apps:property name='label' value='gh/team_mention'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 	<entry>
 		<category term='filter'></category>
@@ -172,7 +148,5 @@
 		<apps:property name='to' value='your_activity@noreply.github.com'/>
 		<apps:property name='label' value='gh/your_activity'/>
 		<apps:property name='shouldArchive' value='true'/>
-		<apps:property name='sizeOperator' value='s_sl'/>
-		<apps:property name='sizeUnit' value='s_smb'/>
 	</entry>
 </feed>
