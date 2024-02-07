@@ -21,7 +21,7 @@ export IRBRC="$XDG_CONFIG_HOME/irb/irbrc"
 # rubygems
 #########################
 
-export GEMRC="$XDG_CONFIG_HOME/gem/config.yml"
+export GEMRC="$XDG_CONFIG_HOME/gem/gemrc"
 
 # share gems across rubies b/c bundler is a thing
 # export GEM_HOME=$XDG_DATA_HOME/gem

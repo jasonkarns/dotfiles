@@ -1,3 +1,4 @@
+# vi: ft=yaml
 ---
 install: --env-shebang --no-document --no-user-install
 
