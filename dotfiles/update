@@ -21,6 +21,13 @@ upbrew() {
   fi
 }
 
+fix_completions() {
+  echo "==> Fixing shell completions…"
+  ln -sf "${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/fzf/shell/completion.bash" "${BASH_COMPLETION_COMPAT_DIR:?}/fzf"
+  # TODO remove once confirmed we're done with hub
+  rm -f "${BASH_COMPLETION_COMPAT_DIR:?}"/hub.*
+}
+
 uprbenv(){
   if [ -d /opt/rbenv/plugins ]; then echo "==> Updating rbenv…"
     rbenv update
@@ -83,17 +90,19 @@ upgpg(){
   fi
 }
 
+upprefs(){
+  dotfiles/prefs
+}
 
-upbrew
-upbrew ~/.config/Brewfile.local
-uprbenv
-upnodenv
-upvim
-upnpm
-upgpg
 
-echo "==> Fixing shell completions…"
-ln -sf "${HOMEBREW_PREFIX:=$(brew --prefix)}/opt/fzf/shell/completion.bash" "${BASH_COMPLETION_COMPAT_DIR:?}/fzf"
-rm -f "${BASH_COMPLETION_COMPAT_DIR:?}"/hub.*
+# update all by default
+if [ $# = 0 ]; then set -- brew rbenv nodenv vim npm gpg prefs; fi
 
-dotfiles/prefs
+while [ $# -gt 0 ]; do
+  case $1 in
+  brew) upbrew; upbrew ~/.config/Brewfile.local; fix_completions ;;
+  rbenv|nodenv|vim|npm|gpg|prefs) up"$1" ;;
+  *) echo "unknown: '$1'" >&2; exit 1 ;;
+  esac
+  shift
+done
