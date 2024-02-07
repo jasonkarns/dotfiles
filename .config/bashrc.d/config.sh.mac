@@ -1,3 +1,5 @@
+# vi: ft=sh
+
 export __CF_USER_TEXT_ENCODING="0x1F5:0:0"
 
 # lines modified in /etc/bashrc_Apple_Terminal
@@ -7,6 +9,5 @@ export __CF_USER_TEXT_ENCODING="0x1F5:0:0"
 # ~97: SHELL_SESSION_DIR="/Users/jasonkarns/.local/share/bash/sessions"
 
 # need to explicitly enable b/c `histappend` disables it
+# shellcheck disable=SC2034
 SHELL_SESSION_HISTORY=1
-
-# vi: ft=sh
