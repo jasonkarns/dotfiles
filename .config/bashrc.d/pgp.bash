@@ -2,7 +2,7 @@
 # GPG
 ##########
 
-export GNUPGHOME="${XDG_CONFIG_HOME:?}"/gpg
+export GNUPGHOME="${XDG_CONFIG_HOME:?}"/gnupg
 
 launchctl setenv GNUPGHOME "$GNUPGHOME"
 
