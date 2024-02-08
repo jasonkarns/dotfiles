@@ -43,3 +43,9 @@ export JOBS=max
 ##############
 
 export BABEL_CACHE_PATH="$XDG_CACHE_HOME/babel.json"
+
+##############
+# yarn       #
+##############
+
+alias yarn='yarn --use-yarnrc "${XDG_CONFIG_HOME:?}/yarnrc"'
