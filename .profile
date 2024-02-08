@@ -38,6 +38,8 @@ export PGSERVICEFILE=${XDG_CONFIG_HOME:?}/pg/pg_service.conf
 # virtual
 export DOCKER_CONFIG=${XDG_CONFIG_HOME:?}/docker
 export MACHINE_STORAGE_PATH=${XDG_DATA_HOME:?}/docker-machine
+export KUBECONFIG=${XDG_CONFIG_HOME:?}/kube
+export KUBECACHEDIR=${XDG_CACHE_HOME:?}/kube
 export VAGRANT_HOME=${XDG_DATA_HOME:?}/vagrant
 export VAGRANT_ALIAS_FILE=${XDG_DATA_HOME:?}/vagrant/aliases
 export IEVMS_HOME=${XDG_DATA_HOME:?}/ievms
