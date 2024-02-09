@@ -2,5 +2,10 @@
 	"auths": {
 		"https://index.docker.io/v1/": {}
 	},
-	"credsStore": "osxkeychain"
+	"credsStore": "osxkeychain",
+	"plugins": {
+		"-x-cli-hints": {
+			"enabled": "true"
+		}
+	}
 }
