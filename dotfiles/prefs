@@ -41,7 +41,8 @@ defaults write "com.apple.HIToolbox" AppleFnUsageType -int 0 # globe key - do no
 # TODO flip screenshot shortcuts
 
 # Spotlight: Option+Space
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '{enabled=1;value={parameters=(32,49,524288);type=standard;};}'
+# wrong?
+# defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 '{enabled=1;value={parameters=(32,49,524288);type=standard;};}'
 # TODO set alfred as cmd+space
 
 
