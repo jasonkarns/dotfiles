@@ -55,6 +55,6 @@ check Package 'npm install' npm-shrinkwrap.json package-lock.json
 
 check Package 'yarn' yarn.lock
 
-check Gemfile 'bundle' Gemfile Gemfile.lock
+check Gemfile 'bundle' Gemfile Gemfile.lock gems.rb gems.locked
 
 check Schema 'rake db:migrate' db/migrate db/schema.rb db/structure.sql
