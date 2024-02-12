@@ -40,7 +40,7 @@ brew "gh"
 brew "gist"
 brew "git"
 brew "git-crypt"
-# brew "git-hooks", args: ["HEAD"]
+brew "git-hooks-go"
 brew "git-imerge"
 brew "git-lfs"
 brew "git-sync" # tap jacobwgillespie/tap
