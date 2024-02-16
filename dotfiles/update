@@ -6,19 +6,23 @@ cd ~
 clone_repos() { while read -r repo; do git clone "https://github.com/$repo.git"; done; }
 confirm() { read -rp "Press any key to continue anyway or Ctrl-C to quit"; }
 
+export HOMEBREW_VERBOSE=${VERBOSE-}
+S=1
+
 # TODO tweak this so it doesn't run the doctor/outdated/upgrade/autoremove bits multiple times when running for multiple files.
 upbrew() {
   brew doctor || confirm
 
   export HOMEBREW_BUNDLE_FILE=${1:-~/.config/Brewfile}
-  if brew bundle check; then echo "==> Updating Homebrew dependencies…"
+  if brew bundle check ${S:+--quiet}; then echo "==> Updating Homebrew dependencies…"
     brew outdated
-    brew upgrade
-    brew autoremove
+    brew upgrade ${S:+--quiet}
   else
     echo "==> Installing Homebrew dependencies…"
-    brew bundle --no-lock
+    brew bundle --no-lock ${S:+--quiet}
   fi
+
+  brew autoremove
 }
 
 fix_completions() {
@@ -79,7 +83,7 @@ upvim(){
 
 upnpm(){
   echo "==> Updating npm…"
-  NODENV_VERSION=system npm update -g --quiet
+  NODENV_VERSION=system npm update -g ${S:+--quiet}
 }
 
 upgpg(){
