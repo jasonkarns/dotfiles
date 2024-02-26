@@ -9,20 +9,26 @@ confirm() { read -rp "Press any key to continue anyway or Ctrl-C to quit"; }
 export HOMEBREW_VERBOSE=${VERBOSE-}
 S=1
 
-# TODO tweak this so it doesn't run the doctor/outdated/upgrade/autoremove bits multiple times when running for multiple files.
 upbrew() {
   brew doctor || confirm
 
-  export HOMEBREW_BUNDLE_FILE=${1:-~/.config/Brewfile}
-  if brew bundle check ${S:+--quiet}; then echo "==> Updating Homebrew dependencies…"
-    brew outdated
-    brew upgrade ${S:+--quiet}
-  else
-    echo "==> Installing Homebrew dependencies…"
-    brew bundle --no-lock ${S:+--quiet}
-  fi
+  for brewfile in "$@"; do brew_bundle "$brewfile"; done
 
+  echo "==> Updating Homebrew dependencies…"
+  brew outdated
+  brew upgrade ${S:+--quiet}
   brew autoremove
+  fix_completions
+}
+
+brew_bundle() {
+  [ -e "${1:?}" ] || return 0
+
+  export HOMEBREW_BUNDLE_FILE=$1
+  brew bundle check ${S:+--quiet} || {
+    echo "==> Installing Homebrew dependencies… $HOMEBREW_BUNDLE_FILE"
+    brew bundle --no-lock ${S:+--quiet}
+  }
 }
 
 fix_completions() {
@@ -104,7 +110,7 @@ if [ $# = 0 ]; then set -- brew rbenv nodenv vim npm gpg prefs; fi
 
 while [ $# -gt 0 ]; do
   case $1 in
-  brew) upbrew; upbrew ~/.config/Brewfile.local; fix_completions ;;
+  brew) upbrew ~/.config/Brewfile{,.local} ;;
   rbenv|nodenv|vim|npm|gpg|prefs) up"$1" ;;
   *) echo "unknown: '$1'" >&2; exit 1 ;;
   esac
