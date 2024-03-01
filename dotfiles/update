@@ -25,6 +25,7 @@ brew_bundle() {
   [ -e "${1:?}" ] || return 0
 
   export HOMEBREW_BUNDLE_FILE=$1
+  echo "==> Checking Homebrew dependencies… $HOMEBREW_BUNDLE_FILE"
   brew bundle check ${S:+--quiet} || {
     echo "==> Installing Homebrew dependencies… $HOMEBREW_BUNDLE_FILE"
     brew bundle --no-lock ${S:+--quiet}
