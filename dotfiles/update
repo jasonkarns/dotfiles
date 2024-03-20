@@ -17,6 +17,7 @@ updots() {
 upbrew() {
   echo "==> Brewing…"
   brew doctor || confirm
+  brew update # still necessary for taps
 
   for brewfile in "$@"; do brew_bundle "$brewfile"; done
 
