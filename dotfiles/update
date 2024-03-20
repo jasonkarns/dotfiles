@@ -12,6 +12,11 @@ S=1
 updots() {
   echo "==> Updating Dotfiles…"
   ( cd dotfiles && git pull --ff-only )
+
+  if [ -e .bash_history ] || [ -e .bash_sessions ]; then
+    echo "==> Fixing Shistory…"
+    dotfiles/fix-apple-history
+  fi
 }
 
 upbrew() {
