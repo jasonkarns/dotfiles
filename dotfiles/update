@@ -9,7 +9,13 @@ confirm() { read -rp "Press any key to continue anyway or Ctrl-C to quit"; }
 export HOMEBREW_VERBOSE=${VERBOSE-}
 S=1
 
+updots() {
+  echo "==> Updating Dotfiles…"
+  ( cd dotfiles && git pull --ff-only )
+}
+
 upbrew() {
+  echo "==> Brewing…"
   brew doctor || confirm
 
   for brewfile in "$@"; do brew_bundle "$brewfile"; done
@@ -107,12 +113,12 @@ upprefs(){
 
 
 # update all by default
-if [ $# = 0 ]; then set -- brew rbenv nodenv vim npm gpg prefs; fi
+if [ $# = 0 ]; then set -- dots brew rbenv nodenv vim npm gpg prefs; fi
 
 while [ $# -gt 0 ]; do
   case $1 in
   brew) upbrew ~/.config/Brewfile{,.local} ;;
-  rbenv|nodenv|vim|npm|gpg|prefs) up"$1" ;;
+  dots|rbenv|nodenv|vim|npm|gpg|prefs) up"$1" ;;
   *) echo "unknown: '$1'" >&2; exit 1 ;;
   esac
   shift
