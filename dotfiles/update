@@ -38,7 +38,7 @@ upbrew() {
 }
 
 brewfile() {
-  cat ~/.config/Brewfile{.local,}
+  cat ~/.config/Brewfile{.local,} || true
 }
 
 fix_completions() {
