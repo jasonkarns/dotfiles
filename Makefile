@@ -27,6 +27,8 @@ nodenv_plugins = $(addprefix $(nodenv_plugindir)/nodenv/,\
   nodenv-package-rehash \
   nodenv-update)
 
+all: | rbenv nodenv vim npm gpg
+
 rbenv: $(rbenv_plugins)
 	@echo '==> Updating rbenv…'
 	rbenv update
@@ -35,6 +37,18 @@ nodenv: $(nodenv_plugins)
 	@echo '==> Updating nodenv…'
 	nodenv update
 	nodenv rehash
+vim:
+	@echo '==> Setting up vim…'
+	vim +PluginUpdate +PluginClean +qall
+npm:
+	@echo '==> Updating npm…'
+	NODENV_VERSION=system npm update -g
+gpg:
+	@if command -v keybase; then echo '==> Updating keybase/gpg…'; \
+		keybase pgp pull; fi
+prefs:
+	dotfiles/prefs
+
 
 $(rbenv_root) $(nodenv_root):
 	sudo install -o "${USER}" -g staff -d $@
@@ -43,7 +57,7 @@ $(rbenv_root) $(nodenv_root):
 	install -o "${USER}" -g staff -d $@
 
 $(rbenv_plugins): $(rbenv_plugindir)/%: | $$(@:/%=)
-	@test -d $|/$(@F) || git -C $| clone https://github.com/$*.git
+	@[ -d $|/$(@F) ] || git -C $| clone https://github.com/$*.git
 
 $(nodenv_plugins): $(nodenv_plugindir)/%: | $$(@:/%=)
-	@test -d $|/$(@F) || git -C $| clone https://github.com/$*.git
+	@[ -d $|/$(@F) ] || git -C $| clone https://github.com/$*.git

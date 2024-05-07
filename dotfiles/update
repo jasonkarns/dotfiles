@@ -48,43 +48,13 @@ fix_completions() {
   rm -f "${BASH_COMPLETION_COMPAT_DIR:?}"/hub.*
 }
 
-uprbenv(){
-  make rbenv
-}
-
-upnodenv(){
-  make nodenv
-}
-
-upvim(){
-  echo "==> Setting up vim…"
-  vim +PluginUpdate +PluginClean +qall
-}
-
-upnpm(){
-  echo "==> Updating npm…"
-  NODENV_VERSION=system npm update -g ${S:+--quiet}
-}
-
-upgpg(){
-  if command -v keybase; then echo "==> Updating keybase/gpg…"
-    keybase pgp pull
-  else
-    echo "==> Skipping keybase…"
-  fi
-}
-
-upprefs(){
-  dotfiles/prefs
-}
-
-
 # update all by default
 if [ $# = 0 ]; then set -- dots brew rbenv nodenv vim npm gpg prefs; fi
 
 while [ $# -gt 0 ]; do
   case $1 in
-  dots|brew|rbenv|nodenv|vim|npm|gpg|prefs) up"$1" ;;
+  dots|brew) up"$1" ;;
+  rbenv|nodenv|vim|npm|gpg|prefs) make "$1" ;;
   *) echo "unknown: '$1'" >&2; exit 1 ;;
   esac
   shift
