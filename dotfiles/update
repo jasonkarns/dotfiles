@@ -49,47 +49,11 @@ fix_completions() {
 }
 
 uprbenv(){
-  if [ -d /opt/rbenv/plugins ]; then echo "==> Updating rbenv…"
-    rbenv update
-    rbenv rehash
-  else echo "==> Setting up rbenv…"
-    sudo install -o "$USER" -g staff -d /opt/rbenv
-    install -o "$USER" -g staff -d /opt/rbenv/plugins
-    ( cd /opt/rbenv/plugins; clone_repos <<-PLUGINS
-      tpope/rbenv-aliases
-      ianheggie/rbenv-binstubs
-      aripollak/rbenv-bundler-ruby-version
-      tpope/rbenv-ctags
-      sstephenson/rbenv-default-gems
-      chriseppstein/rbenv-each
-      ianheggie/rbenv-env
-      mlafeldt/rbenv-man
-      rkh/rbenv-update
-      jasonkarns/ruby-build-update-defs
-PLUGINS
-    )
-  fi
+  make rbenv
 }
 
 upnodenv(){
-  if [ -d /opt/nodenv/plugins ]; then echo "==> Updating nodenv…"
-    nodenv update
-    nodenv rehash
-  else echo "==> Setting up nodenv…"
-    sudo install -o "$USER" -g staff -d /opt/nodenv
-    install -o "$USER" -g staff -d /opt/nodenv/plugins
-    ( cd /opt/nodenv/plugins; clone_repos <<-PLUGINS
-      nodenv/node-build-update-defs
-      nodenv/nodenv-aliases
-      nodenv/nodenv-default-packages
-      nodenv/nodenv-each
-      nodenv/nodenv-man
-      nodenv/nodenv-package-json-engine
-      nodenv/nodenv-package-rehash
-      nodenv/nodenv-update
-PLUGINS
-    )
-  fi
+  make nodenv
 }
 
 upvim(){
