@@ -32,10 +32,15 @@ all: | rbenv nodenv vim npm gpg
 rbenv: $(rbenv_plugins)
 	@echo '==> Updating rbenv…'
 	rbenv update
+	brew rbenv-sync
+	rbenv alias --auto
+	rbenv alias brew `brew ruby -e 'puts RUBY_BIN.dirname'`
 	rbenv rehash
 nodenv: $(nodenv_plugins)
 	@echo '==> Updating nodenv…'
 	nodenv update
+	brew nodenv-sync
+	nodenv alias --auto
 	nodenv rehash
 vim:
 	@echo '==> Setting up vim…'
