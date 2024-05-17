@@ -44,6 +44,10 @@ export VAGRANT_HOME=${XDG_DATA_HOME:?}/vagrant
 export VAGRANT_ALIAS_FILE=${XDG_DATA_HOME:?}/vagrant/aliases
 export IEVMS_HOME=${XDG_DATA_HOME:?}/ievms
 
+export ANDROID_USER_HOME=${XDG_DATA_HOME:?}/android
+export CP_HOME_DIR=${XDG_DATA_HOME:?}/cocoapods
+export GRADLE_USER_HOME=${XDG_DATA_HOME:?}/gradle
+
 # overridden by machine-specific .local
 export CODEPATH=${HOME:?}/Projects
 
