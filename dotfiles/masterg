@@ -41,3 +41,12 @@ fi
 echo "==> Removing tmdir"
 [ -f "$tmpdir/S.gpg-agent" ] && gpg-connect-agent KILLAGENT /bye
 rm -rf "$tmpdir"
+
+echo "==> followup"
+echo "gpg --card-status"
+echo "gh auth refresh -h github.com -s admin:gpg_key"
+echo "gh gpg-key delete E87D122AA9B1B726"
+echo "gpg --armor --export jasonkarns | pbcopy"
+echo "pbpaste | gh gpg-key add -"
+echo "==> elsewhere"
+echo "curl -L 'https://github.com/jasonkarns.gpg' | gpg --import"
