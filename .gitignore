@@ -26,6 +26,8 @@ Public
 .gist
 .gist.*
 .oracle_jre_usage/
+# https://github.com/apple/swift-package-manager/issues/6204
+.swiftpm/
 .zinc/
 
 # AWS CLI SUCKS:
