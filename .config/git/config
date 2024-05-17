@@ -126,6 +126,7 @@
 	global = ~/.config/git/hooks
 
 [init]
+	defaultBranch = main
 	; templatedir = ~/.config/git/template
 
 [advice]
