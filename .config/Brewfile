@@ -4,8 +4,6 @@
 
 tap "github/gh"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "nodenv/nodenv"
 tap "jacobwgillespie/tap"
