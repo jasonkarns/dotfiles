@@ -7,21 +7,21 @@ set -eu
 cd "${HOME}"
 
 [ -d dotfiles ] || { # assume dotfiles existence is configured
-  git clone --no-checkout https://github.com/jasonkarns/dotfiles.git
-
   echo "==> Configuring Dotfiles…"
-  cd dotfiles
-  git config core.worktree "$HOME"
-  git config core.sparseCheckout true
-  printf '/*\n!readme.md' | git sparse-checkout set --stdin
-  git config alias.regit '!echo "gitdir: dotfiles/.git" > ~/.git'
-  git config alias.ungit '!rm ~/.git'
-  git checkout main
-  git submodule update --init --recursive
+  git clone --no-checkout https://github.com/jasonkarns/dotfiles.git
+  (
+    cd dotfiles
+    git config core.worktree "$HOME"
+    git config core.sparseCheckout true
+    printf '/*\n!readme.md' | git sparse-checkout set --stdin
+    git config alias.regit '!echo "gitdir: dotfiles/.git" > ~/.git'
+    git config alias.ungit '!rm ~/.git'
+    git checkout main
+    git submodule update --init --recursive
 
-  [[ "$(git remote get-url origin)" =~ git@github ]] || {
-    git remote set-url origin git@github.com:jasonkarns/dotfiles.git
-  }
+    { git remote get-url origin | grep -q 'git@github.com'; } ||
+      git remote set-url origin git@github.com:jasonkarns/dotfiles.git
+  )
 }
 
 
