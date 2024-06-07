@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
-set -euo pipefail
+# basing on sh instead of bash because it's likely that this is run for the
+# first time on machines with a stock (old) version of bash.
+set -eu
 
 cd "${HOME}"
 
