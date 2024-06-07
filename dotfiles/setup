@@ -25,9 +25,9 @@ cd "${HOME}"
 }
 
 
-command -v brew &>/dev/null || {
+command -v brew || {
   echo "==> Installing Homebrew…"
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
 localconf='.config/bashrc.d/config.sh.local'
