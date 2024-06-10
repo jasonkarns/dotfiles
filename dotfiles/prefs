@@ -5,15 +5,7 @@ cd ~ || exit
 
 echo "==> Customizing Mac Preferences…"
 
-# Shell
-hulk=$(brew --prefix bash)
-if ! grep --quiet "${hulk:?}" /etc/shells; then
-  hulk=${hulk:?}/bin/bash
-  echo "${hulk:?}" | sudo tee -a /etc/shells >/dev/null
-  chsh -s "${hulk:?}"
-fi
-
-# Terminal
+ Terminal
 # FIXME automate these
 # open -g .config/Solarized-JK.terminal
 # defaults write -app Terminal "Default Window Settings" -string "Solarized-JK"

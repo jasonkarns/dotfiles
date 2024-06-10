@@ -29,7 +29,6 @@ esac
   )
 }
 
-
 command -v brew || (
   [ "$OS" = "macos" ] || exit 0;
   echo "==> Installing Homebrew…"
@@ -40,6 +39,20 @@ command -v brew || (
 
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 )
+
+[ "$OS" = "macos" ] && {
+  echo "==> Setup Shell…"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+
+  brew install bash
+
+  hulk=$(brew --prefix)/bin/bash
+  if ! grep --quiet "${hulk:?}" /etc/shells; then
+    echo "${hulk:?}" | sudo tee -a /etc/shells >/dev/null
+    chsh -s "${hulk:?}"
+  fi
+  unset hulk
+}
 
 localconf='.config/bashrc.d/config.sh.local'
 [ -f "$localconf" ] || {
@@ -87,4 +100,5 @@ localconf='.config/git/config.local'
 TMPL
 }
 
+# Need to set up gpg key before running update
 dotfiles/update
