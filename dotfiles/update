@@ -49,11 +49,11 @@ fix_completions() {
 }
 
 # update all by default
-if [ $# = 0 ]; then set -- dots brew rbenv nodenv vim npm gpg prefs; fi
+if [ $# = 0 ]; then set -- brew dots rbenv nodenv vim npm gpg prefs; fi
 
 while [ $# -gt 0 ]; do
   case $1 in
-  dots|brew) up"$1" ;;
+  brew|dots) up"$1" ;;
   rbenv|nodenv|vim|npm|gpg|prefs) make "$1" ;;
   *) echo "unknown: '$1'" >&2; exit 1 ;;
   esac
