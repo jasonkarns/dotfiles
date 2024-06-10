@@ -87,5 +87,4 @@ localconf='.config/git/config.local'
 TMPL
 }
 
-. .profile
 dotfiles/update
