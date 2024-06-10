@@ -17,6 +17,7 @@ Public
 .cache/
 
 *.local
+.config/Alfred.alfredpreferences/preferences/local/
 
 # wontfix: https://github.com/apple/cups/issues/4243
 .cups
