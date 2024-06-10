@@ -6,6 +6,11 @@ set -eu
 
 cd "${HOME}"
 
+case "$(uname)" in
+Linux) OS=linux;;
+Darwin) OS=macos;;
+esac
+
 [ -d dotfiles ] || { # assume dotfiles existence is configured
   echo "==> Configuring Dotfiles…"
   git clone --no-checkout https://github.com/jasonkarns/dotfiles.git
@@ -25,10 +30,16 @@ cd "${HOME}"
 }
 
 
-command -v brew || {
+command -v brew || (
+  [ "$OS" = "macos" ] || exit 0;
   echo "==> Installing Homebrew…"
+
+  # homebrew's install script uses this to instruct on rc-file modifications
+  # we will be on bash, though at install time, it's likely still zsh
+  SHELL=/bin/bash
+
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-}
+)
 
 localconf='.config/bashrc.d/config.sh.local'
 [ -f "$localconf" ] || {
