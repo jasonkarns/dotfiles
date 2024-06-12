@@ -76,6 +76,8 @@
 	wordRegex = [A-z0-9_]+|[^[:space:]]
 [difftool]
 	prompt = false
+[diff "git-crypt"] ; see also git-crypt filter
+	textconv = git-crypt diff
 [diff "rails_credentials"]
 	textconv = bin/rails credentials:diff
 [merge]
@@ -182,10 +184,13 @@
 [sendemail "testdouble"]
 	smtpUser = jason@testdouble.com
 
+[filter "git-crypt"]
+	required = true
+	smudge = git-crypt smudge
+	clean = git-crypt clean
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
-
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
