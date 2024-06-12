@@ -1,1 +1,2 @@
 .config/Alfred.alfredpreferences/** filter=git-crypt diff=git-crypt
+.config/aws/config.chime filter=git-crypt diff=git-crypt
