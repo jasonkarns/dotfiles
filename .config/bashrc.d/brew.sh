@@ -1,4 +1,4 @@
-eval "$(PATH=/opt/homebrew/bin:/usr/local/bin"${PATH+:$PATH}" brew shellenv)"
+eval "$(PATH=/opt/homebrew/bin:/usr/local/bin:$PATH brew shellenv)"
 
 # see also $XDG_CONFIG_HOME/homebrew/brew.env
 
