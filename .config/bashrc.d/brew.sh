@@ -1,9 +1,6 @@
 eval "$(PATH=/opt/homebrew/bin:/usr/local/bin"${PATH+:$PATH}" brew shellenv)"
 
-# disable analytics
-export HOMEBREW_NO_ANALYTICS=1
-
-export HOMEBREW_CACHE="$XDG_CACHE_HOME/Homebrew"
+# see also $XDG_CONFIG_HOME/homebrew/brew.env
 
 # explicitly skip formulae from Brewfiles; space-separated
 # set the vars so they can be appended elsewhere
