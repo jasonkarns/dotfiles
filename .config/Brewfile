@@ -41,7 +41,7 @@ brew "git-crypt"
 brew "git-hooks-go"
 brew "git-imerge"
 brew "git-lfs"
-brew "git-sync" # tap jacobwgillespie/tap
+brew "jacobwgillespie/tap/git-sync"
 brew "gnu-sed"
 brew "gnu-tar"
 brew "gnutls"
