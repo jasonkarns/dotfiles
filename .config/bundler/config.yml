@@ -2,7 +2,7 @@
 # BUNDLE_DISABLE_LOCAL_BRANCH_CHECK: true
 # BUNDLE_DISABLE_MULTISOURCE: true
 BUNDLE_ERROR_ON_STDERR: true
-BUNDLE_INIT_GEMS_RB: true
+BUNDLE_INIT_GEMS_RB: false
 BUNDLE_LOCAL__RAKE_TO_RULE_THEM_ALL: "/Users/jasonkarns/Projects/rake_to_rule_them_all"
 
 # gem scaffolding options
