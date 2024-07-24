@@ -2,6 +2,9 @@
 
 .SHELLFLAGS = -euo pipefail
 
+XDG_CONFIG_HOME ?= ~/.config
+bashrcd = $(XDG_CONFIG_HOME)/bashrc.d
+env_local = $(bashrcd)/config.bash.local
 rbenv_root = /opt/rbenv
 nodenv_root = /opt/nodenv
 rbenv_plugindir = $(rbenv_root)/plugins
@@ -27,14 +30,18 @@ nodenv_plugins = $(addprefix $(nodenv_plugindir)/nodenv/,\
   nodenv-package-rehash \
   nodenv-update)
 
-all: | rbenv nodenv vim npm gpg
+
+all: $(env_local) | rbenv nodenv vim npm gpg
+
+clean:
+	rm -f $(env_local)
 
 rbenv: $(rbenv_plugins)
 	@echo '==> Updating rbenv…'
 	rbenv update
 	brew rbenv-sync
 	rbenv alias --auto
-	rbenv alias brew `brew ruby -e 'puts RUBY_BIN.dirname'`
+	@rbenv alias brew `brew ruby -e 'puts RUBY_BIN.dirname'`
 	rbenv rehash
 nodenv: $(nodenv_plugins)
 	@echo '==> Updating nodenv…'
@@ -66,3 +73,6 @@ $(rbenv_plugins): $(rbenv_plugindir)/%: | $$(@:/%=)
 
 $(nodenv_plugins): $(nodenv_plugindir)/%: | $$(@:/%=)
 	@[ -d $|/$(@F) ] || git -C $| clone https://github.com/$*.git
+
+%.local : %.local.tpl
+	op inject --in-file $< --out-file $@
