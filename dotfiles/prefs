@@ -5,7 +5,7 @@ cd ~ || exit
 
 echo "==> Customizing Mac Preferences…"
 
- Terminal
+# Terminal
 # FIXME automate these
 # open -g .config/Solarized-JK.terminal
 # defaults write -app Terminal "Default Window Settings" -string "Solarized-JK"
