@@ -6,9 +6,13 @@ BUNDLE_INIT_GEMS_RB: false
 BUNDLE_LOCAL__RAKE_TO_RULE_THEM_ALL: "/Users/jasonkarns/Projects/rake_to_rule_them_all"
 
 # gem scaffolding options
+BUNDLE_GEM__CI: github
+BUNDLE_GEM__CHANGELOG: false
 BUNDLE_GEM__COC: true
+BUNDLE_GEM__GITHUB_USERNAME: jasonkarns
+BUNDLE_GEM__LINTER: standard
 BUNDLE_GEM__MIT: true
-BUNDLE_GEM__TEST: false
+BUNDLE_GEM__TEST: rspec
 
 # native ext options
 BUNDLE_BUILD__MYSQL2: "--with-opt-dir=/opt/homebrew/opt/openssl@3"
