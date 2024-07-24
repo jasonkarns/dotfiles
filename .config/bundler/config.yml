@@ -1,12 +1,16 @@
 ---
 # BUNDLE_DISABLE_LOCAL_BRANCH_CHECK: true
 # BUNDLE_DISABLE_MULTISOURCE: true
-BUNDLE_ERROR_ON_STDERR: "true"
-BUNDLE_GEM__COC: "true"
-BUNDLE_GEM__MIT: "true"
-BUNDLE_GEM__TEST: "false"
-BUNDLE_INIT_GEMS_RB: "true"
+BUNDLE_ERROR_ON_STDERR: true
+BUNDLE_INIT_GEMS_RB: true
 BUNDLE_LOCAL__RAKE_TO_RULE_THEM_ALL: "/Users/jasonkarns/Projects/rake_to_rule_them_all"
+
+# gem scaffolding options
+BUNDLE_GEM__COC: true
+BUNDLE_GEM__MIT: true
+BUNDLE_GEM__TEST: false
+
+# native ext options
+BUNDLE_BUILD__MYSQL2: "--with-opt-dir=/opt/homebrew/opt/openssl@3"
 BUNDLE_BUILD__NOKOGIRI: ""
-BUNDLE_BUILD__MYSQL2: "--with-opt-dir=/usr/local/opt/openssl@3"
-BUNDLE_BUILD__PG: "--with-pg-config=/usr/local/opt/libpq/bin/pg_config"
+BUNDLE_BUILD__PG: "--with-pg-config=/opt/homebrew/opt/libpq/bin/pg_config"
