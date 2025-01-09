@@ -40,21 +40,31 @@ remind() {
 }
 
 check() {
-  local file="$1"
-  local cmd="$2"
-  shift 2
-  local -a files=("$@")
+  local check_cmd="$1"
 
-  if modified "${files[@]}"; then
-    remind "$file" "$cmd"
+  if [ "$check_cmd" == -- ]
+  then shift 1
+  else shift 2
   fi
+
+  local -a files=("$@")
+  ! modified "${files[@]}"
 }
 
 
-check Package 'npm install' npm-shrinkwrap.json package-lock.json
+check -- db/migrate db/schema.rb db/structure.sql ||
+  remind "DB Schema" 'rake db:migrate'
 
-check Package 'yarn' yarn.lock
+check -- Gemfile Gemfile.lock gems.rb gems.locked ||
+  bundle check ||
+  remind "Gemfile" 'bundle'
 
-check Gemfile 'bundle' Gemfile Gemfile.lock gems.rb gems.locked
+check -- Podfile Podfile.lock ||
+  remind "Podfile" 'pod install'
 
-check Schema 'rake db:migrate' db/migrate db/schema.rb db/structure.sql
+check -- npm-shrinkwrap.json package-lock.json ||
+  remind "Package" 'npm install'
+
+check -- yarn.lock ||
+  yarn check ||
+  remind "Package" 'yarn'
