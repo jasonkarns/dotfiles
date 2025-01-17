@@ -6,8 +6,8 @@ XDG_CONFIG_HOME ?= ~/.config
 bashrcd = $(XDG_CONFIG_HOME)/bashrc.d
 
 secrets := $(patsubst %.tpl,%,$(wildcard $(bashrcd)/*.local.tpl))
-rbenv_root = /opt/rbenv
-nodenv_root = /opt/nodenv
+
+rbenv_root := /opt/rbenv
 rbenv_plugins = $(addprefix $(rbenv_root)/plugins/,\
   tpope/rbenv-aliases \
   ianheggie/rbenv-binstubs \
@@ -19,6 +19,8 @@ rbenv_plugins = $(addprefix $(rbenv_root)/plugins/,\
   mlafeldt/rbenv-man \
   rkh/rbenv-update \
   jasonkarns/ruby-build-update-defs)
+
+nodenv_root := /opt/nodenv
 nodenv_plugins = $(addprefix $(nodenv_root)/plugins/nodenv/,\
   node-build-update-defs \
   nodenv-aliases \
@@ -32,10 +34,10 @@ nodenv_plugins = $(addprefix $(nodenv_root)/plugins/nodenv/,\
 
 all: env | rbenv nodenv vim npm gpg
 
-env: $(secrets)
-
 clean:
 	rm -f $(secrets)
+
+env: $(secrets)
 
 rbenv: $(rbenv_plugins)
 	@echo '==> Updating rbenv…'
@@ -63,6 +65,9 @@ prefs:
 	dotfiles/prefs
 
 
+%.local : %.local.tpl
+	op inject --in-file $< --out-file $@
+
 $(rbenv_root) $(nodenv_root):
 	sudo install -o "${USER}" -g staff -d $@
 
@@ -74,6 +79,3 @@ $(rbenv_plugins): $(rbenv_root)/plugins/%: | $$(@:/%=)
 
 $(nodenv_plugins): $(nodenv_root)/plugins/%: | $$(@:/%=)
 	@[ -d $|/$(@F) ] || git -C $| clone https://github.com/$*.git
-
-%.local : %.local.tpl
-	op inject --in-file $< --out-file $@
