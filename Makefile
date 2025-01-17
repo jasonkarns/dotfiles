@@ -4,7 +4,8 @@
 
 XDG_CONFIG_HOME ?= ~/.config
 bashrcd = $(XDG_CONFIG_HOME)/bashrc.d
-env_local = $(bashrcd)/config.bash.local
+
+secrets := $(patsubst %.tpl,%,$(wildcard $(bashrcd)/*.local.tpl))
 rbenv_root = /opt/rbenv
 nodenv_root = /opt/nodenv
 rbenv_plugindir = $(rbenv_root)/plugins
@@ -31,10 +32,12 @@ nodenv_plugins = $(addprefix $(nodenv_plugindir)/nodenv/,\
   nodenv-update)
 
 
-all: $(env_local) | rbenv nodenv vim npm gpg
+all: env | rbenv nodenv vim npm gpg
+
+env: $(secrets)
 
 clean:
-	rm -f $(env_local)
+	rm -f $(secrets)
 
 rbenv: $(rbenv_plugins)
 	@echo '==> Updating rbenv…'
