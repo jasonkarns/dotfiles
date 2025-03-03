@@ -1,0 +1,5 @@
+[directories]
+custom_pages_dir = "/Users/jason.karns/.config/tldr"
+
+[updates]
+auto_update = true
