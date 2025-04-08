@@ -32,12 +32,19 @@ nodenv_plugins = $(addprefix $(nodenv_root)/plugins/nodenv/,\
   nodenv-update)
 
 
-all: env | rbenv nodenv vim npm gpg
+all: env | brew dots rbenv nodenv vim npm gpg prefs
 
 clean:
 	rm -f $(secrets)
 
 env: $(secrets)
+
+# TODO bring this task in properly
+brew:
+	dotfiles/update brew
+# TODO bring this task in properly
+dots:
+	dotfiles/update dots
 
 rbenv: $(rbenv_plugins)
 	@echo '==> Updating rbenv…'
