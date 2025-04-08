@@ -1,5 +1,5 @@
+.DEFAULT_GOAL := all
 .SECONDEXPANSION:
-
 .SHELLFLAGS = -euo pipefail
 
 XDG_CONFIG_HOME ?= ~/.config
