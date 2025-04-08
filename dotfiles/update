@@ -27,7 +27,7 @@ upbrew() {
   echo "==> Checking Homebrew dependencies…"
   brewfile | brew bundle check --file=- ${S:+--quiet} || {
     echo "==> Installing Homebrew dependencies…"
-    brewfile | brew bundle --file=- --no-lock ${S:+--quiet}
+    brewfile | brew bundle install --file=- ${S:+--quiet}
   }
 
   echo "==> Updating Homebrew dependencies…"
