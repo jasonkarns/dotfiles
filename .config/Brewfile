@@ -3,8 +3,6 @@
 # TODO look into https://github.com/buo/homebrew-cask-upgrade
 
 tap "github/gh"
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "nodenv/nodenv"
 tap "jacobwgillespie/tap"
 # tap "universal-ctags/universal-ctags"
