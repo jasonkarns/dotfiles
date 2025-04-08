@@ -3,7 +3,6 @@
 set -euo pipefail
 cd ~
 
-clone_repos() { while read -r repo; do git clone "https://github.com/$repo.git"; done; }
 confirm() { read -rp "Press any key to continue anyway or Ctrl-C to quit"; }
 
 export HOMEBREW_VERBOSE=${VERBOSE-}
@@ -48,14 +47,7 @@ fix_completions() {
   rm -f "${BASH_COMPLETION_COMPAT_DIR:?}"/hub.*
 }
 
-# update all by default
-if [ $# = 0 ]; then set -- brew dots rbenv nodenv vim npm gpg prefs; fi
-
-while [ $# -gt 0 ]; do
-  case $1 in
-  brew|dots) up"$1" ;;
-  rbenv|nodenv|vim|npm|gpg|prefs) make "$1" ;;
-  *) echo "unknown: '$1'" >&2; exit 1 ;;
-  esac
-  shift
-done
+case ${1:?which target?} in
+brew|dots) up"$1" ;;
+*) echo "unknown: '$1'" >&2; exit 1 ;;
+esac
