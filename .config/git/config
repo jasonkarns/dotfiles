@@ -121,7 +121,7 @@
 	showPatch = true
 	showStat = true
 [notes]
-	rewriteRef = refs/notes/commits
+	; rewriteRef = refs/notes/commits
 
 [submodule]
 	fetchJobs = 4
