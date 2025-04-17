@@ -31,6 +31,8 @@ defaults write "com.apple.HIToolbox" AppleFnUsageType -int 0 # globe key - do no
 # TODO caps as control
 # TODO paste and match style
 # TODO flip screenshot shortcuts
+# control thumbnail delay
+# defaults write com.apple.screencaptureui "thumbnailExpiration" -float 30
 
 # Spotlight: Option+Space
 # wrong?
