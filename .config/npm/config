@@ -1,5 +1,4 @@
 loglevel=warn
-scripts-prepend-node-path=auto
 
 cache=${XDG_CACHE_HOME}/npm
 devdir=${XDG_CACHE_HOME}/node-gyp
