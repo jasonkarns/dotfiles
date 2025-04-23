@@ -54,25 +54,6 @@ command -v brew || (
   unset hulk
 }
 
-localconf='.config/bashrc.d/config.sh.local'
-[ -f "$localconf" ] || {
-  echo "==> Scaffolding ${localconf}…"
-  cat > "$localconf" <<-'TMPL'
-	# vi: ft=bash
-	#
-	# machine-specific and sensitive config
-	# this file is not versioned
-	
-	for config in "${XDG_CONFIG_HOME:?}"/bashrc.d/*.sh.mac; do
-	  test -r "$config" && . "$config"
-	done
-	
-	printf -v CODEPATH -- "${HOME:?}/Projects/%s:" '' bats nodenv rbenv td
-	
-	# probably add some env vars like NPMJS_AUTHTOKEN and GHPR_AUTHTOKEN
-TMPL
-}
-
 localconf='.ssh/config'
 [ -f "$localconf" ] || {
   echo "==> Scaffolding ${localconf}…"
