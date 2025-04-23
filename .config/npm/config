@@ -1,6 +1,3 @@
-; username=jasonkarns
-email=jason.karns@gmail.com
-
 loglevel=warn
 scripts-prepend-node-path=auto
 
