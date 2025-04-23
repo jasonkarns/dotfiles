@@ -1,3 +1,5 @@
+# vi: ft=dosini
+
 loglevel=warn
 
 cache=${XDG_CACHE_HOME}/npm
@@ -15,5 +17,3 @@ init-license=MIT
 
 @github:registry=https://npm.pkg.github.com/
 ; //npm.pkg.github.com/:_authToken=${GHPR_AUTHTOKEN}
-
-# vi: ft=dosini
