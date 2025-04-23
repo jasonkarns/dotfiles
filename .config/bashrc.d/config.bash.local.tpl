@@ -7,3 +7,11 @@
 for config in "${XDG_CONFIG_HOME:?}"/bashrc.d/*.sh.mac; do
   test -r "$config" && . "$config"
 done
+
+printf -v CODEPATH -- "${HOME:?}/Projects/%s:" '' bats nodenv rbenv td
+
+# used by both hub and gh clis
+# export GITHUB_TOKEN="{{ op://Private/GITHUB_TOKEN old/credential }}"
+
+export NPMJS_AUTHTOKEN="{{ op://Private/NPMJS_AUTHTOKEN/credential }}"
+export GHPR_AUTHTOKEN="{{ op://Private/GHPR_AUTHTOKEN/credential }}"
