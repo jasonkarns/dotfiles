@@ -31,6 +31,7 @@ nodenv_plugins = $(addprefix $(nodenv_root)/plugins/nodenv/,\
   nodenv-package-rehash \
   nodenv-update)
 
+.PHONY: all list clean env brew dots rbenv nodenv vim npm gpg prefs
 
 all: env | brew dots rbenv nodenv vim npm gpg prefs
 
