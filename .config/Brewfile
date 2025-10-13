@@ -133,7 +133,6 @@ cask "tableplus"
 # cask "viscosity"
 # cask "webpquicklook"
 cask "yubico-authenticator"
-cask "yubico-yubikey-manager"
 cask "zoom"
 
 mas "1Password for Safari", id: 1569813296
