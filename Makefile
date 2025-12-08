@@ -33,7 +33,7 @@ nodenv_plugins = $(addprefix $(nodenv_root)/plugins/nodenv/,\
 
 .PHONY: all list clean env brew dots rbenv nodenv vim npm gpg prefs
 
-all: env | brew dots rbenv nodenv vim npm gpg prefs
+all: env | brew dots rbenv nodenv vim npm gpg macos prefs
 
 clean:
 	rm -f $(secrets)
@@ -46,6 +46,9 @@ brew:
 # TODO bring this task in properly
 dots:
 	dotfiles/update dots
+
+macos:
+	softwareupdate -l
 
 rbenv: $(rbenv_plugins)
 	@echo '==> Updating rbenv…'
