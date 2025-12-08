@@ -67,8 +67,9 @@ npm:
 	@echo '==> Updating npm…'
 	NODENV_VERSION=system npm update -g
 gpg:
-	@if command -v keybase; then echo '==> Updating keybase/gpg…'; \
-		keybase pgp pull; fi
+	@echo '==> Updating keybase/gpg…'
+	@if command -v keybase >/dev/null && keybase status; \
+		then keybase pgp pull; fi
 prefs:
 	dotfiles/prefs
 
