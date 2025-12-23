@@ -18,5 +18,4 @@ BUNDLE_GEM__TEST: "rspec"
 
 # native ext options
 BUNDLE_BUILD__MYSQL2: "--with-opt-dir=/opt/homebrew/opt/openssl@3 --with-ldflags=-L/opt/homebrew/opt/zstd/lib"
-BUNDLE_BUILD__NOKOGIRI: ""
-BUNDLE_BUILD__PG: "--with-pg-config=/opt/homebrew/bin/pg_config"
+BUNDLE_BUILD__PG: "--with-pg-config=/opt/homebrew/opt/libpq/bin/pg_config"
