@@ -1,7 +1,7 @@
 # fuzzy finder and path change for code projects
 code() {
   # shellcheck disable=2086
-  cd "$(IFS=: && echo $CODEPATH | xargs -J % find % -maxdepth 1 -type d 2>/dev/null | sort -u | selecta "${1:+ -s $1}")" || return
+  cd "$(IFS=: && echo $CODEPATH | xargs -J % find % -maxdepth 1 -type d 2>/dev/null | sort -u | RBENV_VERSION=3.4 selecta "${1:+ -s $1}")" || return
 }
 
 # Create a new directory and enter it
