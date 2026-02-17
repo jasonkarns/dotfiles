@@ -57,6 +57,11 @@
 
 	fix-email = "filter-branch --env-filter 'if [ \"$GIT_COMMITTER_NAME\" = \"$(git config user.name)\" ]; then GIT_COMMITTER_EMAIL=\"$(git config user.email)\"; fi; if [ \"$GIT_AUTHOR_NAME\" = \"$(git config user.name)\" ]; then GIT_AUTHOR_EMAIL=\"$(git config user.email)\"; fi'"
 
+[blame]
+	; GitHub violates git's filenaming convention 😤
+	; https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files#ignore-commits-in-the-blame-view
+	ignoreRevsFile = .git-blame-ignore-revs
+
 [branch]
 	sort = -committerdate
 
