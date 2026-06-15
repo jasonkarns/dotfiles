@@ -66,5 +66,6 @@ check -- npm-shrinkwrap.json package-lock.json ||
   remind "Package" 'npm install'
 
 check -- yarn.lock ||
-  yarn check ||
+  { [[ "$(yarn --version)" == 1.* ]] && yarn install --frozen-lockfile; } ||
+  { yarn install --immutable --immutable-cache; } ||
   remind "Package" 'yarn'
