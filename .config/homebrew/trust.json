@@ -1,0 +1,11 @@
+{
+  "trustedformulae": [
+    "github/gh/gh",
+    "heroku/brew/heroku",
+    "jacobwgillespie/tap/git-sync"
+  ],
+  "trustedtaps": [
+    "jasonkarns/homebrew",
+    "nodenv/nodenv"
+  ]
+}
