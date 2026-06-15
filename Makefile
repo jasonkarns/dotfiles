@@ -55,7 +55,7 @@ rbenv: $(rbenv_plugins)
 	rbenv update
 	brew rbenv-sync
 	rbenv alias --auto
-	@rbenv alias brew `brew ruby -e 'puts RUBY_BIN.dirname'`
+	@rbenv alias brew `brew ruby -e 'puts RbConfig::TOPDIR'`
 	rbenv rehash
 nodenv: $(nodenv_plugins)
 	@echo '==> Updating nodenv…'
